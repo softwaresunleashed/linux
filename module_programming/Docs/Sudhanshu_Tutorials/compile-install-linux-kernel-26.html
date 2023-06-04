@@ -1,0 +1,2311 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html dir="ltr" xmlns="http://www.w3.org/1999/xhtml" lang="en-US"><head profile="http://gmpg.org/xfn/11">
+
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>   How to: Compile Linux kernel 2.6</title>
+
+<link rel="stylesheet" href="compile-install-linux-kernel-26_files/ssbblog_cv2.css" type="text/css" media="screen, projection">
+<!--[if lte IE 8]><link rel="stylesheet" href="http://files.cyberciti.biz/assets/blog/ssbie.css" type="text/css" media="screen, projection" /><![endif]-->
+<link rel="alternate" type="application/rss+xml" title="nixCraft RSS Feed" href="http://feeds.cyberciti.biz/Nixcraft-LinuxFreebsdSolarisTipsTricks">
+<link rel="pingback" href="http://www.cyberciti.biz/tips/xmlrpc.php">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://www.cyberciti.biz/tips/xmlrpc.php?rsd">
+<script src="compile-install-linux-kernel-26_files/ga.js" async="" type="text/javascript"></script><script src="compile-install-linux-kernel-26_files/a_002" type="text/javascript"></script><script src="compile-install-linux-kernel-26_files/a" type="text/javascript"></script>
+<link rel="shortcut icon" href="http://files.cyberciti.biz/assets/i/favicon.ico" type="image/x-icon">
+<meta name="ROBOTS" content="NOARCHIVE">
+<link rel="alternate" type="application/rss+xml" title="nixCraft » How to: Compile Linux kernel 2.6 Comments Feed" href="http://www.cyberciti.biz/tips/compiling-linux-kernel-26.html/feed">
+<script type="text/javascript" src="compile-install-linux-kernel-26_files/l10n.js"></script>
+<script type="text/javascript" src="compile-install-linux-kernel-26_files/comment-reply.js"></script>
+
+<meta name="description" content="A step-by-step and easy to follow guide for compiling Linux kernel version 2.6.xx for a new Linux user / admin. ">
+<meta name="keywords" content="compile kernel, gnu linux, linux kernel version, kernel source code, compiling linux kernel, kernel image, kernel configuration, kernel version, latest linux kernel, configuration tool, how to compile linux kernel">
+</head><body class="custom">
+<div id="container">
+<div id="page">
+<ul class="menu">
+<li><a href="http://www.cyberciti.biz/tips/about-us" title="About us">About</a></li>
+<li><a href="http://nixcraft.com/" title="Linux / UNIX Tech Support Forum">Forum</a></li>
+<li><a href="http://www.cyberciti.biz/faq/" title="Linux / UNIX Mini Howtos and FAQs">Howtos &amp; FAQs</a></li>
+<li><a href="http://www.cyberciti.biz/low.html?utm_source=graphicsversion&amp;utm_campaign=blog&amp;utm_medium=link" title="See site in low graphics bandwidth friendly mode">Low graphics</a></li>
+<li><a href="http://bash.cyberciti.biz/" title="Linux/UNIX Shell scripts">Shell Scripts</a></li>
+<li class="rss"><a href="http://feeds.cyberciti.biz/Nixcraft-LinuxFreebsdSolarisTipsTricks" title="nixCraft RSS Feed" rel="nofollow">RSS/Feed</a></li>
+</ul>
+	<div id="header">
+<div id="leaderboard"><div id="lbtop"><div id="adstopage"><div id="load-adstopage">
+<script type="text/javascript"><!--// <![CDATA[
+    OA_show(4);
+// ]]> --></script><span><script type="text/javascript"><!--// <![CDATA[
+/* openads=http://simplyguide.com/k/www/delivery bannerid=7 zoneid=5 source= */
+// ]]> --></script><script type="text/javascript"><!--
+google_ad_client = "ca-pub-7825705102693166";
+/* cyberciti.biz-top 728x90 */
+google_ad_slot = "3400670370";
+google_ad_width = 728;
+google_ad_height = 90;
+//-->
+</script>
+<script type="text/javascript" src="compile-install-linux-kernel-26_files/show_ads.js">
+</script><ins style="display: inline-table; border: medium none; height: 90px; margin: 0pt; padding: 0pt; position: relative; visibility: visible; width: 728px;"><ins id="aswift_0_anchor" style="display: block; border: medium none; height: 90px; margin: 0pt; padding: 0pt; position: relative; visibility: visible; width: 728px;"><iframe allowtransparency="true" hspace="0" marginwidth="0" marginheight="0" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){i+='.call';setTimeout(h,0)}else if(h.match){i+='.nav';w.location.replace(h)}s.log&amp;&amp;s.log.push(i)}" vspace="0" id="aswift_0" name="aswift_0" style="left: 0pt; position: absolute; top: 0pt;" frameborder="0" height="90" scrolling="no" width="728"></iframe></ins></ins><script type="text/javascript" src="compile-install-linux-kernel-26_files/ag.php"></script></span><div id="beacon_698e2081d3" style="position: absolute; left: 0px; top: 0px; visibility: hidden;"><img src="compile-install-linux-kernel-26_files/lg_002.gif" alt="" style="width: 0px; height: 0px;" height="0" width="0"></div>
+<noscript><a target='_blank' href='http://simplyguide.com/k/www/delivery/ck.php?n=21e2006'><img border='0' alt='' src='http://simplyguide.com/k/www/delivery/avw.php?zoneid=4&amp;n=21e2006' /></a></noscript>
+</div></div></div></div><div id="crumbslogo"><a href="http://www.cyberciti.biz/" title="Home page">nixcraft - insight into linux admin work</a></div>	</div>
+	<div id="content_box">
+		<div id="content" class="hfeed">
+
+			<div class="post-710 post type-post status-publish format-standard hentry category-centos category-debian-linux category-gnuopen-source category-howto category-linux tag-command-tar tag-compile-kernel tag-compiling-linux-kernel tag-configuration-option tag-configuration-tool tag-gnu-linux tag-how-to-compile-linux-kernel tag-kernel-code tag-kernel-configuration tag-kernel-image tag-kernel-source-code tag-kernel-v2 tag-kernel-version tag-latest-linux-kernel tag-linux-kernel-version post_box top" id="post-710">
+				<div class="headline_area">
+					<h1 class="entry-title">How to: Compile Linux kernel 2.6</h1>
+					<p class="headline_meta">by <span class="author vcard fn">nixcraft</span> on <abbr class="published" title="2005-09-29">September 29, 2005</abbr> · <span><a href="http://www.cyberciti.biz/tips/compiling-linux-kernel-26.html#comments" rel="nofollow">111 comments</a></span></p>
+				</div>
+				<div class="format_text entry-content">
+<div style="float: right; margin-top: 0px; margin-left: 5px;"><a href="http://www.cyberciti.biz/tips/category/linux" title="See all GNU/Linux related tips/articles"><img src="compile-install-linux-kernel-26_files/linux-logo.png" border="0"></a></div>
+<p>Compiling custom kernel has its own advantages and disadvantages. 
+However, new Linux user / admin find it difficult to compile Linux 
+kernel. Compiling kernel needs to understand few things and then just 
+type couple of commands. This step by step howto covers compiling Linux 
+kernel version 2.6.xx under Debian GNU Linux. However, instructions 
+remains the same for any other distribution except for apt-get command. </p>
+<h2>Step # 1 Get Latest Linux kernel code</h2>
+<p>Visit <a href="http://kernel.org/">http://kernel.org/</a> and 
+download the latest source code. File name would be linux-x.y.z.tar.bz2,
+ where x.y.z is actual version number. For example file 
+inux-2.6.25.tar.bz2 represents  2.6.25 kernel version. Use wget command 
+to download kernel source code:<br>
+<code>$ cd /tmp<br>
+$ wget http://www.kernel.org/pub/linux/kernel/v2.6/linux-x.y.z.tar.bz2</code></p>
+<p>Note: Replace  x.y.z with actual version number.</p>
+<h2>Step # 2 Extract tar (.tar.bz3) file</h2>
+<p>Type the following command:<br>
+<code># tar -xjvf linux-2.6.25.tar.bz2 -C /usr/src<br>
+# cd /usr/src</code></p>
+<h2>Step # 3 Configure kernel</h2>
+<p>Before you configure kernel make sure you have development tools (gcc
+ compilers and related tools) are installed on your system. If gcc 
+compiler and tools are not installed then use apt-get command under 
+Debian Linux to install development tools.<br>
+<code># apt-get install gcc </code></p>
+<p>Now you can start kernel configuration  by typing any one of the command:</p>
+<ul>
+<li><b>$ make menuconfig</b> -  Text based color menus, radiolists &amp;
+ dialogs. This option also useful on remote server if you wanna compile 
+kernel remotely. </li>
+<li><b>$ make xconfig</b> -  X windows (Qt) based configuration tool, works best under KDE desktop</li>
+<li><b>$ make gconfig</b> -  X windows (Gtk) based configuration tool, works best under Gnome Dekstop.</li>
+</ul>
+<p>For example  make menuconfig command launches following screen:<br>
+<code>$ make menuconfig</code></p>
+<p>You have to select different options as per your need. Each 
+configuration option has  HELP button associated with it so select help 
+button to get help.</p>
+<h2>Step # 4 Compile kernel</h2>
+<p>Start compiling to create a  compressed kernel image, enter:<br>
+<code>$ make</code><br>
+Start compiling to kernel modules:<br>
+<code>$  make modules </code></p>
+<p>Install kernel modules  (become a root user, use su command):<br>
+<code>$  su -<br>
+#  make modules_install<br>
+</code></p>
+<h2>Step # 5 Install kernel</h2>
+<p>So far we have compiled kernel and installed kernel modules. It is time to install kernel itself.<br>
+<code># make install </code></p>
+<p>It will install three files into /boot directory as well as modification to your kernel grub configuration file:</p>
+<ul>
+<li>System.map-2.6.25  </li>
+<li>config-2.6.25  </li>
+<li>vmlinuz-2.6.25</li>
+</ul>
+<h2>Step # 6: Create an initrd image</h2>
+<p>Type the following command at a shell prompt:<br>
+<code># cd /boot<br>
+# mkinitrd -o initrd.img-2.6.25 2.6.25</code></p>
+<p>initrd images contains device driver which needed to load rest of the
+ operating system later on. Not all computer requires initrd, but it is 
+safe to create one.</p>
+<h2>Step # 7 Modify Grub configuration file - /boot/grub/menu.lst</h2>
+<p>Open file using vi:<br>
+<code># vi /boot/grub/menu.lst</code></p>
+<pre>title           Debian GNU/Linux, kernel 2.6.25 Default
+root            (hd0,0)
+kernel          /boot/vmlinuz root=/dev/hdb1 ro
+initrd          /boot/initrd.img-2.6.25
+savedefault
+boot</pre>
+<p>Remember to setup correct root=/dev/hdXX device. Save and close the 
+file. If you think editing and writing all lines by hand is too much for
+ you, try out update-grub command to update the lines for each kernel in
+ /boot/grub/menu.lst file. Just type the command:<br>
+<code># update-grub</code><br>
+Neat. Huh?</p>
+<h2>Step # 8 : Reboot computer and boot into your new kernel</h2>
+<p>Just issue reboot command:<br>
+<code># reboot</code><br>
+For more information see: </p>
+<ul>
+<li>Our <a href="http://theos.in/exploring-linux-kernel.html">Exploring Linux kernel article</a> and <a href="http://www.cyberciti.biz/tips/compiling-linux-kernel-module.html">Compiling Linux Kernel</a> module only.</li>
+<li>Official README file has more information on kernel and software 
+requirement to compile it. This file is kernel source directory tree.</li>
+<li>Documentation/ directory has interesting kernel documentation for you in kernel source tree.</li>
+</ul>
+<h4>Featured Articles:</h4>
+                <ul> 
+        <li><a href="http://www.cyberciti.biz/tips/top-linux-monitoring-tools.html">20 Linux System Monitoring Tools Every SysAdmin Should Know</a></li>
+        <li><a href="http://www.cyberciti.biz/tips/linux-security.html">20 Linux Server Hardening Security Tips</a></li>
+        <li><a href="http://www.cyberciti.biz/tips/my-10-unix-command-line-mistakes.html">My 10 UNIX Command Line Mistakes</a></li>
+        <li><a href="http://www.cyberciti.biz/tips/linux-laptop.html">The Novice Guide To Buying A Linux Laptop</a> <img style="vertical-align: text-top; padding-left: 1px;" src="compile-install-linux-kernel-26_files/new_fa.png" alt="" border="0"></li>
+        <li><a href="http://www.cyberciti.biz/tips/10-greatest-open-source-software-of-2009.html">10 Greatest Open Source Software Of 2009</a></li>
+        <li><a href="http://www.cyberciti.biz/tips/download-email-client-for-linux-mac-osx-windows.html">Top 5 Email Client For Linux, Mac OS X, and Windows Users</a></li>
+        <li><a href="http://www.cyberciti.biz/tips/linux-unix-bsd-openssh-server-best-practices.html">Top 20 OpenSSH Server Best Security Practices </a></li>
+        <li><a href="http://www.cyberciti.biz/tips/open-source-project-management-software.html">Top 10 Open Source Web-Based Project Management Software</a></li>
+        <li><a href="http://www.cyberciti.biz/faq/top5-linux-video-editing-system-software/">Top 5 Linux Video Editor Software</a></li>
+                </ul>
+        				</div>
+			</div>
+
+			<div id="comments">
+				<div id="comments_intro" class="comments_intro">
+					<p><span class="bracket">{</span> <span>111</span> comments… read them below or <a href="#respond" rel="nofollow">add one</a> <span class="bracket">}</span></p>
+				</div>
+
+				<dl id="comment_list">
+					<dt class="comment even thread-even depth-1" id="comment-19246">
+<span class="comment_num"><a href="#comment-19246" title="Permalink to this comment" rel="nofollow">1</a></span>
+<span class="comment_author">Anonymous</span>
+<span class="comment_time">March 7, 2006</span>
+
+					</dt>
+					<dd class="comment even thread-even depth-1">
+<div class="format_text" id="comment-body-19246">
+<p>According to the kernel documentation, the kernel should be compiled 
+using gcc 2.95.x, with x &gt;= 3. “apt-get install gcc” under debian 
+gives you a recent gcc (version &gt; 4).</p>
+<p class="reply"><a class="comment-reply-link" href="http://www.cyberciti.biz/tips/compiling-linux-kernel-26.html?replytocom=19246#respond" onclick='return addComment.moveForm("comment-body-19246", "19246", "respond", "710")'>Reply</a></p>
+</div>
+					</dd>
+					<dt class="comment odd alt thread-odd thread-alt depth-1" id="comment-19247">
+<span class="comment_num"><a href="#comment-19247" title="Permalink to this comment" rel="nofollow">2</a></span>
+<span class="comment_author">nixcraft</span>
+<span class="comment_time">March 7, 2006</span>
+
+					</dt>
+					<dd class="comment odd alt thread-odd thread-alt depth-1">
+<div class="format_text" id="comment-body-19247">
+<p>It works with gcc version &gt;= 4.0.<br>
+<b>gcc –version</b><br>
+gcc (GCC) 4.0.3 20060212 (prerelease) (Debian 4.0.2-9)</p>
+<p><b>uname -a</b><br>
+Linux debian 2.6.15.4 #1 PREEMPT Fri Feb 17 20:46:04 IST 2006 i686 GNU/Linux</p>
+<p>I have compiled above kernel using gcc 4.0.2-9. INSTALL file may be not updated.</p>
+<p class="reply"><a class="comment-reply-link" href="http://www.cyberciti.biz/tips/compiling-linux-kernel-26.html?replytocom=19247#respond" onclick='return addComment.moveForm("comment-body-19247", "19247", "respond", "710")'>Reply</a></p>
+</div>
+					</dd>
+					<dt class="comment even thread-even depth-1" id="comment-19248">
+<span class="comment_num"><a href="#comment-19248" title="Permalink to this comment" rel="nofollow">3</a></span>
+<span class="comment_author">Anonymous</span>
+<span class="comment_time">March 17, 2006</span>
+
+					</dt>
+					<dd class="comment even thread-even depth-1">
+<div class="format_text" id="comment-body-19248">
+<p>Thanks a lot Gabber Anna,<br>
+It’s works for me :-))</p>
+<p class="reply"><a class="comment-reply-link" href="http://www.cyberciti.biz/tips/compiling-linux-kernel-26.html?replytocom=19248#respond" onclick='return addComment.moveForm("comment-body-19248", "19248", "respond", "710")'>Reply</a></p>
+</div>
+					</dd>
+					<dt class="comment odd alt thread-odd thread-alt depth-1" id="comment-19249">
+<span class="comment_num"><a href="#comment-19249" title="Permalink to this comment" rel="nofollow">4</a></span>
+<span class="comment_author">nixcraft</span>
+<span class="comment_time">March 17, 2006</span>
+
+					</dt>
+					<dd class="comment odd alt thread-odd thread-alt depth-1">
+<div class="format_text" id="comment-body-19249">
+<p>LOL<br>
+Note sure who are you?<br>
+But you bring back some old memories…</p>
+<p>Take care buddy :)</p>
+<p class="reply"><a class="comment-reply-link" href="http://www.cyberciti.biz/tips/compiling-linux-kernel-26.html?replytocom=19249#respond" onclick='return addComment.moveForm("comment-body-19249", "19249", "respond", "710")'>Reply</a></p>
+</div>
+					</dd>
+					<dt class="comment even thread-even depth-1" id="comment-98168">
+<span class="comment_num"><a href="#comment-98168" title="Permalink to this comment" rel="nofollow">5</a></span>
+<span class="comment_author">Learn Hacking</span>
+<span class="comment_time">March 25, 2007</span>
+
+					</dt>
+					<dd class="comment even thread-even depth-1">
+<div class="format_text" id="comment-body-98168">
+<p>any guess about boot loader?</p>
+<p class="reply"><a class="comment-reply-link" href="http://www.cyberciti.biz/tips/compiling-linux-kernel-26.html?replytocom=98168#respond" onclick='return addComment.moveForm("comment-body-98168", "98168", "respond", "710")'>Reply</a></p>
+</div>
+					</dd>
+					<dt class="comment odd alt thread-odd thread-alt depth-1" id="comment-140845">
+<span class="comment_num"><a href="#comment-140845" title="Permalink to this comment" rel="nofollow">6</a></span>
+<span class="comment_author">debianusr</span>
+<span class="comment_time">August 18, 2007</span>
+
+					</dt>
+					<dd class="comment odd alt thread-odd thread-alt depth-1">
+<div class="format_text" id="comment-body-140845">
+<p>After building the kernel and updating grub I’ve rebooted the new 
+kernel successfully. Now I am wondering if this process includes 
+updating the kernel header files in /usr/include/. If not, what is the 
+best way to do that and should any new directories be added to 
+ld.so.conf so I can update glibc?</p>
+<p class="reply"><a class="comment-reply-link" href="http://www.cyberciti.biz/tips/compiling-linux-kernel-26.html?replytocom=140845#respond" onclick='return addComment.moveForm("comment-body-140845", "140845", "respond", "710")'>Reply</a></p>
+</div>
+					</dd>
+					<dt class="comment byuser comment-author-administrator even thread-even depth-1" id="comment-140847">
+<span class="comment_num"><a href="#comment-140847" title="Permalink to this comment" rel="nofollow">7</a></span>
+<span class="comment_author">vivek</span>
+<span class="comment_time">August 18, 2007</span>
+
+					</dt>
+					<dd class="comment byuser comment-author-administrator even thread-even depth-1">
+<div class="format_text" id="comment-body-140847">
+<p>If you also upgraded kernel-devel and headers package you should get updates. No need to upgrade ld.so.conf or cache</p>
+<p class="reply"><a class="comment-reply-link" href="http://www.cyberciti.biz/tips/compiling-linux-kernel-26.html?replytocom=140847#respond" onclick='return addComment.moveForm("comment-body-140847", "140847", "respond", "710")'>Reply</a></p>
+</div>
+					</dd>
+					<dt class="comment odd alt thread-odd thread-alt depth-1" id="comment-141397">
+<span class="comment_num"><a href="#comment-141397" title="Permalink to this comment" rel="nofollow">8</a></span>
+<span class="comment_author">Animesh</span>
+<span class="comment_time">October 13, 2007</span>
+
+					</dt>
+					<dd class="comment odd alt thread-odd thread-alt depth-1">
+<div class="format_text" id="comment-body-141397">
+<p>Info<br>
+—–</p>
+<p>Kernel 2.6.23 has issues with kernel headers. If you have distro’s 
+like fedora it gonna give up some wierd fixdep.c error messages. </p>
+<p>Some forums say you need to have 2.4 headers for compiling it. Kernel
+ header is a huge mess scattered around and well serious debates have 
+gone down the drain…</p>
+<p><a href="http://kerneltrap.org/node/6536" rel="nofollow">http://kerneltrap.org/node/6536</a></p>
+<p class="reply"><a class="comment-reply-link" href="http://www.cyberciti.biz/tips/compiling-linux-kernel-26.html?replytocom=141397#respond" onclick='return addComment.moveForm("comment-body-141397", "141397", "respond", "710")'>Reply</a></p>
+</div>
+					</dd>
+					<dt class="comment even thread-even depth-1" id="comment-143638">
+<span class="comment_num"><a href="#comment-143638" title="Permalink to this comment" rel="nofollow">9</a></span>
+<span class="comment_author">Pradeep</span>
+<span class="comment_time">April 30, 2008</span>
+
+					</dt>
+					<dd class="comment even thread-even depth-1">
+<div class="format_text" id="comment-body-143638">
+<p>Does this kernel support RHEL4 update 5</p>
+<p>I am using kernel 2.6.9-55.EL can i upgade the</p>
+<p class="reply"><a class="comment-reply-link" href="http://www.cyberciti.biz/tips/compiling-linux-kernel-26.html?replytocom=143638#respond" onclick='return addComment.moveForm("comment-body-143638", "143638", "respond", "710")'>Reply</a></p>
+</div>
+					</dd>
+					<dt class="comment odd alt thread-odd thread-alt depth-1" id="comment-143737">
+<span class="comment_num"><a href="#comment-143737" title="Permalink to this comment" rel="nofollow">10</a></span>
+<span class="comment_author">dushyant</span>
+<span class="comment_time">May 9, 2008</span>
+
+					</dt>
+					<dd class="comment odd alt thread-odd thread-alt depth-1">
+<div class="format_text" id="comment-body-143737">
+<p>How much time does it take approximately?</p>
+<p class="reply"><a class="comment-reply-link" href="http://www.cyberciti.biz/tips/compiling-linux-kernel-26.html?replytocom=143737#respond" onclick='return addComment.moveForm("comment-body-143737", "143737", "respond", "710")'>Reply</a></p>
+</div>
+					</dd>
+					<dt class="comment even thread-even depth-1" id="comment-143790">
+<span class="comment_num"><a href="#comment-143790" title="Permalink to this comment" rel="nofollow">11</a></span>
+<span class="comment_author">Krishna Priya Bandyopadhyay</span>
+<span class="comment_time">May 15, 2008</span>
+
+					</dt>
+					<dd class="comment even thread-even depth-1">
+<div class="format_text" id="comment-body-143790">
+<p>i am trying it on mandriva 2008.i can not do “$ make menuconfig”.is 
+there any option to do that.please help me to get out of this as soon as
+ possible.i wonder there is no option of “make”.</p>
+<p class="reply"><a class="comment-reply-link" href="http://www.cyberciti.biz/tips/compiling-linux-kernel-26.html?replytocom=143790#respond" onclick='return addComment.moveForm("comment-body-143790", "143790", "respond", "710")'>Reply</a></p>
+</div>
+					</dd>
+					<dt class="comment odd alt thread-odd thread-alt depth-1 parent" id="comment-143954">
+<span class="comment_num"><a href="#comment-143954" title="Permalink to this comment" rel="nofollow">12</a></span>
+<span class="comment_author">Pothikan Suresh</span>
+<span class="comment_time">June 4, 2008</span>
+
+					</dt>
+					<dd class="comment odd alt thread-odd thread-alt depth-1 parent">
+<div class="format_text" id="comment-body-143954">
+<p>Priya,<br>
+ To make ‘make’ work, go inside the kernel directory ie., /usr/src/. 
+There, u can find the make file. Now, just give “$make menuconfig”. It 
+will work…. :)</p>
+<p class="reply"><a class="comment-reply-link" href="http://www.cyberciti.biz/tips/compiling-linux-kernel-26.html?replytocom=143954#respond" onclick='return addComment.moveForm("comment-body-143954", "143954", "respond", "710")'>Reply</a></p>
+</div>
+					<dl class="children">
+					<dt class="comment even depth-2" id="comment-156725">
+<span class="comment_num"><a href="#comment-156725" title="Permalink to this comment" rel="nofollow">13</a></span>
+<span class="comment_author">Krishna Priya Bandyopadhyay</span>
+<span class="comment_time">June 20, 2010</span>
+
+					</dt>
+					<dd class="comment even depth-2">
+<div class="format_text" id="comment-body-156725">
+<p>Thanks for ur reply.I’m working fine now with the walk through given by you…<br>
+Krishba Priya bandyopadhyay</p>
+<p class="reply"><a class="comment-reply-link" href="http://www.cyberciti.biz/tips/compiling-linux-kernel-26.html?replytocom=156725#respond" onclick='return addComment.moveForm("comment-body-156725", "156725", "respond", "710")'>Reply</a></p>
+</div>
+					</dd>
+					</dl>
+					</dd>
+					<dt class="comment odd alt thread-even depth-1" id="comment-143964">
+<span class="comment_num"><a href="#comment-143964" title="Permalink to this comment" rel="nofollow">14</a></span>
+<span class="comment_author">Blues</span>
+<span class="comment_time">June 4, 2008</span>
+
+					</dt>
+					<dd class="comment odd alt thread-even depth-1">
+<div class="format_text" id="comment-body-143964">
+<p>With 2.6 kernel there is no need for <b>make modules</b>. make builds kernel and modules. Have you ever read the README in kernel source directory?</p>
+<p class="reply"><a class="comment-reply-link" href="http://www.cyberciti.biz/tips/compiling-linux-kernel-26.html?replytocom=143964#respond" onclick='return addComment.moveForm("comment-body-143964", "143964", "respond", "710")'>Reply</a></p>
+</div>
+					</dd>
+					<dt class="comment even thread-odd thread-alt depth-1" id="comment-144151">
+<span class="comment_num"><a href="#comment-144151" title="Permalink to this comment" rel="nofollow">15</a></span>
+<span class="comment_author">Anil Kumar Jena</span>
+<span class="comment_time">June 24, 2008</span>
+
+					</dt>
+					<dd class="comment even thread-odd thread-alt depth-1">
+<div class="format_text" id="comment-body-144151">
+<p>It will take near about 1 to 1.30 hours. for complete<br>
+installation</p>
+<p class="reply"><a class="comment-reply-link" href="http://www.cyberciti.biz/tips/compiling-linux-kernel-26.html?replytocom=144151#respond" onclick='return addComment.moveForm("comment-body-144151", "144151", "respond", "710")'>Reply</a></p>
+</div>
+					</dd>
+					<dt class="comment odd alt thread-even depth-1" id="comment-144158">
+<span class="comment_num"><a href="#comment-144158" title="Permalink to this comment" rel="nofollow">16</a></span>
+<span class="comment_author">Lin</span>
+<span class="comment_time">June 25, 2008</span>
+
+					</dt>
+					<dd class="comment odd alt thread-even depth-1">
+<div class="format_text" id="comment-body-144158">
+<p>I tried make 2.6.25 in my desktop (FC5, kernel version 2.6.15), 
+everything goes okay, but failed to boot the new kernel image with the 
+follow error messages:</p>
+<p>PCI: BIOS Bug: MCFG area at e0000000 is not E820-reserved<br>
+PCI: Not using MMCONFIG</p>
+<p>Read Hat nash version 5.0.32 Starting<br>
+mount: error mounting /dev/root on /sysroot at ext3: No such device<br>
+….</p>
+<p>In initrd.img file, I found no libata.ko or any other .ko modules are added before mkrootdev. </p>
+<p>Is this problem caused by incorrect or even no HDD controller driver 
+loaded? I did not see appropriate entry for libata in .config file. Do 
+you guys have any suggestion on make it through?</p>
+<p>Thanks.</p>
+<p>-Lin</p>
+<p class="reply"><a class="comment-reply-link" href="http://www.cyberciti.biz/tips/compiling-linux-kernel-26.html?replytocom=144158#respond" onclick='return addComment.moveForm("comment-body-144158", "144158", "respond", "710")'>Reply</a></p>
+</div>
+					</dd>
+					<dt class="comment even thread-odd thread-alt depth-1" id="comment-144306">
+<span class="comment_num"><a href="#comment-144306" title="Permalink to this comment" rel="nofollow">17</a></span>
+<span class="comment_author">Logic</span>
+<span class="comment_time">July 8, 2008</span>
+
+					</dt>
+					<dd class="comment even thread-odd thread-alt depth-1">
+<div class="format_text" id="comment-body-144306">
+<p>About the 4th step, as the “make help” says: you do not need to do 
+make modules again, so when using “make” it already compiles the 
+modules.</p>
+<p>:D</p>
+<p class="reply"><a class="comment-reply-link" href="http://www.cyberciti.biz/tips/compiling-linux-kernel-26.html?replytocom=144306#respond" onclick='return addComment.moveForm("comment-body-144306", "144306", "respond", "710")'>Reply</a></p>
+</div>
+					</dd>
+					<dt class="comment odd alt thread-even depth-1" id="comment-145213">
+<span class="comment_num"><a href="#comment-145213" title="Permalink to this comment" rel="nofollow">18</a></span>
+<span class="comment_author">Ramkey</span>
+<span class="comment_time">October 9, 2008</span>
+
+					</dt>
+					<dd class="comment odd alt thread-even depth-1">
+<div class="format_text" id="comment-body-145213">
+<p>Lin,</p>
+<p>Did your problem sorted out?Thans</p>
+<p class="reply"><a class="comment-reply-link" href="http://www.cyberciti.biz/tips/compiling-linux-kernel-26.html?replytocom=145213#respond" onclick='return addComment.moveForm("comment-body-145213", "145213", "respond", "710")'>Reply</a></p>
+</div>
+					</dd>
+					<dt class="comment even thread-odd thread-alt depth-1" id="comment-145219">
+<span class="comment_num"><a href="#comment-145219" title="Permalink to this comment" rel="nofollow">19</a></span>
+<span class="comment_author">Rohit Awasthi</span>
+<span class="comment_time">October 10, 2008</span>
+
+					</dt>
+					<dd class="comment even thread-odd thread-alt depth-1">
+<div class="format_text" id="comment-body-145219">
+<p>Hi.. wt if somethin goes wrong… is there any way to get OS to its 
+former stage, say ( backup or uninstall Kernel or something ).. or will 
+need to install whole OS again…</p>
+<p class="reply"><a class="comment-reply-link" href="http://www.cyberciti.biz/tips/compiling-linux-kernel-26.html?replytocom=145219#respond" onclick='return addComment.moveForm("comment-body-145219", "145219", "respond", "710")'>Reply</a></p>
+</div>
+					</dd>
+					<dt class="comment odd alt thread-even depth-1" id="comment-145427">
+<span class="comment_num"><a href="#comment-145427" title="Permalink to this comment" rel="nofollow">20</a></span>
+<span class="comment_author">Ravi</span>
+<span class="comment_time">October 31, 2008</span>
+
+					</dt>
+					<dd class="comment odd alt thread-even depth-1">
+<div class="format_text" id="comment-body-145427">
+<p>I followed the above steps in order to compile Linux kernel 
+“linux-2.6.27″ but when tried to boot my system from latest compiled 
+kernel got the Kernel Panic error which says can’t find<br>
+file system /boot/root at the start.</p>
+<p>please suggest</p>
+<p class="reply"><a class="comment-reply-link" href="http://www.cyberciti.biz/tips/compiling-linux-kernel-26.html?replytocom=145427#respond" onclick='return addComment.moveForm("comment-body-145427", "145427", "respond", "710")'>Reply</a></p>
+</div>
+					</dd>
+					<dt class="comment even thread-odd thread-alt depth-1 parent" id="comment-145456">
+<span class="comment_num"><a href="#comment-145456" title="Permalink to this comment" rel="nofollow">21</a></span>
+<span class="comment_author">Jared</span>
+<span class="comment_time">November 2, 2008</span>
+
+					</dt>
+					<dd class="comment even thread-odd thread-alt depth-1 parent">
+<div class="format_text" id="comment-body-145456">
+<p>This is a nice tutorial, but I have a note to make. On my 
+installation, Ubuntu 8.04.1 64-bit, the command in Step # 6 is 
+“mkinitramfs” instead of “mkinitrd”.</p>
+<p>Can’t wait to try out my new kernel…</p>
+<p class="reply"><a class="comment-reply-link" href="http://www.cyberciti.biz/tips/compiling-linux-kernel-26.html?replytocom=145456#respond" onclick='return addComment.moveForm("comment-body-145456", "145456", "respond", "710")'>Reply</a></p>
+</div>
+					<dl class="children">
+					<dt class="comment odd alt depth-2" id="comment-170564">
+<span class="comment_num"><a href="#comment-170564" title="Permalink to this comment" rel="nofollow">22</a></span>
+<span class="comment_author">Abdul</span>
+<span class="comment_time">April 12, 2011</span>
+
+					</dt>
+					<dd class="comment odd alt depth-2">
+<div class="format_text" id="comment-body-170564">
+<p>That helped me Thanks!!!!!!!</p>
+<p class="reply"><a class="comment-reply-link" href="http://www.cyberciti.biz/tips/compiling-linux-kernel-26.html?replytocom=170564#respond" onclick='return addComment.moveForm("comment-body-170564", "170564", "respond", "710")'>Reply</a></p>
+</div>
+					</dd>
+					</dl>
+					</dd>
+					<dt class="comment even thread-even depth-1" id="comment-145459">
+<span class="comment_num"><a href="#comment-145459" title="Permalink to this comment" rel="nofollow">23</a></span>
+<span class="comment_author">same</span>
+<span class="comment_time">November 2, 2008</span>
+
+					</dt>
+					<dd class="comment even thread-even depth-1">
+<div class="format_text" id="comment-body-145459">
+<p>the same thing happened to me as ravi.</p>
+<p class="reply"><a class="comment-reply-link" href="http://www.cyberciti.biz/tips/compiling-linux-kernel-26.html?replytocom=145459#respond" onclick='return addComment.moveForm("comment-body-145459", "145459", "respond", "710")'>Reply</a></p>
+</div>
+					</dd>
+					<dt class="comment odd alt thread-odd thread-alt depth-1" id="comment-146021">
+<span class="comment_num"><a href="#comment-146021" title="Permalink to this comment" rel="nofollow">24</a></span>
+<span class="comment_author">Roman</span>
+<span class="comment_time">December 7, 2008</span>
+
+					</dt>
+					<dd class="comment odd alt thread-odd thread-alt depth-1">
+<div class="format_text" id="comment-body-146021">
+<p>I have compiled custom kernel and I am missing in /boot directory 
+config-2.6 file. What have I done wrong? I see config files from old 
+kernel there. thanks in advance.</p>
+<p class="reply"><a class="comment-reply-link" href="http://www.cyberciti.biz/tips/compiling-linux-kernel-26.html?replytocom=146021#respond" onclick='return addComment.moveForm("comment-body-146021", "146021", "respond", "710")'>Reply</a></p>
+</div>
+					</dd>
+					<dt class="comment even thread-even depth-1" id="comment-146236">
+<span class="comment_num"><a href="#comment-146236" title="Permalink to this comment" rel="nofollow">25</a></span>
+<span class="comment_author">saga</span>
+<span class="comment_time">December 14, 2008</span>
+
+					</dt>
+					<dd class="comment even thread-even depth-1">
+<div class="format_text" id="comment-body-146236">
+<p>you have compiled a upstream kernel.How should i compile distribution
+ specific kernels,like if i install fedora it has its kernel source in 
+/usr/src/, fedora community might have added its own patches.Will the 
+steps described in this article work for distribution specific kernels?</p>
+<p class="reply"><a class="comment-reply-link" href="http://www.cyberciti.biz/tips/compiling-linux-kernel-26.html?replytocom=146236#respond" onclick='return addComment.moveForm("comment-body-146236", "146236", "respond", "710")'>Reply</a></p>
+</div>
+					</dd>
+					<dt class="comment odd alt thread-odd thread-alt depth-1" id="comment-146363">
+<span class="comment_num"><a href="#comment-146363" title="Permalink to this comment" rel="nofollow">26</a></span>
+<span class="comment_author">anand</span>
+<span class="comment_time">December 21, 2008</span>
+
+					</dt>
+					<dd class="comment odd alt thread-odd thread-alt depth-1">
+<div class="format_text" id="comment-body-146363">
+<p>Except for step where you create the initrd img file, rest of the 
+steps explained here worked fine. The Kernel version I tried was 
+2.6.27.10 and the  linux box had ubuntu 8.10 installed.</p>
+<p>On ubuntu if you try to use mkinitrd you might get the message “No 
+command found”. Try using mkinitramfs instead. It worked perfectly fine.</p>
+<p class="reply"><a class="comment-reply-link" href="http://www.cyberciti.biz/tips/compiling-linux-kernel-26.html?replytocom=146363#respond" onclick='return addComment.moveForm("comment-body-146363", "146363", "respond", "710")'>Reply</a></p>
+</div>
+					</dd>
+					<dt class="comment even thread-even depth-1" id="comment-146389">
+<span class="comment_num"><a href="#comment-146389" title="Permalink to this comment" rel="nofollow">27</a></span>
+<span class="comment_author">Maker</span>
+<span class="comment_time">December 22, 2008</span>
+
+					</dt>
+					<dd class="comment even thread-even depth-1">
+<div class="format_text" id="comment-body-146389">
+<p>There is no such thing as bz3.</p>
+<p class="reply"><a class="comment-reply-link" href="http://www.cyberciti.biz/tips/compiling-linux-kernel-26.html?replytocom=146389#respond" onclick='return addComment.moveForm("comment-body-146389", "146389", "respond", "710")'>Reply</a></p>
+</div>
+					</dd>
+					<dt class="comment odd alt thread-odd thread-alt depth-1" id="comment-146471">
+<span class="comment_num"><a href="#comment-146471" title="Permalink to this comment" rel="nofollow">28</a></span>
+<span class="comment_author">Axon</span>
+<span class="comment_time">December 28, 2008</span>
+
+					</dt>
+					<dd class="comment odd alt thread-odd thread-alt depth-1">
+<div class="format_text" id="comment-body-146471">
+<p>It’s cool.<br>
+Thanks alot NIXTCRAFT.</p>
+<p class="reply"><a class="comment-reply-link" href="http://www.cyberciti.biz/tips/compiling-linux-kernel-26.html?replytocom=146471#respond" onclick='return addComment.moveForm("comment-body-146471", "146471", "respond", "710")'>Reply</a></p>
+</div>
+					</dd>
+					<dt class="comment even thread-even depth-1" id="comment-146480">
+<span class="comment_num"><a href="#comment-146480" title="Permalink to this comment" rel="nofollow">29</a></span>
+<span class="comment_author">Carnes</span>
+<span class="comment_time">December 29, 2008</span>
+
+					</dt>
+					<dd class="comment even thread-even depth-1">
+<div class="format_text" id="comment-body-146480">
+<p>I tried to cheat and copied over an older .config.. broke something and had to redo all the options by hand : /</p>
+<p>Anyways, the instructions worked great with Gentoo.   I had to emerge
+ “mkinitrd” but otherwise everything went very quickly, maybe 20 min to 
+compile everything (very short in Gentoo world).</p>
+<p>I suggest everyone keep their old kernel and a lilo/grub option for 
+it just incase :)  Most of the problems in the comments seem to be from 
+misconfiguring the kernel.  If you aren’t sure what your hardware is or 
+don’t have the time to run through every option.  I suggest you pop in a
+ live cd and copy “/proc/config.gz” to use as your base config (“gzip -d
+ config.gz” will uncompress it). </p>
+<p>If your system is already unusable, pop in a live cd and try the following as root:<br>
+“cd /”<br>
+“mkdir /mnt/fixme”<br>
+“mount /dev/ROOTDRIVE /mnt/fixme”<br>
+“mount /dev/BOOTDRIVE /mnt/fixme/boot”<br>
+“mount -t proc proc /mnt/fixme/proc”<br>
+“chroot /mnt/fixme /bin/bash”</p>
+<p>That should put you back into your computer to compile/fix whatever.</p>
+<p class="reply"><a class="comment-reply-link" href="http://www.cyberciti.biz/tips/compiling-linux-kernel-26.html?replytocom=146480#respond" onclick='return addComment.moveForm("comment-body-146480", "146480", "respond", "710")'>Reply</a></p>
+</div>
+					</dd>
+					<dt class="comment odd alt thread-odd thread-alt depth-1" id="comment-146549">
+<span class="comment_num"><a href="#comment-146549" title="Permalink to this comment" rel="nofollow">30</a></span>
+<span class="comment_author">benny lootens</span>
+<span class="comment_time">January 4, 2009</span>
+
+					</dt>
+					<dd class="comment odd alt thread-odd thread-alt depth-1">
+<div class="format_text" id="comment-body-146549">
+<p>i’ve just build the 2.6.28 kernel on ubuntu 8.04 LTS and it’s working
+ like a charm. It was required, as I had some troubles installing my 500
+ GB Samsung drive that was attached to a Trust eSATA IF-3300 card. 
+Thanks for this great tutorial !!</p>
+<p class="reply"><a class="comment-reply-link" href="http://www.cyberciti.biz/tips/compiling-linux-kernel-26.html?replytocom=146549#respond" onclick='return addComment.moveForm("comment-body-146549", "146549", "respond", "710")'>Reply</a></p>
+</div>
+					</dd>
+					<dt class="comment even thread-even depth-1" id="comment-146591">
+<span class="comment_num"><a href="#comment-146591" title="Permalink to this comment" rel="nofollow">31</a></span>
+<span class="comment_author">Otto</span>
+<span class="comment_time">January 6, 2009</span>
+
+					</dt>
+					<dd class="comment even thread-even depth-1">
+<div class="format_text" id="comment-body-146591">
+<p>You don’t need make modules anymore.  I compiled a few times the last
+ days and just make &amp;&amp; make modules_install will do.</p>
+<p class="reply"><a class="comment-reply-link" href="http://www.cyberciti.biz/tips/compiling-linux-kernel-26.html?replytocom=146591#respond" onclick='return addComment.moveForm("comment-body-146591", "146591", "respond", "710")'>Reply</a></p>
+</div>
+					</dd>
+					<dt class="comment odd alt thread-odd thread-alt depth-1" id="comment-146598">
+<span class="comment_num"><a href="#comment-146598" title="Permalink to this comment" rel="nofollow">32</a></span>
+<span class="comment_author">Akash</span>
+<span class="comment_time">January 7, 2009</span>
+
+					</dt>
+					<dd class="comment odd alt thread-odd thread-alt depth-1">
+<div class="format_text" id="comment-body-146598">
+<p>Following error occured during make command of compilation step for linux 2.6.23<br>
+make: *** [.tmp_vmlinux1] Error 1 </p>
+<p>Plz provide me solution for it.<br>
+Thanks<br>
+Akash</p>
+<p class="reply"><a class="comment-reply-link" href="http://www.cyberciti.biz/tips/compiling-linux-kernel-26.html?replytocom=146598#respond" onclick='return addComment.moveForm("comment-body-146598", "146598", "respond", "710")'>Reply</a></p>
+</div>
+					</dd>
+					<dt class="comment even thread-even depth-1" id="comment-146599">
+<span class="comment_num"><a href="#comment-146599" title="Permalink to this comment" rel="nofollow">33</a></span>
+<span class="comment_author">Akash</span>
+<span class="comment_time">January 7, 2009</span>
+
+					</dt>
+					<dd class="comment even thread-even depth-1">
+<div class="format_text" id="comment-body-146599">
+<p>make command error:<br>
+make: *** [.tmp_vmlinux1] Error 1<br>
+Kindly suggest solution<br>
+regards<br>
+————-<br>
+Akash</p>
+<p class="reply"><a class="comment-reply-link" href="http://www.cyberciti.biz/tips/compiling-linux-kernel-26.html?replytocom=146599#respond" onclick='return addComment.moveForm("comment-body-146599", "146599", "respond", "710")'>Reply</a></p>
+</div>
+					</dd>
+					<dt class="comment odd alt thread-odd thread-alt depth-1" id="comment-146689">
+<span class="comment_num"><a href="#comment-146689" title="Permalink to this comment" rel="nofollow">34</a></span>
+<span class="comment_author">Pekka</span>
+<span class="comment_time">January 14, 2009</span>
+
+					</dt>
+					<dd class="comment odd alt thread-odd thread-alt depth-1">
+<div class="format_text" id="comment-body-146689">
+<p>Hi</p>
+<p>On Debian the kernel compile is much more straightforward than this describes.</p>
+<p>First you of course need to take the kernel source. Then:</p>
+<p>1. make menuconfig (or whatever you want)<br>
+2. make-kpkg –revision  kernel_image<br>
+3. Install the resulting .deb package using dpkg.</p>
+<p>The debian package management system then knows about your custom 
+kernel and it handles all needed actions to get the kernel properly 
+working. For example initrd is done automagically if needed.</p>
+<p>I compile the root file system and the way to access it directly into
+ kernel and customize the kernel sharply to the computer. That way you 
+wont need initrd anymore :) and the machine boots quite fast, because 
+the chipset drivers are active from wery beginning of booting.</p>
+<p class="reply"><a class="comment-reply-link" href="http://www.cyberciti.biz/tips/compiling-linux-kernel-26.html?replytocom=146689#respond" onclick='return addComment.moveForm("comment-body-146689", "146689", "respond", "710")'>Reply</a></p>
+</div>
+					</dd>
+					<dt class="comment even thread-even depth-1" id="comment-147084">
+<span class="comment_num"><a href="#comment-147084" title="Permalink to this comment" rel="nofollow">35</a></span>
+<span class="comment_author">komal</span>
+<span class="comment_time">February 7, 2009</span>
+
+					</dt>
+					<dd class="comment even thread-even depth-1">
+<div class="format_text" id="comment-body-147084">
+<p>I compiled the whole thing and then booted ..I see the updated 
+version of fedora but when I try to run it ..it says kernal panic and 
+doesn’t proceed any further</p>
+<p class="reply"><a class="comment-reply-link" href="http://www.cyberciti.biz/tips/compiling-linux-kernel-26.html?replytocom=147084#respond" onclick='return addComment.moveForm("comment-body-147084", "147084", "respond", "710")'>Reply</a></p>
+</div>
+					</dd>
+					<dt class="comment odd alt thread-odd thread-alt depth-1" id="comment-147264">
+<span class="comment_num"><a href="#comment-147264" title="Permalink to this comment" rel="nofollow">36</a></span>
+<span class="comment_author">Anonymous</span>
+<span class="comment_time">February 17, 2009</span>
+
+					</dt>
+					<dd class="comment odd alt thread-odd thread-alt depth-1">
+<div class="format_text" id="comment-body-147264">
+<p>If you have multiple CPU-kernels, you’d consider using the -j option 
+for make, for example   make -j5 , which will use 5 instance of make to 
+built the process. This will speed up things, nice tip I got on IRC :)</p>
+<p class="reply"><a class="comment-reply-link" href="http://www.cyberciti.biz/tips/compiling-linux-kernel-26.html?replytocom=147264#respond" onclick='return addComment.moveForm("comment-body-147264", "147264", "respond", "710")'>Reply</a></p>
+</div>
+					</dd>
+					<dt class="comment even thread-even depth-1" id="comment-147309">
+<span class="comment_num"><a href="#comment-147309" title="Permalink to this comment" rel="nofollow">37</a></span>
+<span class="comment_author">kontinumas</span>
+<span class="comment_time">February 18, 2009</span>
+
+					</dt>
+					<dd class="comment even thread-even depth-1">
+<div class="format_text" id="comment-body-147309">
+<p>Hello!</p>
+<p>got some problems while compiling new kernel using <b>make</b>. Error below: </p>
+<p><code><br>
+{standard input}: Assembler messages:<br>
+{standard input}:745: Error: suffix or operands invalid for `mov'<br>
+{standard input}:746: Error: suffix or operands invalid for `mov'<br>
+{standard input}:950: Error: suffix or operands invalid for `mov'<br>
+{standard input}:951: Error: suffix or operands invalid for `mov'<br>
+{standard input}:1024: Error: suffix or operands invalid for `mov'<br>
+{standard input}:1025: Error: suffix or operands invalid for `mov'<br>
+{standard input}:1120: Error: suffix or operands invalid for `mov'<br>
+{standard input}:1121: Error: suffix or operands invalid for `mov'<br>
+{standard input}:1208: Error: suffix or operands invalid for `mov'<br>
+{standard input}:1220: Error: suffix or operands invalid for `mov'<br>
+make[1]: *** [arch/i386/kernel/process.o] Error 1<br>
+make: *** [arch/i386/kernel] Error 2<br>
+</code></p>
+<p>gcc version 4.1.2<br>
+debian etch</p>
+<p>got some ideas? thanx</p>
+<p class="reply"><a class="comment-reply-link" href="http://www.cyberciti.biz/tips/compiling-linux-kernel-26.html?replytocom=147309#respond" onclick='return addComment.moveForm("comment-body-147309", "147309", "respond", "710")'>Reply</a></p>
+</div>
+					</dd>
+					<dt class="comment odd alt thread-odd thread-alt depth-1" id="comment-147323">
+<span class="comment_num"><a href="#comment-147323" title="Permalink to this comment" rel="nofollow">38</a></span>
+<span class="comment_author">trevor</span>
+<span class="comment_time">February 19, 2009</span>
+
+					</dt>
+					<dd class="comment odd alt thread-odd thread-alt depth-1">
+<div class="format_text" id="comment-body-147323">
+<p>a very good clarification about kernels,i’m impressed!</p>
+<p class="reply"><a class="comment-reply-link" href="http://www.cyberciti.biz/tips/compiling-linux-kernel-26.html?replytocom=147323#respond" onclick='return addComment.moveForm("comment-body-147323", "147323", "respond", "710")'>Reply</a></p>
+</div>
+					</dd>
+					<dt class="comment even thread-even depth-1" id="comment-147723">
+<span class="comment_num"><a href="#comment-147723" title="Permalink to this comment" rel="nofollow">39</a></span>
+<span class="comment_author">ondrg</span>
+<span class="comment_time">March 18, 2009</span>
+
+					</dt>
+					<dd class="comment even thread-even depth-1">
+<div class="format_text" id="comment-body-147723">
+<p>Thanks, it works perfectly.</p>
+<p class="reply"><a class="comment-reply-link" href="http://www.cyberciti.biz/tips/compiling-linux-kernel-26.html?replytocom=147723#respond" onclick='return addComment.moveForm("comment-body-147723", "147723", "respond", "710")'>Reply</a></p>
+</div>
+					</dd>
+					<dt class="comment odd alt thread-odd thread-alt depth-1" id="comment-147984">
+<span class="comment_num"><a href="#comment-147984" title="Permalink to this comment" rel="nofollow">40</a></span>
+<span class="comment_author">nugga</span>
+<span class="comment_time">April 4, 2009</span>
+
+					</dt>
+					<dd class="comment odd alt thread-odd thread-alt depth-1">
+<div class="format_text" id="comment-body-147984">
+<p>hello when i try to boot my kernel it says error file not found.</p>
+<p>i use the following command<br>
+title           Debian GNU/Linux, kernel 2.6.25 Default<br>
+root            (hd0,0)<br>
+kernel          /boot/vmlinuz root=/dev/hdb1 ro<br>
+initrd          /boot/initrd.img-2.6.25<br>
+savedefault<br>
+boot</p>
+<p>im pretty noob i dont know what im doing wrong.</p>
+<p>plzz contact me or post here.</p>
+<p class="reply"><a class="comment-reply-link" href="http://www.cyberciti.biz/tips/compiling-linux-kernel-26.html?replytocom=147984#respond" onclick='return addComment.moveForm("comment-body-147984", "147984", "respond", "710")'>Reply</a></p>
+</div>
+					</dd>
+					<dt class="comment even thread-even depth-1" id="comment-147991">
+<span class="comment_num"><a href="#comment-147991" title="Permalink to this comment" rel="nofollow">41</a></span>
+<span class="comment_author">nugga</span>
+<span class="comment_time">April 5, 2009</span>
+
+					</dt>
+					<dd class="comment even thread-even depth-1">
+<div class="format_text" id="comment-body-147991">
+<p>my mail is <a href="mailto:toldamtorp@gmail.com">toldamtorp@gmail.com</a></p>
+<p class="reply"><a class="comment-reply-link" href="http://www.cyberciti.biz/tips/compiling-linux-kernel-26.html?replytocom=147991#respond" onclick='return addComment.moveForm("comment-body-147991", "147991", "respond", "710")'>Reply</a></p>
+</div>
+					</dd>
+					<dt class="comment odd alt thread-odd thread-alt depth-1" id="comment-148439">
+<span class="comment_num"><a href="#comment-148439" title="Permalink to this comment" rel="nofollow">42</a></span>
+<span class="comment_author">Hussain Jaffar</span>
+<span class="comment_time">May 5, 2009</span>
+
+					</dt>
+					<dd class="comment odd alt thread-odd thread-alt depth-1">
+<div class="format_text" id="comment-body-148439">
+<p>37 ondrg, Which gcc version you used ?</p>
+<p>Can any body tell that How to remove a previously compiled and 
+installed kernel.  So as to make space for compiling and installing a 
+new kernel ?</p>
+<p class="reply"><a class="comment-reply-link" href="http://www.cyberciti.biz/tips/compiling-linux-kernel-26.html?replytocom=148439#respond" onclick='return addComment.moveForm("comment-body-148439", "148439", "respond", "710")'>Reply</a></p>
+</div>
+					</dd>
+					<dt class="comment even thread-even depth-1" id="comment-148471">
+<span class="comment_num"><a href="#comment-148471" title="Permalink to this comment" rel="nofollow">43</a></span>
+<span class="comment_author">Acevedo</span>
+<span class="comment_time">May 7, 2009</span>
+
+					</dt>
+					<dd class="comment even thread-even depth-1">
+<div class="format_text" id="comment-body-148471">
+<p>NIce step-by-step process, BUT Following error occured during make command of configuration step for linux 2.6.29.2<br>
+make[1]: *** [script/kconfig/dochecklxdialog] Error 1<br>
+make: *** [menuconfig] Error 2</p>
+<p>Plz provide me solution for it.<br>
+Thanks<br>
+J.Acevedo</p>
+<p class="reply"><a class="comment-reply-link" href="http://www.cyberciti.biz/tips/compiling-linux-kernel-26.html?replytocom=148471#respond" onclick='return addComment.moveForm("comment-body-148471", "148471", "respond", "710")'>Reply</a></p>
+</div>
+					</dd>
+					<dt class="comment odd alt thread-odd thread-alt depth-1" id="comment-148520">
+<span class="comment_num"><a href="#comment-148520" title="Permalink to this comment" rel="nofollow">44</a></span>
+<span class="comment_author">Anitha</span>
+<span class="comment_time">May 12, 2009</span>
+
+					</dt>
+					<dd class="comment odd alt thread-odd thread-alt depth-1">
+<div class="format_text" id="comment-body-148520">
+<p>Hi… Kindly help me please… i m in serious trouble…<br>
+I m trying to install RTLinux on Linux 2.6.xx<br>
+The installation guide specified to patch the linux 2.6.xx, configure and then compile. But<br>
+i m able to proceed til the configuration of the kernel…<br>
+When i give the make command, i m coming up with errors…<br>
+Also i tried to install linux 2.6.xx without patching it with RTLinux,again i m struck up while compiling……</p>
+<p>Kindly help please…Wil be grateful to you…</p>
+<p class="reply"><a class="comment-reply-link" href="http://www.cyberciti.biz/tips/compiling-linux-kernel-26.html?replytocom=148520#respond" onclick='return addComment.moveForm("comment-body-148520", "148520", "respond", "710")'>Reply</a></p>
+</div>
+					</dd>
+					<dt class="comment even thread-even depth-1" id="comment-148749">
+<span class="comment_num"><a href="#comment-148749" title="Permalink to this comment" rel="nofollow">45</a></span>
+<span class="comment_author">chindam</span>
+<span class="comment_time">May 29, 2009</span>
+
+					</dt>
+					<dd class="comment even thread-even depth-1">
+<div class="format_text" id="comment-body-148749">
+<p>It’s good, but i need your help  to compile;boot from a flash drive 
+and configure options such that the size of the kernel is max 
+5Mb(minimum application like terminal,usb…)</p>
+<p class="reply"><a class="comment-reply-link" href="http://www.cyberciti.biz/tips/compiling-linux-kernel-26.html?replytocom=148749#respond" onclick='return addComment.moveForm("comment-body-148749", "148749", "respond", "710")'>Reply</a></p>
+</div>
+					</dd>
+					<dt class="comment odd alt thread-odd thread-alt depth-1" id="comment-149353">
+<span class="comment_num"><a href="#comment-149353" title="Permalink to this comment" rel="nofollow">46</a></span>
+<span class="comment_author">mavgh1</span>
+<span class="comment_time">July 7, 2009</span>
+
+					</dt>
+					<dd class="comment odd alt thread-odd thread-alt depth-1">
+<div class="format_text" id="comment-body-149353">
+<p>Great Tutorial .I have E8200 , Gigabyte EP43-DS3L  kernel 2.6.18 that
+ does not recognize coretemp,I compiled  2.6.30.1 kernel and it’s 
+working.Thanks</p>
+<p class="reply"><a class="comment-reply-link" href="http://www.cyberciti.biz/tips/compiling-linux-kernel-26.html?replytocom=149353#respond" onclick='return addComment.moveForm("comment-body-149353", "149353", "respond", "710")'>Reply</a></p>
+</div>
+					</dd>
+					<dt class="comment even thread-even depth-1" id="comment-149467">
+<span class="comment_num"><a href="#comment-149467" title="Permalink to this comment" rel="nofollow">47</a></span>
+<span class="comment_author">Max Baird</span>
+<span class="comment_time">July 13, 2009</span>
+
+					</dt>
+					<dd class="comment even thread-even depth-1">
+<div class="format_text" id="comment-body-149467">
+<p>Hey this was great, worked for me… I had some small issues where I 
+was missing some files like ncurses etc, but after getting them it all 
+flowed smoothly… thanks alot again :)</p>
+<p class="reply"><a class="comment-reply-link" href="http://www.cyberciti.biz/tips/compiling-linux-kernel-26.html?replytocom=149467#respond" onclick='return addComment.moveForm("comment-body-149467", "149467", "respond", "710")'>Reply</a></p>
+</div>
+					</dd>
+					<dt class="comment odd alt thread-odd thread-alt depth-1" id="comment-149587">
+<span class="comment_num"><a href="#comment-149587" title="Permalink to this comment" rel="nofollow">48</a></span>
+<span class="comment_author">Kousik</span>
+<span class="comment_time">July 20, 2009</span>
+
+					</dt>
+					<dd class="comment odd alt thread-odd thread-alt depth-1">
+<div class="format_text" id="comment-body-149587">
+<p>This is nice documentation. But I think some modification is required.</p>
+<p>Step # 6: Create an initrd image<br>
+Type the following command at a shell prompt:<br>
+# cd /boot<br>
+# mkinitrd -o initrd.img-2.6.25 2.6.25<br>
+Instead of mkinitrd I use mkinitramfs in ubuntu 9.04</p>
+<p>Step # 7 Modify Grub configuration file – /boot/grub/menu.lst<br>
+# update-grub</p>
+<p>update-grub is not required in ubuntu 9.04</p>
+<p class="reply"><a class="comment-reply-link" href="http://www.cyberciti.biz/tips/compiling-linux-kernel-26.html?replytocom=149587#respond" onclick='return addComment.moveForm("comment-body-149587", "149587", "respond", "710")'>Reply</a></p>
+</div>
+					</dd>
+					<dt class="comment even thread-even depth-1" id="comment-150589">
+<span class="comment_num"><a href="#comment-150589" title="Permalink to this comment" rel="nofollow">49</a></span>
+<span class="comment_author">Lady</span>
+<span class="comment_time">September 10, 2009</span>
+
+					</dt>
+					<dd class="comment even thread-even depth-1">
+<div class="format_text" id="comment-body-150589">
+<p>Can any body describe to me next: about the process0, process0 which happened in Linux kernel 2.6,<br>
+1. describe how to greate it<br>
+2. describe what they do</p>
+<p class="reply"><a class="comment-reply-link" href="http://www.cyberciti.biz/tips/compiling-linux-kernel-26.html?replytocom=150589#respond" onclick='return addComment.moveForm("comment-body-150589", "150589", "respond", "710")'>Reply</a></p>
+</div>
+					</dd>
+					<dt class="comment odd alt thread-odd thread-alt depth-1 parent" id="comment-150761">
+<span class="comment_num"><a href="#comment-150761" title="Permalink to this comment" rel="nofollow">50</a></span>
+<span class="comment_author">Sivakumar</span>
+<span class="comment_time">September 23, 2009</span>
+
+					</dt>
+					<dd class="comment odd alt thread-odd thread-alt depth-1 parent">
+<div class="format_text" id="comment-body-150761">
+<p>Hi<br>
+I am using ubuntu distribution, I like to update my kernel , my present 
+version kernel is 2.6.28-11-generic #42-Ubuntu SMP Fri Apr 17 01:57:59 
+UTC 2009 i686 GNU/Linux.<br>
+i downloaded latest kernel source from kernel.org “linux-2.6.31.tar.bz2″ i followed the following steps to configure my kernel</p>
+<p>1. i extracted the kernel source file in usr/src<br>
+2. I updated my gcc complier</p>
+<p>root@sivakumar-desktop:/usr/src# apt-get install gcc<br>
+Reading package lists… Done<br>
+Building dependency tree<br>
+Reading state information… Done<br>
+gcc is already the newest version.<br>
+0 upgraded, 0 newly installed, 0 to remove and 228 not upgraded.</p>
+<p>3. Then i tried to run make menuconfig, i got the following error</p>
+<p>root@sivakumar-desktop:/usr/src# make menuconfig<br>
+make: *** No rule to make target `menuconfig’. Stop.</p>
+<p>4. then i tried</p>
+<p>root@sivakumar-desktop:/usr/src/linux-2.6.31# make menuconfig<br>
+*** Unable to find the ncurses libraries or the<br>
+*** required header files.<br>
+*** ‘make menuconfig’ requires the ncurses libraries.<br>
+***<br>
+*** Install ncurses (ncurses-devel) and try again.<br>
+***<br>
+make[1]: *** [scripts/kconfig/dochecklxdialog] Error 1<br>
+make: *** [menuconfig] Error 2</p>
+<p class="reply"><a class="comment-reply-link" href="http://www.cyberciti.biz/tips/compiling-linux-kernel-26.html?replytocom=150761#respond" onclick='return addComment.moveForm("comment-body-150761", "150761", "respond", "710")'>Reply</a></p>
+</div>
+					<dl class="children">
+					<dt class="comment even depth-2" id="comment-170329">
+<span class="comment_num"><a href="#comment-170329" title="Permalink to this comment" rel="nofollow">51</a></span>
+<span class="comment_author">Aks</span>
+<span class="comment_time">March 26, 2011</span>
+
+					</dt>
+					<dd class="comment even depth-2">
+<div class="format_text" id="comment-body-170329">
+<p>Hi there,</p>
+<p>To resolve this issue you have to first complete all update of you system then try this</p>
+<p>“$ sudo apt-get install libncurses5-dev”</p>
+<p class="reply"><a class="comment-reply-link" href="http://www.cyberciti.biz/tips/compiling-linux-kernel-26.html?replytocom=170329#respond" onclick='return addComment.moveForm("comment-body-170329", "170329", "respond", "710")'>Reply</a></p>
+</div>
+					</dd>
+					</dl>
+					</dd>
+					<dt class="comment odd alt thread-even depth-1" id="comment-150847">
+<span class="comment_num"><a href="#comment-150847" title="Permalink to this comment" rel="nofollow">52</a></span>
+<span class="comment_author">saki</span>
+<span class="comment_time">September 28, 2009</span>
+
+					</dt>
+					<dd class="comment odd alt thread-even depth-1">
+<div class="format_text" id="comment-body-150847">
+<p>i am also getting the same problem …….plz suggest</p>
+<p class="reply"><a class="comment-reply-link" href="http://www.cyberciti.biz/tips/compiling-linux-kernel-26.html?replytocom=150847#respond" onclick='return addComment.moveForm("comment-body-150847", "150847", "respond", "710")'>Reply</a></p>
+</div>
+					</dd>
+					<dt class="comment even thread-odd thread-alt depth-1" id="comment-151009">
+<span class="comment_num"><a href="#comment-151009" title="Permalink to this comment" rel="nofollow">53</a></span>
+<span class="comment_author">Mukesh</span>
+<span class="comment_time">October 11, 2009</span>
+
+					</dt>
+					<dd class="comment even thread-odd thread-alt depth-1">
+<div class="format_text" id="comment-body-151009">
+<p>after extracting there is some error when i configure the kernel<br>
+that error is make: *** No rule to make target ‘menuconfig’, Stop.</p>
+<p class="reply"><a class="comment-reply-link" href="http://www.cyberciti.biz/tips/compiling-linux-kernel-26.html?replytocom=151009#respond" onclick='return addComment.moveForm("comment-body-151009", "151009", "respond", "710")'>Reply</a></p>
+</div>
+					</dd>
+					<dt class="comment odd alt thread-even depth-1" id="comment-151010">
+<span class="comment_num"><a href="#comment-151010" title="Permalink to this comment" rel="nofollow">54</a></span>
+<span class="comment_author">Mukesh</span>
+<span class="comment_time">October 11, 2009</span>
+
+					</dt>
+					<dd class="comment odd alt thread-even depth-1">
+<div class="format_text" id="comment-body-151010">
+<p>Hello,<br>
+Can Any One Solve My Problem That Is<br>
+after extracting there is some error when i configure the kernel<br>
+that error is make: *** No rule to make target ‘menuconfig’, Stop.<br>
+plz tell me the fast it is urgent friends….<br>
+plz</p>
+<p class="reply"><a class="comment-reply-link" href="http://www.cyberciti.biz/tips/compiling-linux-kernel-26.html?replytocom=151010#respond" onclick='return addComment.moveForm("comment-body-151010", "151010", "respond", "710")'>Reply</a></p>
+</div>
+					</dd>
+					<dt class="comment even thread-odd thread-alt depth-1" id="comment-151036">
+<span class="comment_num"><a href="#comment-151036" title="Permalink to this comment" rel="nofollow">55</a></span>
+<span class="comment_author">Redd</span>
+<span class="comment_time">October 13, 2009</span>
+
+					</dt>
+					<dd class="comment even thread-odd thread-alt depth-1">
+<div class="format_text" id="comment-body-151036">
+<p>Mukesh – seems like you need to cd into the extarcted directory to run the make.</p>
+<p class="reply"><a class="comment-reply-link" href="http://www.cyberciti.biz/tips/compiling-linux-kernel-26.html?replytocom=151036#respond" onclick='return addComment.moveForm("comment-body-151036", "151036", "respond", "710")'>Reply</a></p>
+</div>
+					</dd>
+					<dt class="comment odd alt thread-even depth-1" id="comment-151037">
+<span class="comment_num"><a href="#comment-151037" title="Permalink to this comment" rel="nofollow">56</a></span>
+<span class="comment_author">Redd</span>
+<span class="comment_time">October 13, 2009</span>
+
+					</dt>
+					<dd class="comment odd alt thread-even depth-1">
+<div class="format_text" id="comment-body-151037">
+<p>Has anyone made a suggestion as to how to fix the kernel panic issue 
+that was pointed to several time here?  I have the same issue.  After 
+installing the new kernel and trying to boot into it, I see the kernel 
+panic since it doesn’t see any of my drives ( “/”, “/usr”, etc).  
+Anyideas where I went amiss?</p>
+<p class="reply"><a class="comment-reply-link" href="http://www.cyberciti.biz/tips/compiling-linux-kernel-26.html?replytocom=151037#respond" onclick='return addComment.moveForm("comment-body-151037", "151037", "respond", "710")'>Reply</a></p>
+</div>
+					</dd>
+					<dt class="comment even thread-odd thread-alt depth-1" id="comment-151351">
+<span class="comment_num"><a href="#comment-151351" title="Permalink to this comment" rel="nofollow">57</a></span>
+<span class="comment_author">Raj</span>
+<span class="comment_time">October 30, 2009</span>
+
+					</dt>
+					<dd class="comment even thread-odd thread-alt depth-1">
+<div class="format_text" id="comment-body-151351">
+<p>Hi!!<br>
+     i am using Redhat 4 – kernel 2.6.9 and now i build kernel 2.7.13. 
+it was sucessfully and after reboot i can see my new kernel in the 
+grub.. but when i select .and proceed . i am getting the following 
+error:</p>
+<p>“Enforcing mode requested but no policy loaded. Halting now.<br>
+Kernel panic – not syncing: Attempted to kill init!”</p>
+<p>please tell me wht might the problem and suggest me how to load the kenel 2.7.13..<br>
+                      Thanx in advance….</p>
+<p class="reply"><a class="comment-reply-link" href="http://www.cyberciti.biz/tips/compiling-linux-kernel-26.html?replytocom=151351#respond" onclick='return addComment.moveForm("comment-body-151351", "151351", "respond", "710")'>Reply</a></p>
+</div>
+					</dd>
+					<dt class="comment odd alt thread-even depth-1" id="comment-151510">
+<span class="comment_num"><a href="#comment-151510" title="Permalink to this comment" rel="nofollow">58</a></span>
+<span class="comment_author">GARG</span>
+<span class="comment_time">November 6, 2009</span>
+
+					</dt>
+					<dd class="comment odd alt thread-even depth-1">
+<div class="format_text" id="comment-body-151510">
+<p>problem occur on booting…<br>
+  mount: unknown file system type ‘devfs’<br>
+  Kernel panic – not syncing: Attempted to kill init!”</p>
+<p class="reply"><a class="comment-reply-link" href="http://www.cyberciti.biz/tips/compiling-linux-kernel-26.html?replytocom=151510#respond" onclick='return addComment.moveForm("comment-body-151510", "151510", "respond", "710")'>Reply</a></p>
+</div>
+					</dd>
+					<dt class="comment even thread-odd thread-alt depth-1" id="comment-151602">
+<span class="comment_num"><a href="#comment-151602" title="Permalink to this comment" rel="nofollow">59</a></span>
+<span class="comment_author">ben</span>
+<span class="comment_time">November 11, 2009</span>
+
+					</dt>
+					<dd class="comment even thread-odd thread-alt depth-1">
+<div class="format_text" id="comment-body-151602">
+<p>In the process make install .there are two files created in the direction /boot<br>
+Kernel image:   /boot/vmlinuz-2.6.31.4-smp<br>
+Initrd image:   /boot/initrd-2.6.31.4-smp<br>
+However,One file config is missed.<br>
+I update the menu.list<br>
+Then ,reboot.<br>
+On the way booting,there is no error.<br>
+but when I inter the X-window ,my keyboard and mouse doesn’t work.</p>
+<p class="reply"><a class="comment-reply-link" href="http://www.cyberciti.biz/tips/compiling-linux-kernel-26.html?replytocom=151602#respond" onclick='return addComment.moveForm("comment-body-151602", "151602", "respond", "710")'>Reply</a></p>
+</div>
+					</dd>
+					<dt class="comment odd alt thread-even depth-1" id="comment-151842">
+<span class="comment_num"><a href="#comment-151842" title="Permalink to this comment" rel="nofollow">60</a></span>
+<span class="comment_author">mahdi</span>
+<span class="comment_time">November 24, 2009</span>
+
+					</dt>
+					<dd class="comment odd alt thread-even depth-1">
+<div class="format_text" id="comment-body-151842">
+<p>Hi everybody,<br>
+I have followed all the steps above and succeeded in every step. But 
+when I choose  in the grub to run the 2.6.31.6 kernel I have the 
+following message:<br>
+Unable to find a suitable fs in /proc/mounts, is it mounted ?<br>
+Use –subdomainfs to override.</p>
+<p>I have installed the linux kernel from Ubuntu 9.10. I am not sure, 
+but I think because I have installed ubuntu with ext4 file system, the 
+kernel could not recognize it. The kernel is residing in /usr/src which 
+is in the same partition as ubuntu.</p>
+<p>Have anyone an idea out there ?<br>
+Thx,</p>
+<p class="reply"><a class="comment-reply-link" href="http://www.cyberciti.biz/tips/compiling-linux-kernel-26.html?replytocom=151842#respond" onclick='return addComment.moveForm("comment-body-151842", "151842", "respond", "710")'>Reply</a></p>
+</div>
+					</dd>
+					<dt class="comment even thread-odd thread-alt depth-1" id="comment-152048">
+<span class="comment_num"><a href="#comment-152048" title="Permalink to this comment" rel="nofollow">61</a></span>
+<span class="comment_author">bonz</span>
+<span class="comment_time">December 3, 2009</span>
+
+					</dt>
+					<dd class="comment even thread-odd thread-alt depth-1">
+<div class="format_text" id="comment-body-152048">
+<p>if you want people to do your survey you should make it accessable for us lynx users</p>
+<p class="reply"><a class="comment-reply-link" href="http://www.cyberciti.biz/tips/compiling-linux-kernel-26.html?replytocom=152048#respond" onclick='return addComment.moveForm("comment-body-152048", "152048", "respond", "710")'>Reply</a></p>
+</div>
+					</dd>
+					<dt class="comment odd alt thread-even depth-1" id="comment-152150">
+<span class="comment_num"><a href="#comment-152150" title="Permalink to this comment" rel="nofollow">62</a></span>
+<span class="comment_author">Noober</span>
+<span class="comment_time">December 6, 2009</span>
+
+					</dt>
+					<dd class="comment odd alt thread-even depth-1">
+<div class="format_text" id="comment-body-152150">
+<p>I need help.I follow stepbystep all is done.And but at the reboot say
+ “error 16: inconsistent filesystem structure” what wrong whit it? My 
+kernel is 2.6.24-16 want to upgrade kernel 2.6.31.6 plz help me thx</p>
+<p class="reply"><a class="comment-reply-link" href="http://www.cyberciti.biz/tips/compiling-linux-kernel-26.html?replytocom=152150#respond" onclick='return addComment.moveForm("comment-body-152150", "152150", "respond", "710")'>Reply</a></p>
+</div>
+					</dd>
+					<dt class="comment even thread-odd thread-alt depth-1" id="comment-152458">
+<span class="comment_num"><a href="#comment-152458" title="Permalink to this comment" rel="nofollow">63</a></span>
+<span class="comment_author">Azade</span>
+<span class="comment_time">December 24, 2009</span>
+
+					</dt>
+					<dd class="comment even thread-odd thread-alt depth-1">
+<div class="format_text" id="comment-body-152458">
+<p>Does it work for SUSE?</p>
+<p class="reply"><a class="comment-reply-link" href="http://www.cyberciti.biz/tips/compiling-linux-kernel-26.html?replytocom=152458#respond" onclick='return addComment.moveForm("comment-body-152458", "152458", "respond", "710")'>Reply</a></p>
+</div>
+					</dd>
+					<dt class="comment odd alt thread-even depth-1 parent" id="comment-152903">
+<span class="comment_num"><a href="#comment-152903" title="Permalink to this comment" rel="nofollow">64</a></span>
+<span class="comment_author">vaidya1</span>
+<span class="comment_time">January 13, 2010</span>
+
+					</dt>
+					<dd class="comment odd alt thread-even depth-1 parent">
+<div class="format_text" id="comment-body-152903">
+<p>hey guys…….can anyone help me……….in my /boot i am not getting config 
+file for newly compiled and installed kernel and also after successful 
+installation of kernel.2.6.32 , i am not able to boot from this kernel 
+as it says file system not detected ,  /dev/hda not detected……..and 
+kernel panic……….</p>
+<p class="reply"><a class="comment-reply-link" href="http://www.cyberciti.biz/tips/compiling-linux-kernel-26.html?replytocom=152903#respond" onclick='return addComment.moveForm("comment-body-152903", "152903", "respond", "710")'>Reply</a></p>
+</div>
+					<dl class="children">
+					<dt class="comment even depth-2" id="comment-155018">
+<span class="comment_num"><a href="#comment-155018" title="Permalink to this comment" rel="nofollow">65</a></span>
+<span class="comment_author">princelibya14</span>
+<span class="comment_time">April 14, 2010</span>
+
+					</dt>
+					<dd class="comment even depth-2">
+<div class="format_text" id="comment-body-155018">
+<p>hi, bro , just try theses commend , cause i got the same problem when
+ i used them every thing is going ok, i wish them helping u, (1. make 
+mrproper<br>
+2.cp /boot/config-`uname -r` ./.config ,Then we run 3.make menuconfig) 
+so these two commends  use them before make menuconfig, and also do not 
+use make only, just use (make all) . then continue as usual commend in 
+this article,   i wish them useful,<br>
+my regards,</p>
+<p class="reply"><a class="comment-reply-link" href="http://www.cyberciti.biz/tips/compiling-linux-kernel-26.html?replytocom=155018#respond" onclick='return addComment.moveForm("comment-body-155018", "155018", "respond", "710")'>Reply</a></p>
+</div>
+					</dd>
+					</dl>
+					</dd>
+					<dt class="comment odd alt thread-odd thread-alt depth-1" id="comment-152953">
+<span class="comment_num"><a href="#comment-152953" title="Permalink to this comment" rel="nofollow">66</a></span>
+<span class="comment_author">BongoBongo</span>
+<span class="comment_time">January 16, 2010</span>
+
+					</dt>
+					<dd class="comment odd alt thread-odd thread-alt depth-1">
+<div class="format_text" id="comment-body-152953">
+<p>Nice.</p>
+<p>Came in handy as I needed to recompile kernel in order to remove KVM 
+virtualization support. VirtualBox won’t run with KVM modules loaded.</p>
+<p>Why am I telling you this?</p>
+<p class="reply"><a class="comment-reply-link" href="http://www.cyberciti.biz/tips/compiling-linux-kernel-26.html?replytocom=152953#respond" onclick='return addComment.moveForm("comment-body-152953", "152953", "respond", "710")'>Reply</a></p>
+</div>
+					</dd>
+					<dt class="comment even thread-even depth-1" id="comment-153209">
+<span class="comment_num"><a href="#comment-153209" title="Permalink to this comment" rel="nofollow">67</a></span>
+<span class="comment_author">DaVince</span>
+<span class="comment_time">January 28, 2010</span>
+
+					</dt>
+					<dd class="comment even thread-even depth-1">
+<div class="format_text" id="comment-body-153209">
+<p>Some of the instructions are kind of outdated on modern systems, could you perhaps update the article?</p>
+<p>- Some systems now use GRUB 2, which doesn’t have a menu.lst.<br>
+- Modern systems tend to use mkinitramfs or yaird, not mkinitrd.</p>
+<p>Thanks a lot for the article, though. Off to test out my new kernel.</p>
+<p class="reply"><a class="comment-reply-link" href="http://www.cyberciti.biz/tips/compiling-linux-kernel-26.html?replytocom=153209#respond" onclick='return addComment.moveForm("comment-body-153209", "153209", "respond", "710")'>Reply</a></p>
+</div>
+					</dd>
+					<dt class="comment odd alt thread-odd thread-alt depth-1" id="comment-153265">
+<span class="comment_num"><a href="#comment-153265" title="Permalink to this comment" rel="nofollow">68</a></span>
+<span class="comment_author">ahmeds</span>
+<span class="comment_time">February 1, 2010</span>
+
+					</dt>
+					<dd class="comment odd alt thread-odd thread-alt depth-1">
+<div class="format_text" id="comment-body-153265">
+<p>This article actually very usefull. It helped me to kompile  linux kernel after my resultles<br>
+ attemtions for a long period. The only issue I had was creating initrd image.<br>
+My Ubuntu 8.10 interpid (also 8.4 hardy) do not have mkinitrd command so instead<br>
+I used next steps to compile linux kernel(2.6.27.7).Here they are.<br>
+1. first copy your /boot folder to somewhere , home folder<br>
+2. go to top of your linux  source tree and run(root prev required)<br>
+#make-kpkg clean &amp;&amp; make-kpkg –initrd –revision=custom.1.0 kernel_image<br>
+and after its finished with no errors run<br>
+#dpkg -i .deb<br>
+the latest command will update your /boot also /boot/grub/menu.lst file , but this is not what<br>
+do we want , and after reboot you may find your pc not booting at all.<br>
+what do we need is new kernel and new initrd image .<br>
+our new kernel is vmlinuz-2.6.27.7 and image is initrd.img-2.6.27.7<br>
+so we have to copy these files to some temp folder , then restore our old /boot folder<br>
+from backup and  copy back again our fresh kernel and image from temp folder to /boot.<br>
+to finish we need edit /boot/grub/menu.lst file.<br>
+here we can simply copy our generic boot items and make no change except names<br>
+of kernel and image to new ones. reboot and enjoy.</p>
+<p class="reply"><a class="comment-reply-link" href="http://www.cyberciti.biz/tips/compiling-linux-kernel-26.html?replytocom=153265#respond" onclick='return addComment.moveForm("comment-body-153265", "153265", "respond", "710")'>Reply</a></p>
+</div>
+					</dd>
+					<dt class="comment even thread-even depth-1" id="comment-153272">
+<span class="comment_num"><a href="#comment-153272" title="Permalink to this comment" rel="nofollow">69</a></span>
+<span class="comment_author">vig</span>
+<span class="comment_time">February 1, 2010</span>
+
+					</dt>
+					<dd class="comment even thread-even depth-1">
+<div class="format_text" id="comment-body-153272">
+<p>it really worked .. clean .. thanks .. a lot</p>
+<p class="reply"><a class="comment-reply-link" href="http://www.cyberciti.biz/tips/compiling-linux-kernel-26.html?replytocom=153272#respond" onclick='return addComment.moveForm("comment-body-153272", "153272", "respond", "710")'>Reply</a></p>
+</div>
+					</dd>
+					<dt class="comment odd alt thread-odd thread-alt depth-1" id="comment-153296">
+<span class="comment_num"><a href="#comment-153296" title="Permalink to this comment" rel="nofollow">70</a></span>
+<span class="comment_author">Danny</span>
+<span class="comment_time">February 3, 2010</span>
+
+					</dt>
+					<dd class="comment odd alt thread-odd thread-alt depth-1">
+<div class="format_text" id="comment-body-153296">
+<p>&gt; Step # 2 Extract tar (.tar.bz3) file<br>
+I lol’d.</p>
+<p class="reply"><a class="comment-reply-link" href="http://www.cyberciti.biz/tips/compiling-linux-kernel-26.html?replytocom=153296#respond" onclick='return addComment.moveForm("comment-body-153296", "153296", "respond", "710")'>Reply</a></p>
+</div>
+					</dd>
+					<dt class="comment even thread-even depth-1" id="comment-154183">
+<span class="comment_num"><a href="#comment-154183" title="Permalink to this comment" rel="nofollow">71</a></span>
+<span class="comment_author">Anon13</span>
+<span class="comment_time">March 9, 2010</span>
+
+					</dt>
+					<dd class="comment even thread-even depth-1">
+<div class="format_text" id="comment-body-154183">
+<p>Thanks! i was looking forward to use some source code for making a 
+fake “compiling” terminal session, so i could slack on the job 
+eventually (slow days make you wanna do something else, but boss doesnt 
+understand the meaning of ‘I do my job so good nobody gets errors, 
+therefore nobody needs IT support’) with the excuse that my code is 
+compiling (thanks xkcd.com for the idea). All i do is run make on the 
+source directory, and once im done with slackin’ i just run “make clean”
+ to revert any changes :b</p>
+<p class="reply"><a class="comment-reply-link" href="http://www.cyberciti.biz/tips/compiling-linux-kernel-26.html?replytocom=154183#respond" onclick='return addComment.moveForm("comment-body-154183", "154183", "respond", "710")'>Reply</a></p>
+</div>
+					</dd>
+					<dt class="comment odd alt thread-odd thread-alt depth-1" id="comment-154278">
+<span class="comment_num"><a href="#comment-154278" title="Permalink to this comment" rel="nofollow">72</a></span>
+<span class="comment_author">Tom</span>
+<span class="comment_time">March 14, 2010</span>
+
+					</dt>
+					<dd class="comment odd alt thread-odd thread-alt depth-1">
+<div class="format_text" id="comment-body-154278">
+<p>This is after I’ve done step#2 and installed gcc.<br>
+When I use this command “make xconfig” I’m getting this error “No rule to make target”.<br>
+Any ideas on how to fix this?</p>
+<p class="reply"><a class="comment-reply-link" href="http://www.cyberciti.biz/tips/compiling-linux-kernel-26.html?replytocom=154278#respond" onclick='return addComment.moveForm("comment-body-154278", "154278", "respond", "710")'>Reply</a></p>
+</div>
+					</dd>
+					<dt class="comment even thread-even depth-1" id="comment-154308">
+<span class="comment_num"><a href="#comment-154308" title="Permalink to this comment" rel="nofollow">73</a></span>
+<span class="comment_author">tata1</span>
+<span class="comment_time">March 16, 2010</span>
+
+					</dt>
+					<dd class="comment even thread-even depth-1">
+<div class="format_text" id="comment-body-154308">
+<p>you have to be inside linux folder,<br>
+go to yor home directory with cd und then type</p>
+<p>pla@pla# cd /usr/src/linux<br>
+then type<br>
+pla@pla # make menuconfig or make xconfig<br>
+make sure that ncurses package is installed<br>
+all the best</p>
+<p class="reply"><a class="comment-reply-link" href="http://www.cyberciti.biz/tips/compiling-linux-kernel-26.html?replytocom=154308#respond" onclick='return addComment.moveForm("comment-body-154308", "154308", "respond", "710")'>Reply</a></p>
+</div>
+					</dd>
+					<dt class="comment odd alt thread-odd thread-alt depth-1 parent" id="comment-155097">
+<span class="comment_num"><a href="#comment-155097" title="Permalink to this comment" rel="nofollow">74</a></span>
+<span class="comment_author">princelibya14</span>
+<span class="comment_time">April 18, 2010</span>
+
+					</dt>
+					<dd class="comment odd alt thread-odd thread-alt depth-1 parent">
+<div class="format_text" id="comment-body-155097">
+<p>hi, i have done all these steps, but i got error when i enter to my 
+new kernel there is network to connection to internet , so can any one 
+help me to solve this problem, cause i am not expert in fedora 10( i 
+mean in Linux )<br>
+ my regards</p>
+<p class="reply"><a class="comment-reply-link" href="http://www.cyberciti.biz/tips/compiling-linux-kernel-26.html?replytocom=155097#respond" onclick='return addComment.moveForm("comment-body-155097", "155097", "respond", "710")'>Reply</a></p>
+</div>
+					<dl class="children">
+					<dt class="comment even depth-2 parent" id="comment-155281">
+<span class="comment_num"><a href="#comment-155281" title="Permalink to this comment" rel="nofollow">75</a></span>
+<span class="comment_author">ahmeds</span>
+<span class="comment_time">April 22, 2010</span>
+
+					</dt>
+					<dd class="comment even depth-2 parent">
+<div class="format_text" id="comment-body-155281">
+<p>Could you please explain in more detail your error about connection?<br>
+Can you run programs with new kernel?<br>
+And did you use config file from previous kernel or new one?</p>
+<p class="reply"><a class="comment-reply-link" href="http://www.cyberciti.biz/tips/compiling-linux-kernel-26.html?replytocom=155281#respond" onclick='return addComment.moveForm("comment-body-155281", "155281", "respond", "710")'>Reply</a></p>
+</div>
+					<dl class="children">
+					<dt class="comment odd alt depth-3" id="comment-155544">
+<span class="comment_num"><a href="#comment-155544" title="Permalink to this comment" rel="nofollow">76</a></span>
+<span class="comment_author">princelibya14</span>
+<span class="comment_time">May 4, 2010</span>
+
+					</dt>
+					<dd class="comment odd alt depth-3">
+<div class="format_text" id="comment-body-155544">
+<p>hi, bro , i am sorry, i took long time to answer on your query, so my
+ problem is (i can not access on internet) by using wire or less card, 
+when i run commend (iwconfig i got message no wireless extension for 
+eth1 )so sholud i got these from last kernel on my new kernel when i 
+configure it, and also when i search i got article i have to install 
+package for wireless chip . my chip num is b4312, i am already installed
+ , but there is not thing , i wish to help me, cause i waste my time on 
+in these for month , i attempt to solve it, but nothing.plz help me as 
+soon as u can , cause i am in rush.<br>
+my regards bro.</p>
+<p class="reply"><a class="comment-reply-link" href="http://www.cyberciti.biz/tips/compiling-linux-kernel-26.html?replytocom=155544#respond" onclick='return addComment.moveForm("comment-body-155544", "155544", "respond", "710")'>Reply</a></p>
+</div>
+					</dd>
+					</dl>
+					</dd>
+					</dl>
+					</dd>
+					<dt class="comment even thread-even depth-1 parent" id="comment-155540">
+<span class="comment_num"><a href="#comment-155540" title="Permalink to this comment" rel="nofollow">77</a></span>
+<span class="comment_author">Malay Gopani</span>
+<span class="comment_time">May 4, 2010</span>
+
+					</dt>
+					<dd class="comment even thread-even depth-1 parent">
+<div class="format_text" id="comment-body-155540">
+<p>Hi,<br>
+i want to add the support of portuguese font in linux. i don’t know how to add this if anyone knows then please tell me.</p>
+<p class="reply"><a class="comment-reply-link" href="http://www.cyberciti.biz/tips/compiling-linux-kernel-26.html?replytocom=155540#respond" onclick='return addComment.moveForm("comment-body-155540", "155540", "respond", "710")'>Reply</a></p>
+</div>
+					<dl class="children">
+					<dt class="comment odd alt depth-2 parent" id="comment-155545">
+<span class="comment_num"><a href="#comment-155545" title="Permalink to this comment" rel="nofollow">78</a></span>
+<span class="comment_author">princelibya14</span>
+<span class="comment_time">May 4, 2010</span>
+
+					</dt>
+					<dd class="comment odd alt depth-2 parent">
+<div class="format_text" id="comment-body-155545">
+<p>hi, bro, how r u? i wish to help u, u can enter on 1.system  then 
+2.administration 3. choose language from the menu. 5 enter ur password, 
+at last choose  Portuguese language ,<br>
+i hope this info it is useful to u,<br>
+my regards.</p>
+<p class="reply"><a class="comment-reply-link" href="http://www.cyberciti.biz/tips/compiling-linux-kernel-26.html?replytocom=155545#respond" onclick='return addComment.moveForm("comment-body-155545", "155545", "respond", "710")'>Reply</a></p>
+</div>
+					<dl class="children">
+					<dt class="comment even depth-3" id="comment-155648">
+<span class="comment_num"><a href="#comment-155648" title="Permalink to this comment" rel="nofollow">79</a></span>
+<span class="comment_author">Malay Gopani</span>
+<span class="comment_time">May 5, 2010</span>
+
+					</dt>
+					<dd class="comment even depth-3">
+<div class="format_text" id="comment-body-155648">
+<p>Hi,<br>
+Thanks,<br>
+But i want something different. I have ported linux on the device. I 
+have done “make menuconfig” to make on the portuguese character set ,but
+  it shows this error.<br>
+ HOSTLD  -static scripts/kconfig/mconf<br>
+/usr/bin/ld: cannot find -lncursesw<br>
+collect2: ld returned 1 exit status<br>
+make[1]: *** [scripts/kconfig/mconf] Error 1<br>
+make: *** [menuconfig] Error 2<br>
+i have this ncursesw library installes also.<br>
+would you help me again?</p>
+<p class="reply"><a class="comment-reply-link" href="http://www.cyberciti.biz/tips/compiling-linux-kernel-26.html?replytocom=155648#respond" onclick='return addComment.moveForm("comment-body-155648", "155648", "respond", "710")'>Reply</a></p>
+</div>
+					</dd>
+					</dl>
+					</dd>
+					</dl>
+					</dd>
+					<dt class="comment odd alt thread-odd thread-alt depth-1 parent" id="comment-155943">
+<span class="comment_num"><a href="#comment-155943" title="Permalink to this comment" rel="nofollow">80</a></span>
+<span class="comment_author">anon</span>
+<span class="comment_time">May 9, 2010</span>
+
+					</dt>
+					<dd class="comment odd alt thread-odd thread-alt depth-1 parent">
+<div class="format_text" id="comment-body-155943">
+<p>apt-get install libncurses5-dev</p>
+<p class="reply"><a class="comment-reply-link" href="http://www.cyberciti.biz/tips/compiling-linux-kernel-26.html?replytocom=155943#respond" onclick='return addComment.moveForm("comment-body-155943", "155943", "respond", "710")'>Reply</a></p>
+</div>
+					<dl class="children">
+					<dt class="comment even depth-2 parent" id="comment-155948">
+<span class="comment_num"><a href="#comment-155948" title="Permalink to this comment" rel="nofollow">81</a></span>
+<span class="comment_author">kishore</span>
+<span class="comment_time">May 10, 2010</span>
+
+					</dt>
+					<dd class="comment even depth-2 parent">
+<div class="format_text" id="comment-body-155948">
+<p>Hi everybody,<br>
+I have followed all the steps above and succeeded in every step. But 
+when I choose in the grub to run the 2.6.31.6 kernel I have the 
+following message:<br>
+Unable to find a suitable fs in /proc/mounts, is it mounted ?<br>
+Use –subdomainfs to override.</p>
+<p>I have installed the linux kernel from Ubuntu 9.10. I am not sure, 
+but I think because I have installed ubuntu with ext4 file system, the 
+kernel could not recognize it. The kernel is residing in /usr/src which 
+is in the same partition as ubuntu.</p>
+<p>Have anyone an idea out there ?<br>
+Thx,</p>
+<p class="reply"><a class="comment-reply-link" href="http://www.cyberciti.biz/tips/compiling-linux-kernel-26.html?replytocom=155948#respond" onclick='return addComment.moveForm("comment-body-155948", "155948", "respond", "710")'>Reply</a></p>
+</div>
+					<dl class="children">
+					<dt class="comment odd alt depth-3" id="comment-156057">
+<span class="comment_num"><a href="#comment-156057" title="Permalink to this comment" rel="nofollow">82</a></span>
+<span class="comment_author">Alex</span>
+<span class="comment_time">May 17, 2010</span>
+
+					</dt>
+					<dd class="comment odd alt depth-3">
+<div class="format_text" id="comment-body-156057">
+<p>Did you maybe load ext4 as a module and not compile it directly into the kernel</p>
+<p>Also if nothing else works I think you could bootstrap it with an initrd to make it boot in ext4</p>
+<p class="reply"><a class="comment-reply-link" href="http://www.cyberciti.biz/tips/compiling-linux-kernel-26.html?replytocom=156057#respond" onclick='return addComment.moveForm("comment-body-156057", "156057", "respond", "710")'>Reply</a></p>
+</div>
+					</dd>
+					<dt class="comment even depth-3" id="comment-156168">
+<span class="comment_num"><a href="#comment-156168" title="Permalink to this comment" rel="nofollow">83</a></span>
+<span class="comment_author">pankyubootha</span>
+<span class="comment_time">May 23, 2010</span>
+
+					</dt>
+					<dd class="comment even depth-3">
+<div class="format_text" id="comment-body-156168">
+<p>hi kishore, i think enabling  SYSFS_DEPRECATED in the config file 
+i.e. “.config” and recompiling the kernel  should resolve the issue. but
+ this may lead to udev being adversely affected. also remember to enable
+ LBDAF in the kernel profiling segment of the .config file. good luck. 
+PankyuBootha.</p>
+<p class="reply"><a class="comment-reply-link" href="http://www.cyberciti.biz/tips/compiling-linux-kernel-26.html?replytocom=156168#respond" onclick='return addComment.moveForm("comment-body-156168", "156168", "respond", "710")'>Reply</a></p>
+</div>
+					</dd>
+					</dl>
+					</dd>
+					</dl>
+					</dd>
+					<dt class="comment odd alt thread-even depth-1" id="comment-156053">
+<span class="comment_num"><a href="#comment-156053" title="Permalink to this comment" rel="nofollow">84</a></span>
+<span class="comment_author">Jagan</span>
+<span class="comment_time">May 17, 2010</span>
+
+					</dt>
+					<dd class="comment odd alt thread-even depth-1">
+<div class="format_text" id="comment-body-156053">
+<p>Hi All<br>
+Is there any changes needed during kernel configuration for USB boot support.<br>
+what are the steps required for USB boot, starting from the compilation.</p>
+<p>any help would appreciated!!!!!<br>
+Regards<br>
+Jagan</p>
+<p class="reply"><a class="comment-reply-link" href="http://www.cyberciti.biz/tips/compiling-linux-kernel-26.html?replytocom=156053#respond" onclick='return addComment.moveForm("comment-body-156053", "156053", "respond", "710")'>Reply</a></p>
+</div>
+					</dd>
+					<dt class="comment even thread-odd thread-alt depth-1" id="comment-156187">
+<span class="comment_num"><a href="#comment-156187" title="Permalink to this comment" rel="nofollow">85</a></span>
+<span class="comment_author">ahmeds</span>
+<span class="comment_time">May 25, 2010</span>
+
+					</dt>
+					<dd class="comment even thread-odd thread-alt depth-1">
+<div class="format_text" id="comment-body-156187">
+<p>Hi Jaqan. I guess for USB boot support no kernel conf needed. Because<br>
+your kernel and initrd.img is loaded by grub from hd, USB or net.<br>
+Just copy your boot folder from HD to USB and istall grub on USB.<br>
+Restart and see what happens. Good lucks.</p>
+<p class="reply"><a class="comment-reply-link" href="http://www.cyberciti.biz/tips/compiling-linux-kernel-26.html?replytocom=156187#respond" onclick='return addComment.moveForm("comment-body-156187", "156187", "respond", "710")'>Reply</a></p>
+</div>
+					</dd>
+					<dt class="comment odd alt thread-even depth-1 parent" id="comment-156298">
+<span class="comment_num"><a href="#comment-156298" title="Permalink to this comment" rel="nofollow">86</a></span>
+<span class="comment_author">Federico</span>
+<span class="comment_time">June 1, 2010</span>
+
+					</dt>
+					<dd class="comment odd alt thread-even depth-1 parent">
+<div class="format_text" id="comment-body-156298">
+<p>I guys i have a problem when I try to generate the init image.. Using
+ Debian 5.0 it says mkinitrd command not found.. Anyone can help me? D:<br>
+Thanks<br>
+ps: sorry for the english im italian</p>
+<p class="reply"><a class="comment-reply-link" href="http://www.cyberciti.biz/tips/compiling-linux-kernel-26.html?replytocom=156298#respond" onclick='return addComment.moveForm("comment-body-156298", "156298", "respond", "710")'>Reply</a></p>
+</div>
+					<dl class="children">
+					<dt class="comment even depth-2" id="comment-156356">
+<span class="comment_num"><a href="#comment-156356" title="Permalink to this comment" rel="nofollow">87</a></span>
+<span class="comment_author">anonymous</span>
+<span class="comment_time">June 4, 2010</span>
+
+					</dt>
+					<dd class="comment even depth-2">
+<div class="format_text" id="comment-body-156356">
+<p>use ‘mkinitramfs’</p>
+<p class="reply"><a class="comment-reply-link" href="http://www.cyberciti.biz/tips/compiling-linux-kernel-26.html?replytocom=156356#respond" onclick='return addComment.moveForm("comment-body-156356", "156356", "respond", "710")'>Reply</a></p>
+</div>
+					</dd>
+					<dt class="comment odd alt depth-2" id="comment-156389">
+<span class="comment_num"><a href="#comment-156389" title="Permalink to this comment" rel="nofollow">88</a></span>
+<span class="comment_author">ahmeds</span>
+<span class="comment_time">June 7, 2010</span>
+
+					</dt>
+					<dd class="comment odd alt depth-2">
+<div class="format_text" id="comment-body-156389">
+<p>Hi Federico. I also used debian and it actually a headache to find proper initrd.img for<br>
+new kernel, as mkinitrd doesn’t work on new distrs and a lot of other stuff.<br>
+I put here the answer that found<br>
+<a href="http://www.cyberciti.biz/tips/compiling-linux-kernel-26.html/comment-page-7#comments" rel="nofollow">http://www.cyberciti.biz/tips/compiling-linux-kernel-26.html/comment-page-7#comments</a><br>
+lucks.</p>
+<p class="reply"><a class="comment-reply-link" href="http://www.cyberciti.biz/tips/compiling-linux-kernel-26.html?replytocom=156389#respond" onclick='return addComment.moveForm("comment-body-156389", "156389", "respond", "710")'>Reply</a></p>
+</div>
+					</dd>
+					</dl>
+					</dd>
+					<dt class="comment even thread-odd thread-alt depth-1" id="comment-156437">
+<span class="comment_num"><a href="#comment-156437" title="Permalink to this comment" rel="nofollow">89</a></span>
+<span class="comment_author">Jeff</span>
+<span class="comment_time">June 9, 2010</span>
+
+					</dt>
+					<dd class="comment even thread-odd thread-alt depth-1">
+<div class="format_text" id="comment-body-156437">
+<p>Howdy y’all.  I just wanted to ask about this process.  We own a lot 
+of RHEL/CentOS systems round here and I’m curious how the kernels built 
+with this process will differ from the kernels shipped from the standard
+ repositories.  I’ve looked countless places for a guide to recompiling a
+ kernel specifically with the source from those OSes, but something has 
+always failed, or not been in the right location, etc.  I’m currently 
+building a kernel using the described process and it actually seems to 
+be working, but I’m just wondering what functionality loss there will 
+be.</p>
+<p class="reply"><a class="comment-reply-link" href="http://www.cyberciti.biz/tips/compiling-linux-kernel-26.html?replytocom=156437#respond" onclick='return addComment.moveForm("comment-body-156437", "156437", "respond", "710")'>Reply</a></p>
+</div>
+					</dd>
+					<dt class="comment odd alt thread-even depth-1 parent" id="comment-156440">
+<span class="comment_num"><a href="#comment-156440" title="Permalink to this comment" rel="nofollow">90</a></span>
+<span class="comment_author">Jeff</span>
+<span class="comment_time">June 10, 2010</span>
+
+					</dt>
+					<dd class="comment odd alt thread-even depth-1 parent">
+<div class="format_text" id="comment-body-156440">
+<p>Hi everyone.  I just wanted to ask about this process.  We own a lot 
+of RHEL/CentOS systems round here and I’m curious how the kernels built 
+with this process will differ from the kernels shipped from the standard
+ repositories.  I’ve looked countless places for a guide to recompiling a
+ kernel specifically with the source from those OSes, but something has 
+always failed, or not been in the right location, etc.  I’m currently 
+building a kernel using the described process and it actually seems to 
+be working, but I’m just wondering what functionality loss there will 
+be.</p>
+<p class="reply"><a class="comment-reply-link" href="http://www.cyberciti.biz/tips/compiling-linux-kernel-26.html?replytocom=156440#respond" onclick='return addComment.moveForm("comment-body-156440", "156440", "respond", "710")'>Reply</a></p>
+</div>
+					<dl class="children">
+					<dt class="comment even depth-2 parent" id="comment-156442">
+<span class="comment_num"><a href="#comment-156442" title="Permalink to this comment" rel="nofollow">91</a></span>
+<span class="comment_author">Jeff</span>
+<span class="comment_time">June 10, 2010</span>
+
+					</dt>
+					<dd class="comment even depth-2 parent">
+<div class="format_text" id="comment-body-156442">
+<p>Weeell…</p>
+<p>New kernel compiled, but either doesn’t have SATA or LVM support, as 
+it’s failing to mount root at boot and kernel panicing.  At least I got 
+the darn thing compiled … all I really wanted to accomplish at the 
+moment</p>
+<p class="reply"><a class="comment-reply-link" href="http://www.cyberciti.biz/tips/compiling-linux-kernel-26.html?replytocom=156442#respond" onclick='return addComment.moveForm("comment-body-156442", "156442", "respond", "710")'>Reply</a></p>
+</div>
+					<dl class="children">
+					<dt class="comment odd alt depth-3" id="comment-156454">
+<span class="comment_num"><a href="#comment-156454" title="Permalink to this comment" rel="nofollow">92</a></span>
+<span class="comment_author">Pankyu Bootha</span>
+<span class="comment_time">June 10, 2010</span>
+
+					</dt>
+					<dd class="comment odd alt depth-3">
+<div class="format_text" id="comment-body-156454">
+<p>Hi Jeff, As I had said earlier, for RHEL, CentOS and such cognate 
+systems, I have found that one has to enable SYSFS_DEPRECATED while 
+compiling the kernel versions &gt; 2.6.33. As for enabling SATA support,
+ in the relevant section of the .config file one has to enable scsi/ide 
+support while configuring the kernel. Pl first copy “.config” on desktop
+ after uncompressing the tarball in your home directory-</p>
+<p>$ bzip2  -dc  linux-2.6.34.tar.bz2  |  tar -xvf  -. You can copy .config  file by-</p>
+<p>$ mv   /home/jeff/linux-2.6.34/.config   /home/jeff/Desktop/config.text. Then copy config.text in your home folder/directory. </p>
+<p>Now read the config.text file carefully in gedit. you can search for 
+SYSFS_DEPRECATED by using the interactivesearch available in the top 
+window-bar of gedit. Also go through the scsi and ide drivers section.</p>
+<p>To manually enable the required features do-</p>
+<p>CONFIG SYSFS_DEPRECATED=y </p>
+<p>Remember to uncomment the relevant by removing the ‘#’.</p>
+<p>Affter you have thus enabled the relevant features, replace config.text to linux-2.6.34 by-</p>
+<p>$ mv  /home/jeff/Desktop/config.text   /home/jeff/linux-2.6.34/.config</p>
+<p>Now  cd to linux-2.6.34 and do ‘make’<br>
+.<br>
+Any further queries are welcome. Good Luck. Pankyu Bootha</p>
+<p class="reply"><a class="comment-reply-link" href="http://www.cyberciti.biz/tips/compiling-linux-kernel-26.html?replytocom=156454#respond" onclick='return addComment.moveForm("comment-body-156454", "156454", "respond", "710")'>Reply</a></p>
+</div>
+					</dd>
+					</dl>
+					</dd>
+					</dl>
+					</dd>
+					<dt class="comment even thread-odd thread-alt depth-1" id="comment-158343">
+<span class="comment_num"><a href="#comment-158343" title="Permalink to this comment" rel="nofollow">93</a></span>
+<span class="comment_author">Rocky</span>
+<span class="comment_time">July 26, 2010</span>
+
+					</dt>
+					<dd class="comment even thread-odd thread-alt depth-1">
+<div class="format_text" id="comment-body-158343">
+<p>Hi,</p>
+<p>I followed this nice link  for kernel compilation.Everything is done 
+nicely.There is no any error while doing compilation process.But after 
+step 5( Step # 5 Install kernel<br>
+# make install ) , I am not getting config file in /boot for new<br>
+kernel. I m getting systemmap,vmlinuz and initrd for new kernel.So as<br>
+per step 6 for mkinitrd, it shows already exists.</p>
+<p>And when i rebooted machine with new kernel , getting kernel panic , /<br>
+dev/root fileystem not found.</p>
+<p>OS: CENTOS 5.5<br>
+KERNEL : 2.6.34.1</p>
+<p class="reply"><a class="comment-reply-link" href="http://www.cyberciti.biz/tips/compiling-linux-kernel-26.html?replytocom=158343#respond" onclick='return addComment.moveForm("comment-body-158343", "158343", "respond", "710")'>Reply</a></p>
+</div>
+					</dd>
+					<dt class="comment odd alt thread-even depth-1 parent" id="comment-158370">
+<span class="comment_num"><a href="#comment-158370" title="Permalink to this comment" rel="nofollow">94</a></span>
+<span class="comment_author">ahmeds</span>
+<span class="comment_time">July 27, 2010</span>
+
+					</dt>
+					<dd class="comment odd alt thread-even depth-1 parent">
+<div class="format_text" id="comment-body-158370">
+<p>Good day Rocky. I dont know what the issue was that config file 
+missed for new kernel at /boot folder, but you can copy it manually from
+ source directory of the new kernel that you compiled. At step 3 you 
+have to configure your new kernel  using make menuconfig, make oldconfig
+ , or another one of your choise. This step will do nothing else but 
+create<br>
+ .config file at the top of your source dir. As usual all files in unix 
+that begin with dot are hidden so .config file too. Just copy it to your
+ /boot folder using<br>
+# cp .copnfig /boot/config-2.6.x.y<br>
+Regarding kernel panic you have to specify right root filesystem.<br>
+Either the problem is with your  initrd file and sometimes it is becoming real headache<br>
+to get proper initrd for new kernel that doesn’t panic.<br>
+What I do really advice just try if it will work do make oldconfig. This will config your<br>
+kernel using configuration of currently running one. And dont use make initrd but rename<br>
+and use initrd file file of your currnetly running kernel for new one.</p>
+<p class="reply"><a class="comment-reply-link" href="http://www.cyberciti.biz/tips/compiling-linux-kernel-26.html?replytocom=158370#respond" onclick='return addComment.moveForm("comment-body-158370", "158370", "respond", "710")'>Reply</a></p>
+</div>
+					<dl class="children">
+					<dt class="comment even depth-2" id="comment-158390">
+<span class="comment_num"><a href="#comment-158390" title="Permalink to this comment" rel="nofollow">95</a></span>
+<span class="comment_author">Rocky</span>
+<span class="comment_time">July 28, 2010</span>
+
+					</dt>
+					<dd class="comment even depth-2">
+<div class="format_text" id="comment-body-158390">
+<p>Hi Ahmeds,</p>
+<p>I followed your reply.But getting same.</p>
+<p>Rocky</p>
+<p class="reply"><a class="comment-reply-link" href="http://www.cyberciti.biz/tips/compiling-linux-kernel-26.html?replytocom=158390#respond" onclick='return addComment.moveForm("comment-body-158390", "158390", "respond", "710")'>Reply</a></p>
+</div>
+					</dd>
+					</dl>
+					</dd>
+					<dt class="comment odd alt thread-odd thread-alt depth-1" id="comment-158470">
+<span class="comment_num"><a href="#comment-158470" title="Permalink to this comment" rel="nofollow">96</a></span>
+<span class="comment_author">ahmeds</span>
+<span class="comment_time">July 29, 2010</span>
+
+					</dt>
+					<dd class="comment odd alt thread-odd thread-alt depth-1">
+<div class="format_text" id="comment-body-158470">
+<p>Hi Rocky. It is ok if your kernel again did panic. If you want to compile kernel<br>
+just for update your current system then I can’t help you. But if you want to<br>
+compile kernel so that you could start to kernel programming then just say hello<br>
+to bulk of the problems waiting you ahead. I spent 4 month for compiling my kernel<br>
+that didn’t panic. It was 2.6.27.7 . I also learned how to configure kernel to<br>
+compile all necessary drivers built in so that kernel loaded without headache initrd.<br>
+But with 2.6.34.xx things are a little bit different.  I didn’t come yet to this level but<br>
+what I may advice you is next:<br>
+1. download   kernel source code of the  exact version that is  
+currently running, so that make oldconfig doesn’t complain to anything 
+and if it does say yes.<br>
+2. try again more and more.<br>
+3. specify RIGHT ROOT filesystem. i.e. root=/dev/sda5 or root=/dev/hda2<br>
+    The list of filesystems and your root filesystem you can find by df command<br>
+for example my root file system(/) mounted on /dev/sda7<br>
+john@lnx:~$ df<br>
+Filesystem           1K-blocks      Used Available Use% Mounted on<br>
+/dev/sda7             18482044  15095664   2447528  87% /<br>
+none                    504828       304    504524   1% /dev<br>
+none                    509044       212    508832   1% /dev/shm</p>
+<p>4. If these wouldn’t help try compiling necessary drivers built in. To do this do next:<br>
+  1. GET list of all of your modules loaded using lsmod.<br>
+john@lnx:~$ lsmod<br>
+Module                  Size  Used by<br>
+binfmt_misc             6587  1<br>
+rfcomm                 33421  4<br>
+…<br>
+get module information for each module using modinfo.<br>
+john@lnx:~$ modinfo binfmt_misc | grep filename<br>
+filename:       /lib/modules/2.6.32-21-generic/kernel/fs/binfmt_misc.ko<br>
+Go to your kernel source code open  fs/Makefile file. Find “binfmt_misc.o” string<br>
+(Note:  .o not .ko).<br>
+obj-$(CONFIG_BINFMT_MISC)	+= binfmt_misc.o<br>
+Then open .config file of your kernel (off course after make oldconfig ) and find<br>
+“CONFIG_BINFMT_MISC”.</p>
+<p>CONFIG_BINFMT_MISC=m<br>
+m means compile as module. If you want this driver to be compiled built in just change m here to y and save your .config file.<br>
+CONFIG_BINFMT_MISC=y</p>
+<p>You dont have to compile all of your drivers as built in just those 
+which is necessary for mounting root file system, i.e. hard disk 
+drivers, scsi if present, ext3 or 4 if they are compiled as module. It 
+is up to you.  If df prints something like<br>
+/dev/sda4 … for (root fs,/) this means you have scsi disk. /dev/hda says you have ide disk.<br>
+Huh. It is not fun at the end. Good lucks.</p>
+<p class="reply"><a class="comment-reply-link" href="http://www.cyberciti.biz/tips/compiling-linux-kernel-26.html?replytocom=158470#respond" onclick='return addComment.moveForm("comment-body-158470", "158470", "respond", "710")'>Reply</a></p>
+</div>
+					</dd>
+					<dt class="comment even thread-even depth-1 parent" id="comment-158636">
+<span class="comment_num"><a href="#comment-158636" title="Permalink to this comment" rel="nofollow">97</a></span>
+<span class="comment_author">Marten</span>
+<span class="comment_time">July 31, 2010</span>
+
+					</dt>
+					<dd class="comment even thread-even depth-1 parent">
+<div class="format_text" id="comment-body-158636">
+<p>Hello,</p>
+<p>I have the exact same problem as Rocky: centos 5.5 with running 
+kernel 2.6.18-194.3.1.el5 and I want to install 2.6.34.1. All teh steps 
+went fine, no errors, but I had to manually copy .config into 
+/boot/config-2.6.34.1. After reboot, same errors like Rocky and also 
+“Volume group Volgroup00 not found” which is why / is not mounted.<br>
+# df -h<br>
+Filesystem            Size  Used Avail Use% Mounted on<br>
+/dev/mapper/VolGroup00-LogVol00<br>
+                       71G   21G   46G  32% /<br>
+/dev/sda1              99M   35M   59M  37% /boot<br>
+tmpfs                 950M     0  950M   0% /dev/shm<br>
+# cat /boot/grub/menu.lst<br>
+# grub.conf generated by anaconda<br>
+#<br>
+# Note that you do not have to rerun grub after making changes to this file<br>
+# NOTICE:  You have a /boot partition.  This means that<br>
+#          all kernel and initrd paths are relative to /boot/, eg.<br>
+#          root (hd0,0)<br>
+#          kernel /vmlinuz-version ro root=/dev/VolGroup00/LogVol00<br>
+#          initrd /initrd-version.img<br>
+#boot=/dev/sda<br>
+default=2<br>
+timeout=5<br>
+splashimage=(hd0,0)/grub/splash.xpm.gz<br>
+hiddenmenu<br>
+title CentOS (2.6.34.1)<br>
+        root (hd0,0)<br>
+        kernel /vmlinuz-2.6.34.1 ro root=/dev/mapper/VolGroup00-LogVol00 rhgb quiet<br>
+        initrd /initrd-2.6.34.1.img<br>
+title CentOS (2.6.18-194.8.1.el5)<br>
+        root (hd0,0)<br>
+        kernel /vmlinuz-2.6.18-194.8.1.el5 ro root=/dev/VolGroup00/LogVol00 rhgb quiet<br>
+        initrd /initrd-2.6.18-194.8.1.el5.img<br>
+title CentOS (2.6.18-194.3.1.el5)<br>
+        root (hd0,0)<br>
+        kernel /vmlinuz-2.6.18-194.3.1.el5 ro root=/dev/VolGroup00/LogVol00 rhgb quiet<br>
+        initrd /initrd-2.6.18-194.3.1.el5.img<br>
+Any help?:)</p>
+<p class="reply"><a class="comment-reply-link" href="http://www.cyberciti.biz/tips/compiling-linux-kernel-26.html?replytocom=158636#respond" onclick='return addComment.moveForm("comment-body-158636", "158636", "respond", "710")'>Reply</a></p>
+</div>
+					<dl class="children">
+					<dt class="comment odd alt depth-2" id="comment-158641">
+<span class="comment_num"><a href="#comment-158641" title="Permalink to this comment" rel="nofollow">98</a></span>
+<span class="comment_author">Rocky</span>
+<span class="comment_time">August 1, 2010</span>
+
+					</dt>
+					<dd class="comment odd alt depth-2">
+<div class="format_text" id="comment-body-158641">
+<p>Hi,</p>
+<p>You can resolve this error.Follow this steps.<br>
+After menuconfig.open .config file and add CONFIG_SYSFS_DEPRECATED_V2=y 
+and then compile the kernel.Your issue wiil be resolved.If you have any 
+query, let me know.</p>
+<p>Rocky</p>
+<p class="reply"><a class="comment-reply-link" href="http://www.cyberciti.biz/tips/compiling-linux-kernel-26.html?replytocom=158641#respond" onclick='return addComment.moveForm("comment-body-158641", "158641", "respond", "710")'>Reply</a></p>
+</div>
+					</dd>
+					</dl>
+					</dd>
+					<dt class="comment even thread-odd thread-alt depth-1" id="comment-158646">
+<span class="comment_num"><a href="#comment-158646" title="Permalink to this comment" rel="nofollow">99</a></span>
+<span class="comment_author">Marten</span>
+<span class="comment_time">August 2, 2010</span>
+
+					</dt>
+					<dd class="comment even thread-odd thread-alt depth-1">
+<div class="format_text" id="comment-body-158646">
+<p>Hi Rocky,</p>
+<p>Thanks for the help, it worked. I still get this strange error mesage:<br>
+insmod: error inserting ‘/lib/dm-region-hash.ko’: -1 File exists<br>
+but the system boots up ok, so I guess I can ignore it.<br>
+Kernel 2.6.34.1 running :D :<br>
+ uname -rs<br>
+Linux 2.6.34.1</p>
+<p class="reply"><a class="comment-reply-link" href="http://www.cyberciti.biz/tips/compiling-linux-kernel-26.html?replytocom=158646#respond" onclick='return addComment.moveForm("comment-body-158646", "158646", "respond", "710")'>Reply</a></p>
+</div>
+					</dd>
+					<dt class="comment odd alt thread-even depth-1" id="comment-158961">
+<span class="comment_num"><a href="#comment-158961" title="Permalink to this comment" rel="nofollow">100</a></span>
+<span class="comment_author">ragul</span>
+<span class="comment_time">August 16, 2010</span>
+
+					</dt>
+					<dd class="comment odd alt thread-even depth-1">
+<div class="format_text" id="comment-body-158961">
+<p>how to recompile linux kernal?<br>
+ i am working on module programming . . so i ve to disable the versoning . . can any 1 help me</p>
+<p class="reply"><a class="comment-reply-link" href="http://www.cyberciti.biz/tips/compiling-linux-kernel-26.html?replytocom=158961#respond" onclick='return addComment.moveForm("comment-body-158961", "158961", "respond", "710")'>Reply</a></p>
+</div>
+					</dd>
+					<dt class="comment even thread-odd thread-alt depth-1" id="comment-159011">
+<span class="comment_num"><a href="#comment-159011" title="Permalink to this comment" rel="nofollow">101</a></span>
+<span class="comment_author">ahmeds</span>
+<span class="comment_time">August 19, 2010</span>
+
+					</dt>
+					<dd class="comment even thread-odd thread-alt depth-1">
+<div class="format_text" id="comment-body-159011">
+<p>Hi ragul.<br>
+Pls write the command you use for compiling your module.<br>
+and also uname -r.<br>
+bye.</p>
+<p class="reply"><a class="comment-reply-link" href="http://www.cyberciti.biz/tips/compiling-linux-kernel-26.html?replytocom=159011#respond" onclick='return addComment.moveForm("comment-body-159011", "159011", "respond", "710")'>Reply</a></p>
+</div>
+					</dd>
+					<dt class="comment odd alt thread-even depth-1" id="comment-159106">
+<span class="comment_num"><a href="#comment-159106" title="Permalink to this comment" rel="nofollow">102</a></span>
+<span class="comment_author">uui</span>
+<span class="comment_time">August 21, 2010</span>
+
+					</dt>
+					<dd class="comment odd alt thread-even depth-1">
+<div class="format_text" id="comment-body-159106">
+<p>For step 2, I don’t think you’re suppose to do it in /usr/src when you’re installing.</p>
+<p class="reply"><a class="comment-reply-link" href="http://www.cyberciti.biz/tips/compiling-linux-kernel-26.html?replytocom=159106#respond" onclick='return addComment.moveForm("comment-body-159106", "159106", "respond", "710")'>Reply</a></p>
+</div>
+					</dd>
+					<dt class="comment even thread-odd thread-alt depth-1" id="comment-160244">
+<span class="comment_num"><a href="#comment-160244" title="Permalink to this comment" rel="nofollow">103</a></span>
+<span class="comment_author">deepak goel</span>
+<span class="comment_time">October 20, 2010</span>
+
+					</dt>
+					<dd class="comment even thread-odd thread-alt depth-1">
+<div class="format_text" id="comment-body-160244">
+<p>hiii<br>
+i am using kernel 2.6.33 but i want to compile 2.6.23<br>
+i get a error getline function conflict when i change the name of it i’ll get errors in make install command<br>
+ERROR: modinfo: could not find module garp<br>
+ERROR: modinfo: could not find module stp</p>
+<p>plz suggest how i’ll proceed …<br>
+thnx in advance</p>
+<p class="reply"><a class="comment-reply-link" href="http://www.cyberciti.biz/tips/compiling-linux-kernel-26.html?replytocom=160244#respond" onclick='return addComment.moveForm("comment-body-160244", "160244", "respond", "710")'>Reply</a></p>
+</div>
+					</dd>
+					<dt class="comment odd alt thread-even depth-1" id="comment-161434">
+<span class="comment_num"><a href="#comment-161434" title="Permalink to this comment" rel="nofollow">104</a></span>
+<span class="comment_author">goo</span>
+<span class="comment_time">November 21, 2010</span>
+
+					</dt>
+					<dd class="comment odd alt thread-even depth-1">
+<div class="format_text" id="comment-body-161434">
+<p>i am using kernel linux-2.6.36-21 and i want to update it to 2.6.36<br>
+everything is ok during compiling and installing<br>
+but after reboot my system it tell me “could not load /lib/modules2.6.36/modules.dep: no such file or directory”.<br>
+any one have met this problem?<br>
+please help me, thanx</p>
+<p class="reply"><a class="comment-reply-link" href="http://www.cyberciti.biz/tips/compiling-linux-kernel-26.html?replytocom=161434#respond" onclick='return addComment.moveForm("comment-body-161434", "161434", "respond", "710")'>Reply</a></p>
+</div>
+					</dd>
+					<dt class="comment even thread-odd thread-alt depth-1" id="comment-161514">
+<span class="comment_num"><a href="#comment-161514" title="Permalink to this comment" rel="nofollow">105</a></span>
+<span class="comment_author">subhash</span>
+<span class="comment_time">November 26, 2010</span>
+
+					</dt>
+					<dd class="comment even thread-odd thread-alt depth-1">
+<div class="format_text" id="comment-body-161514">
+<p>i m using ubuntu 10.10…..completed upto step5…<br>
+In mkinitrd -o initrd.img-2.6.25 2.6.25  its giving command not found.<br>
+on trying to install initrd-tools getting the following error…..Unable 
+to locate package initrd-tools….its very urgent….please can anyone tell 
+what is getting wrong</p>
+<p class="reply"><a class="comment-reply-link" href="http://www.cyberciti.biz/tips/compiling-linux-kernel-26.html?replytocom=161514#respond" onclick='return addComment.moveForm("comment-body-161514", "161514", "respond", "710")'>Reply</a></p>
+</div>
+					</dd>
+					<dt class="comment odd alt thread-even depth-1" id="comment-161564">
+<span class="comment_num"><a href="#comment-161564" title="Permalink to this comment" rel="nofollow">106</a></span>
+<span class="comment_author">ahmeds</span>
+<span class="comment_time">November 29, 2010</span>
+
+					</dt>
+					<dd class="comment odd alt thread-even depth-1">
+<div class="format_text" id="comment-body-161564">
+<p>Good day subhash. I also had the issue with initrd.img compiling linux.<br>
+I put my solution in  above comment “ahmeds February 1, 2010″.</p>
+<p>The only mistake in this solution is #dpkg -i .deb.<br>
+prior issuing this command  you have to  cd ..<br>
+and then run dpkg with the deb file prodced by<br>
+#make-kpkg clean &amp;&amp; make-kpkg –initrd –revision=custom.1.0 kernel_image</p>
+<p class="reply"><a class="comment-reply-link" href="http://www.cyberciti.biz/tips/compiling-linux-kernel-26.html?replytocom=161564#respond" onclick='return addComment.moveForm("comment-body-161564", "161564", "respond", "710")'>Reply</a></p>
+</div>
+					</dd>
+					<dt class="comment even thread-odd thread-alt depth-1" id="comment-161642">
+<span class="comment_num"><a href="#comment-161642" title="Permalink to this comment" rel="nofollow">107</a></span>
+<span class="comment_author">Hammad</span>
+<span class="comment_time">December 6, 2010</span>
+
+					</dt>
+					<dd class="comment even thread-odd thread-alt depth-1">
+<div class="format_text" id="comment-body-161642">
+<p>Hi,</p>
+<p>I followed these instructions and managed to compile the kernel on an
+ ubuntu virtual box. I had some issues with installing the ncurses 
+library, and then with the mkinitrd command, but managed to resolve both
+ of them.</p>
+<p>However, just the make step took nearly 6 hours to complete. I 
+thought this was OK until I read in several places that it usually takes
+ around the order of 20 minutes or so. What might I be doing wrong?</p>
+<p>I am running ubuntu on a virtual machine, with 512 MB RAM and 10 GB HDD space. Any help would be greatly appreciated.</p>
+<p>Thanks!</p>
+<p class="reply"><a class="comment-reply-link" href="http://www.cyberciti.biz/tips/compiling-linux-kernel-26.html?replytocom=161642#respond" onclick='return addComment.moveForm("comment-body-161642", "161642", "respond", "710")'>Reply</a></p>
+</div>
+					</dd>
+					<dt class="comment odd alt thread-even depth-1" id="comment-165495">
+<span class="comment_num"><a href="#comment-165495" title="Permalink to this comment" rel="nofollow">108</a></span>
+<span class="comment_author">anany</span>
+<span class="comment_time">December 24, 2010</span>
+
+					</dt>
+					<dd class="comment odd alt thread-even depth-1">
+<div class="format_text" id="comment-body-165495">
+<p>Hi<br>
+thanks dude.. you did a rocking job..</p>
+<p>I Remembered what youhv written somewhere.</p>
+<p>Dont send a boy to do a Mens job..</p>
+<p class="reply"><a class="comment-reply-link" href="http://www.cyberciti.biz/tips/compiling-linux-kernel-26.html?replytocom=165495#respond" onclick='return addComment.moveForm("comment-body-165495", "165495", "respond", "710")'>Reply</a></p>
+</div>
+					</dd>
+					<dt class="comment even thread-odd thread-alt depth-1" id="comment-170288">
+<span class="comment_num"><a href="#comment-170288" title="Permalink to this comment" rel="nofollow">109</a></span>
+<span class="comment_author">Neal Anderson</span>
+<span class="comment_time">March 23, 2011</span>
+
+					</dt>
+					<dd class="comment even thread-odd thread-alt depth-1">
+<div class="format_text" id="comment-body-170288">
+<p>I found something and thought to share it  with you people.</p>
+<p>I was compiling the kernel on fedora 13 when i issued make makeconfig
+ command i got some errors same as make*** . Thats ok , the solution is 
+install ncurses-devel<br>
+… fine enough?? </p>
+<p>ok now shoot yum clean alll….<br>
+thats it….<br>
+now again run make makeconfig ;) here you go :D</p>
+<p class="reply"><a class="comment-reply-link" href="http://www.cyberciti.biz/tips/compiling-linux-kernel-26.html?replytocom=170288#respond" onclick='return addComment.moveForm("comment-body-170288", "170288", "respond", "710")'>Reply</a></p>
+</div>
+					</dd>
+					<dt class="comment odd alt thread-even depth-1" id="comment-170546">
+<span class="comment_num"><a href="#comment-170546" title="Permalink to this comment" rel="nofollow">110</a></span>
+<span class="comment_author">deadman</span>
+<span class="comment_time">April 10, 2011</span>
+
+					</dt>
+					<dd class="comment odd alt thread-even depth-1">
+<div class="format_text" id="comment-body-170546">
+<p>hey<br>
+i’m having problems while doing make for 2.6.38<br>
+its shows 44 sections mismatch(es)<br>
+i ignored it and installed the thing<br>
+but on loading its shows kernel panic<br>
+plz help</p>
+<p class="reply"><a class="comment-reply-link" href="http://www.cyberciti.biz/tips/compiling-linux-kernel-26.html?replytocom=170546#respond" onclick='return addComment.moveForm("comment-body-170546", "170546", "respond", "710")'>Reply</a></p>
+</div>
+					</dd>
+					<dt class="comment even thread-odd thread-alt depth-1" id="comment-171094">
+<span class="comment_num"><a href="#comment-171094" title="Permalink to this comment" rel="nofollow">111</a></span>
+<span class="comment_author">Tanish</span>
+<span class="comment_time">May 2, 2011</span>
+
+					</dt>
+					<dd class="comment even thread-odd thread-alt depth-1">
+<div class="format_text" id="comment-body-171094">
+<p>Hi,</p>
+<p>I am trying to build the new kernel (2.6.38) and facing the similar 
+issue as in the comment # 97. I followed the instructions in comment #98
+ but not able to fix the problem. As I start the make, the .config file 
+is renamed to .config.old and the changes is lost. Can you help me 
+fixing the issue? I am using CentOS 5.5.</p>
+<p>-regards,<br>
+Tanish S.</p>
+<p class="reply"><a class="comment-reply-link" href="http://www.cyberciti.biz/tips/compiling-linux-kernel-26.html?replytocom=171094#respond" onclick='return addComment.moveForm("comment-body-171094", "171094", "respond", "710")'>Reply</a></p>
+</div>
+					</dd>
+				</dl>
+				<div id="respond">
+					<div id="respond_intro">
+<a rel="nofollow" id="cancel-comment-reply-link" href="http://www.cyberciti.biz/tips/compiling-linux-kernel-26.html#respond" style="display: none;">Cancel reply</a>						<p>Leave a Comment</p>
+					</div>
+					<form action="http://www.cyberciti.biz/tips/wp-comments-post.php" method="post" id="commentform">
+						<p><input class="text_input" name="author" id="author" tabindex="1" aria-required="true" type="text"><label for="author">Name <span class="required" title="Required">*</span></label></p>
+						<p><input class="text_input" name="email" id="email" tabindex="2" aria-required="true" type="text"><label for="email">E-mail <span class="required" title="Required">*</span></label></p>
+						<p><input class="text_input" name="url" id="url" tabindex="3" type="text"><label for="url">Website</label></p>
+						<p class="comment_box">
+							<textarea name="comment" id="comment" tabindex="4" cols="40" rows="8"></textarea>
+						</p>
+<span class="allowed"><span>
+<em>You can use these <acronym title="HyperText Markup Language">HTML</acronym> tags and attributes for your code and commands:</em> &lt;strong&gt; &lt;em&gt; &lt;ol&gt; &lt;li&gt; &lt;u&gt; &lt;ul&gt; &lt;blockquote&gt; &lt;pre&gt; &lt;a href="" title=""&gt; 
+</span></span>
+
+
+	<p style="clear: both;" class="subscribe-to-comments">
+	<input name="subscribe" id="subscribe" value="subscribe" style="width: auto;" type="checkbox">
+	<label for="subscribe">Notify me of followup comments via e-mail.</label>
+	</p>
+
+
+						<p class="remove_bottom_margin">
+							<input name="submit" class="form_submit" id="submit" tabindex="5" value="Submit" type="submit">
+<input name="comment_post_ID" value="710" id="comment_post_ID" type="hidden">
+<input name="comment_parent" id="comment_parent" value="0" type="hidden">
+						</p>
+<p style="display: none;"><input id="akismet_comment_nonce" name="akismet_comment_nonce" value="79dde7ebc9" type="hidden"></p><br><br><center><div id="adslargerectbottom"><div id="load-adslargerectbottom">
+<script type="text/javascript"><!--// <![CDATA[
+    OA_show(16);
+// ]]> --></script><noscript><a target='_blank' href='http://simplyguide.com/k/www/delivery/ck.php?n=31a572a'><img border='0' alt='' src='http://simplyguide.com/k/www/delivery/avw.php?zoneid=16&amp;n=31a572a' /></a></noscript>
+</div></div></center><br><small><p class="post_tags">Tagged as: <a href="http://www.cyberciti.biz/tips/tag/command-tar" rel="tag">command tar</a>, <a href="http://www.cyberciti.biz/tips/tag/compile-kernel" rel="tag">compile kernel</a>, <a href="http://www.cyberciti.biz/tips/tag/compiling-linux-kernel" rel="tag">compiling linux kernel</a>, <a href="http://www.cyberciti.biz/tips/tag/configuration-option" rel="tag">configuration option</a>, <a href="http://www.cyberciti.biz/tips/tag/configuration-tool" rel="tag">configuration tool</a>, <a href="http://www.cyberciti.biz/tips/tag/gnu-linux" rel="tag">gnu linux</a>, <a href="http://www.cyberciti.biz/tips/tag/how-to-compile-linux-kernel" rel="tag">how to compile linux kernel</a>, <a href="http://www.cyberciti.biz/tips/tag/kernel-code" rel="tag">kernel code</a>, <a href="http://www.cyberciti.biz/tips/tag/kernel-configuration" rel="tag">kernel configuration</a>, <a href="http://www.cyberciti.biz/tips/tag/kernel-image" rel="tag">kernel image</a>, <a href="http://www.cyberciti.biz/tips/tag/kernel-source-code" rel="tag">kernel source code</a>, <a href="http://www.cyberciti.biz/tips/tag/kernel-v2" rel="tag">kernel v2</a>, <a href="http://www.cyberciti.biz/tips/tag/kernel-version" rel="tag">kernel version</a>, <a href="http://www.cyberciti.biz/tips/tag/latest-linux-kernel" rel="tag">latest linux kernel</a>, <a href="http://www.cyberciti.biz/tips/tag/linux-kernel-version" rel="tag">linux kernel version</a></p></small>					</form>
+				</div>
+			</div>
+					<div class="prev_next post_nav">
+						<p class="previous">Previous post: <a href="http://www.cyberciti.biz/tips/knoppix-402-dvd-released.html" rel="prev">Knoppix 4.0.2 DVD Released</a></p>
+						<p>Next post: <a href="http://www.cyberciti.biz/tips/the-importance-of-linux-partitions.html" rel="next">The importance of Linux partitions</a></p>
+					</div>
+		</div>
+
+		<div id="sidebars">
+			<div id="multimedia_box" class="custom_box">
+				<div id="custom_box">
+<img style="vertical-align: middle; border: 0pt none;" src="compile-install-linux-kernel-26_files/emailsignup.png" alt="0" border="0"> Sign up for our daily email newsletter:<br><br>
+<form action="http://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open('http://feedburner.google.com/fb/a/mailverify?uri=Nixcraft-LinuxFreebsdSolarisTipsTricks', 'popupwindow', 'scrollbars=yes,width=550,height=520');return true">&nbsp;&nbsp;&nbsp;&nbsp;<input class="text_input" name="email" value="Enter your email address" id="name" onclick="if (this.value=='Enter your email address') {this.value=''};" onblur="if (this.value=='') {this.value='Enter your email address';}" type="text"><input value="Nixcraft-LinuxFreebsdSolarisTipsTricks" name="uri" type="hidden">
+<input name="loc" value="en_US" type="hidden"><input value="Sign Up" class="form_submit" onclick="javascript: pageTracker._trackPageview('/outgoing/email/signup/tips/top-right/');" type="submit"></form>
+
+				</div>
+			</div>
+			<div id="sidebar_1" class="sidebar">
+				<ul class="sidebar_list">
+<li class="widget widget_text" id="text-3">			<div class="textwidget"><div id="adstoprect"><div id="load-adstoprect">
+<script type="text/javascript"><!--// <![CDATA[
+    OA_show(3);
+// ]]> --></script><span><script type="text/javascript"><!--// <![CDATA[
+/* openads=http://simplyguide.com/k/www/delivery bannerid=8 zoneid=6 source= */
+// ]]> --></script><script type="text/javascript"><!--
+google_ad_client = "ca-pub-7825705102693166";
+/* Cyberciti.biz-300x250 */
+google_ad_slot = "7895531150";
+google_ad_width = 300;
+google_ad_height = 250;
+//-->
+</script>
+<script type="text/javascript" src="compile-install-linux-kernel-26_files/show_ads.js">
+</script><ins style="display: inline-table; border: medium none; height: 250px; margin: 0pt; padding: 0pt; position: relative; visibility: visible; width: 300px;"><ins id="aswift_1_anchor" style="display: block; border: medium none; height: 250px; margin: 0pt; padding: 0pt; position: relative; visibility: visible; width: 300px;"><iframe allowtransparency="true" hspace="0" marginwidth="0" marginheight="0" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){i+='.call';setTimeout(h,0)}else if(h.match){i+='.nav';w.location.replace(h)}s.log&amp;&amp;s.log.push(i)}" vspace="0" id="aswift_1" name="aswift_1" style="left: 0pt; position: absolute; top: 0pt;" frameborder="0" height="250" scrolling="no" width="300"></iframe></ins></ins><script type="text/javascript" src="compile-install-linux-kernel-26_files/ag.php"></script></span><div id="beacon_4ba357a2e6" style="position: absolute; left: 0px; top: 0px; visibility: hidden;"><img src="compile-install-linux-kernel-26_files/lg.gif" alt="" style="width: 0px; height: 0px;" height="0" width="0"></div>
+<noscript><a target='_blank' href='http://simplyguide.com/k/www/delivery/ck.php?n=27ef20f'><img border='0' alt='' src='http://simplyguide.com/k/www/delivery/avw.php?zoneid=3&amp;n=27ef20f' /></a></noscript>
+</div></div></div>
+		</li><li class="widget widget_text" id="text-4">			<div class="textwidget"><form action="http://www.cyberciti.biz/linux-search.php" id="cse-search-box">
+  <div>
+    <input name="cx" value="002165917076592449621:d37x4vctltg" type="hidden">
+    <input name="cof" value="FORID:11" type="hidden">
+    <input name="ie" value="UTF-8" type="hidden">
+    <input style="background: url(&quot;http://www.google.com/cse/intl/en/images/google_custom_search_watermark.gif&quot;) no-repeat scroll left center rgb(255, 255, 255);" name="q" size="27" type="text">
+    <input name="sa" value="Search" type="submit">
+
+  </div>
+<input value="www.cyberciti.biz/tips/compiling-linux-kernel-26.html" name="siteurl" type="hidden"></form>
+<script type="text/javascript" src="compile-install-linux-kernel-26_files/brand"></script></div>
+		</li><li class="widget widget_text" id="text-5">			<div class="textwidget"><div id="adswhitepapers"><div id="load-adswhitepapers">
+<center>
+<script type="text/javascript"><!--// <![CDATA[
+    OA_show(8);
+// ]]> --></script><noscript><a target='_blank' href='http://simplyguide.com/k/www/delivery/ck.php?n=3d0a6f0'><img border='0' alt='' src='http://simplyguide.com/k/www/delivery/avw.php?zoneid=8&amp;n=3d0a6f0' /></a></noscript>
+</center>
+
+</div></div></div>
+		</li><li class="widget widget_text" id="text-6">			<div class="textwidget"><iframe src="compile-install-linux-kernel-26_files/likebox.html" style="border: medium none; overflow: hidden; width: 300px; height: 289px;" allowtransparency="true" frameborder="0" scrolling="no"></iframe></div>
+		</li><li class="widget widget_text" id="text-7">			<div class="textwidget"><div id="adsrightsky1"><div id="load-adsrightsky1">
+<script type="text/javascript"><!--// <![CDATA[
+    OA_show(17);
+// ]]> --></script><noscript><a target='_blank' href='http://simplyguide.com/k/www/delivery/ck.php?n=da585eb'><img border='0' alt='' src='http://simplyguide.com/k/www/delivery/avw.php?zoneid=17&amp;n=da585eb' /></a></noscript>
+</div></div></div>
+		</li><li class="widget widget_related_faq"><h3>Related Posts</h3><ul><li><a href="http://www.cyberciti.biz/tips/download-linux-kernel-2624.html" rel="bookmark" title="Permanent Link: Download of the day: Linux kernel 2.6.24">Download of the day: Linux kernel 2.6.24</a></li><li><a href="http://www.cyberciti.biz/tips/writing-freebsd-kernel-module-tutorial.html" rel="bookmark" title="Permanent Link: Programming Tutorial: How To Write a FreeBSD Kernel Module ( Driver )">Programming Tutorial: How To Write a FreeBSD Kernel Module ( Driver )</a></li><li><a href="http://www.cyberciti.biz/tips/linux-how-to-compile-program.html" rel="bookmark" title="Permanent Link: Linux: How to compile program">Linux: How to compile program</a></li></ul></li><div id="adsrightlargerect"><div id="load-adsrightlargerect">
+<script type="text/javascript"><!--// <![CDATA[
+    /* [id21] www.cyberciti.biz\/IDG\/Articles\/Large-300x600 (BF) */
+    OA_show(21);
+// ]]> --></script><noscript><a target='_blank' href='http://simplyguide.com/k/www/delivery/ck.php?n=616bac2'><img border='0' alt='' src='http://simplyguide.com/k/www/delivery/avw.php?zoneid=21&amp;n=616bac2' /></a></noscript>
+</div></div>				</ul>
+			</div>
+		</div>
+	</div>
+	<div id="footer">
+<div class="idglogo">
+            <img src="compile-install-linux-kernel-26_files/idg-logo-new.gif" alt="" border="0">
+	 </div><div class="copynotice">
+©2004-2011 nixCraft. All rights reserved. Cannot be reproduced without written permission. <br> 
+<a href="http://www.cyberciti.biz/tips/privacy">Privacy Policy</a> | 
+<a href="http://www.cyberciti.biz/tips/disclaimer">Terms of Service</a> |
+<a href="http://www.cyberciti.biz/tips/contact-us" title="Email us / Contact us">Questions or Comments</a> | 
+<a href="http://www.cyberciti.biz/tips/copyright" title="nixCraft copyright information">Copyright Info</a> |
+<a href="http://www.cyberciti.biz/tips/sitemaps" title="nixCraft sitemap">Sitemap</a>
+</div>
+	</div>
+</div>
+</div>
+<!--[if lte IE 8]>
+<div id="ie_clear"></div>
+<![endif]-->
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-108650-1']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+<script type="text/javascript" src="compile-install-linux-kernel-26_files/jqads.js"></script>
+<script type="text/javascript" src="compile-install-linux-kernel-26_files/spcjs.php"></script><script type="text/javascript" src="compile-install-linux-kernel-26_files/spc.php"></script><script type="text/javascript" src="compile-install-linux-kernel-26_files/fl.js"></script>
+
+<script type="text/javascript">
+<!--
+  function rotatenixCraftads(nixcraftAds){
+    $("#load-ads" + nixcraftAds).appendTo('#ads' + nixcraftAds)
+  }
+//-->
+</script>
+
+<div style="display: none;">
+
+</div>
+<script type="text/javascript">
+<!--
+rotatenixCraftads('topage');
+//-->
+</script>
+
+
+
+<div style="display: none;">
+
+</div>
+<script type="text/javascript">
+<!--
+rotatenixCraftads('toprect');
+//-->
+</script>
+
+
+<div style="display: none;">
+<div id="load-adstopvert">
+<!-- -->
+</div>
+</div>
+<script type="text/javascript">
+<!--
+rotatenixCraftads('topvert');
+//-->
+</script>
+
+<div style="display: none;">
+
+</div>
+<script type="text/javascript">
+<!--
+rotatenixCraftads('whitepapers');
+//-->
+</script>
+
+<div style="display: none;">
+<div id="load-adslargerect">
+<!-- -->
+</div>
+</div>
+<script type="text/javascript">
+<!--
+rotatenixCraftads('largerect');
+//-->
+</script>
+
+<div style="display: none;">
+
+</div>
+<script type="text/javascript">
+<!--
+rotatenixCraftads('largerectbottom');
+//-->
+</script>
+
+
+<div style="display: none;">
+
+</div>
+<script type="text/javascript">
+<!--
+rotatenixCraftads('rightsky1');
+//-->
+</script>
+<div style="display: none;">
+
+</div> 
+<script type="text/javascript">
+<!--
+rotatenixCraftads('rightlargerect');
+//-->
+</script>
+</body></html>

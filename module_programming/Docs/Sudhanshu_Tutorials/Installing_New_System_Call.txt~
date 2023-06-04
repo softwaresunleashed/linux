@@ -1,0 +1,34 @@
+This tutorial describes how-to add a new custom System Call (to be called from User applications).
+
+1) Add a new #define in the file <linux_src/arc/x86/include/asm/Unistd_32.h>
+    /* Sudhanshu : 02 Jun 2011 : Added a define for new System call */
+      #define __NR_my_syscall_Sum      341       // 340 was the number assigned to previous #define...hence increment by one
+      
+2) Increment the present value of the variable  "NR_syscalls" by ONE.
+      #define NR_syscalls 342       // previous value = 341
+      
+3) Add a new folder and file , somewhere in the kernel source...Remember to modify the 'makefile(s)' accordingly.      
+  New folder : /linux_src/kernel/cust_sys_calls
+  New file : /linux_src/kernel/cust_sys_calls/my_sys_call.c
+  
+4) In the C source file, add the implementation of the new System Call..
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  #include <linux/syscalls.h>
+  asmlinkage int sysSum(int a, int b)
+  {
+     printk("calling sysSum\n");
+     return a+b;
+  }
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+5) Add the prototype of new System Call in "/linux_src/include/linux/Syscalls.h"
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  /* Sudhanshu : 02 Jun 2011 : Added the prototype of custom system call */
+  asmlinkage int my_syscall_Sum(int a, int b);
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  
+6) Now make a clean kernel build.
+The new system call is added to the kernel image (check if the symbol is present in System.map file generated during build process), 
+and can be invoked by any user application (C-program) by including [#include <linux/unistd.h>] on the top.
+  
+  

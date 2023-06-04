@@ -1,0 +1,8 @@
+
+
+config SCULL_CHAR_DRIVER_ENABLE
+	tristate "Support for SCULL CHAR device drives"
+	---help---
+	Enable this option if you wish to install SCULL CHAR device drivers
+
+

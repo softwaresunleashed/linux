@@ -1,0 +1,115 @@
+Reference Material(s)
+=====================
+Repo installation and configuration --> [ http://source.android.com/source/downloading.html ]
+Repo commands --> [ http://source.android.com/source/version-control.html ]
+Setting Up of build envirnment --> [ http://source.android.com/source/initializing.html ]
+Tutorial on building Android images --> [ http://www.android-x86.org/getsourcecode ]
+
+==========================================================================================================
+
+1) Install repo client, if not already installed
+   # Make sure you have a bin/ directory in your home directory, and that it is included in your path:
+      $ mkdir ~/bin
+      $ PATH=~/bin:$PATH
+    
+   # Download the Repo script and ensure it is executable:
+      $ curl http://android.git.kernel.org/repo > ~/bin/repo
+      $ chmod a+x ~/bin/repo
+
+2) Initializing Repo client
+
+   # Now, set up your client to access the android source repository:
+
+     Create an empty directory to hold your working files:
+      $ mkdir android_source_root
+      $ cd android_source_root
+   
+   # Run repo init to bring down the latest version of Repo with all its most recent bug fixes. You must specify a URL for the manifest, which specifies where the various repositories included in the Android source will be placed within your working directory.
+      
+      $ repo init -u git://android.git.kernel.org/platform/manifest.git -b froyo
+                -b is the branch you want to pull to local disk. (e.g. froyo, gingerbird etc)
+      
+   # When prompted, please configure Repo with your real name and email address. To use the Gerrit code-review tool, you will need an email address that is connected with a registered Google account. Make sure this is a live address at which you can receive messages. The name that you provide here will show up in attributions for your code submissions.
+ 
+3) Getting the source files
+   # To pull down files to your working directory from the repositories as specified in the default manifest, run
+      
+      $ repo sync
+            
+  The Android source files will be located in your working directory under their project names.
+  For more about repo sync and other Repo commands [http://source.android.com/source/version-control.html]     
+  
+4) Setting up a Linux build environment
+
+  In general you will need:
+
+    * Python 2.4 -- 2.7, which you can download from python.org.
+      
+    * JDK 6 if you wish to build Gingerbread or newer; JDK 5 for Froyo or older. You can download both from java.sun.com.
+
+                    Java 6: for Gingerbread and newer
+        $ sudo add-apt-repository "deb http://archive.canonical.com/ lucid partner"
+        $ sudo add-apt-repository "deb-src http://archive.canonical.com/ubuntu lucid partner"
+        $ sudo apt-get update
+        $ sudo apt-get install sun-java6-jdk
+
+                    Java 5: for Froyo and older
+        $ sudo add-apt-repository "deb http://archive.ubuntu.com/ubuntu dapper main multiverse"
+        $ sudo add-apt-repository "deb http://archive.ubuntu.com/ubuntu dapper-updates main multiverse"
+        $ sudo apt-get update
+        $ sudo apt-get install sun-java5-jdk
+
+    * Git 1.5.4 or newer. You can find it at git-scm.com.
+    * (optional) Valgrind, a tool that will help you find memory leaks, stack corruption, array bounds overflows, etc. Download from valgrind.org.
+  
+5) Installing required packages
+
+  # To set up your development environment, install the following required packages:
+
+      $ sudo apt-get install git-core gnupg flex bison gperf build-essential zip curl zlib1g-dev libc6-dev lib32ncurses5-dev ia32-libs x11proto-core-dev libx11-dev lib32readline5-dev lib32z-dev
+
+  # For building Froyo or an older release on a 64-bit system, several other packages are necessary to establish a 32-bit build environment:
+      $ sudo apt-get install gcc-multilib g++-multilib libc6-i386 libc6-dev-i386
+ 
+ 
+6) Building Image 
+  # Once the repo sync is complete, you can build either a usb image or a cdrom iso image.
+    Note: Before froyo-x86 (included), you can build on either a 32-bit or 64-bit host. But since gingerbread-x86, a 64-bit build environment is mandatory.
+
+
+      
+7) Configuring USB Access
+
+  Under GNU/linux systems (and specifically under Ubuntu systems), regular users can't directly access USB devices by default. The system needs to be configured to allow such access.
+
+  The recommended approach is to create a file /etc/udev/rules.d/51-android.rules (as the root user) and to copy the following lines in it. must be replaced by the actual username of the user who is authorized to access the phones over USB. 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  # adb protocol on passion (Nexus One)
+  SUBSYSTEM=="usb", ATTR{idVendor}=="18d1", ATTR{idProduct}=="4e12", MODE="0600", OWNER="<username>"
+  # fastboot protocol on passion (Nexus One)
+  SUBSYSTEM=="usb", ATTR{idVendor}=="0bb4", ATTR{idProduct}=="0fff", MODE="0600", OWNER="<username>"
+  # adb protocol on crespo (Nexus S)
+  SUBSYSTEM=="usb", ATTR{idVendor}=="18d1", ATTR{idProduct}=="4e22", MODE="0600", OWNER="<username>"
+  # fastboot protocol on crespo (Nexus S)
+  SUBSYSTEM=="usb", ATTR{idVendor}=="18d1", ATTR{idProduct}=="4e20", MODE="0600", OWNER="<username>"
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~     
+
+  Those new rules take effect the next time a device is plugged in. It might therefore be necessary to unplug the device and plug it back into the computer.
+
+  This is known to work on both Ubuntu Hardy Heron (8.04.x LTS) and Lucid Lynx (10.04.x LTS). Other versions of Ubuntu or other variants of GNU/linux might require different configurations.
+
+
+  
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+       

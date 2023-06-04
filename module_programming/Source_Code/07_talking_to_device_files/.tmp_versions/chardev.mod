@@ -1,0 +1,2 @@
+/home/sudhanshu/Desktop/module_programming/Source_Code/07_talking_to_device_files/chardev.ko
+/home/sudhanshu/Desktop/module_programming/Source_Code/07_talking_to_device_files/chardev.o

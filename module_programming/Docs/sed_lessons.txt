@@ -1,0 +1,103 @@
+SED -- Stream EDitor
+====================
+
+(1) Text Replacement 
+    $ echo This is a line of text. | sed 's/text/replaced text/'
+          s - stands for substitute.
+          / - is a delimiter.
+          
+(2) Sequence Command - Seq
+    $ seq 10 | sed '/[049]/d' 
+    $ seq 99 120 | sed '/[049]/d'
+          seq - command outputs a sequence of numbers, one to a line.
+          seq a b - prints a range of numbers between a & b.
+          d - specifies the action of deletion.
+    Hence, every matching line (containing any number from the set) is thus 
+          deleted - removed from the output.
+
+(3)
+
+
+
+Regular Expressions
+===================
+* Regular Expressions (regex) is a language used to represent patterns for 
+matching text. Regex are primary text-matching schema in all text-processing 
+tools, including Sed.
+
+Regex       Description
+^           Start-of-line marker
+            Ex. ^tux matches any line that starts with tux.
+
+$           The end-of-line marker
+            Ex. tux$ matches any line that ends with tux.
+            
+.           Matches any one character.
+            Ex. Hack. - matches Hack1, Hacki   but NOT Hack12, Hackil (only one additional character matches.
+            
+[]          Matches any one of the character set inside [].
+            Ex. coo[kl] matches cook or cool.
+
+[^]         Exclusion set  : the carat negates the set of characters in the square brackets.
+            Ex. 9[^01] matches 92, 93 but not 91 or 90.
+
+[-]         Matching any character within the range specified in []
+            Ex. [1-5] matches any digits from 1 to 5.
+
+?           The preceding item must match "ONE or ZERO" times. 
+            Ex. colou?r matches color or colour but NOT colouur
+
++           Preceding item must match "ONE or MORE"  times.
+            Ex. Rollno-9+ matches Rollno-99, Rollno-9 but not Rollno-
+
+*           Preceding item must match "ZERO or MORE" times.
+            Ex. co*l matches cl, col, cooool
+
+()          Creates a sub-string in the regex match.
+
+{n}         Preceding item must match _exactly_ 'n' times
+            Ex. [0-9]{3} matches any three-digit number...this can be expanded as [0-9][0-9][0-9]
+
+{n,}        Minimum number of times the preceding item should match.
+            Ex. [0-9]{2,} matches any number that is two digits or more in length.
+
+{n,m}       Minimum and Maximum number of times the preceding item should match. 
+            Ex. [0-9]{2,5} matches any number that is between two and five digits in length
+
+|           Alternation - one of the items on either side of  | should match.
+            Ex. Oct (1st | 2nd) matches "Oct 1st" or "Oct 2nd"                        
+
+\           Escape character for escaping any of the special characters (discussed above).
+            Ex. a\.b matches a.b , but not ajb                        
+                The 'dot' is not interpreted as the special 'match any one character'
+                
+
+POSIX Classes - [:name:]
+=============
+** POSIX classes can be used conveniently instead of spelling out the character set each time.                
+** In order to use POSIX Classes, you need to enclose the class itself in another pair of square brackets.
+
+  Ex. $ echo -e "max\nOR\nMatrix" | sed '/[:alpha:]/d'
+      $ echo -e "max\nOR\nMatrix" | sed '/[[:alpha:]]/d'
+      
+In the first case, the set is interpreted literally -- the words 'max' and 'matrix' are deleted because they contain alphabet 'a'.
+However, in second case, all the lines are deleted, because all of them contain atleast one alphabet.
+
+REGEX     --  Description                                   e.g.
+================================================================================
+[:alnum:] -- Alphanumeric characters                        e.g. [[:alnum:]]+
+[:alpha:] -- Alphabet character (lower & upper case).       e.g. [[:alpha:]]{4}
+[:blank:] -- Space & tab                                    e.g. [[:blank:]]*
+[:digit:] -- Digit                                          e.g. [[:digit:]]?
+[:lower:] -- Lower-case alphabet                            e.g. [[:lower:]]{5,}
+[:upper:] -- Lower-case alphabet                            e.g. ([[:upper:]]+)?
+[:punct:] -- Punctuation                                    e.g. [[:punct:]]
+
+
+
+                
+                
+                
+                
+                
+

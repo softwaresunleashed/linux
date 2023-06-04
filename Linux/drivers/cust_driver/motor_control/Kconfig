@@ -1,0 +1,8 @@
+
+
+config MOTORCONTROL_L298N_ENABLE
+	tristate "Support for Motor Controller H-Bridge Driver IC - L298N Interfacing"
+	---help---
+	Enable this option if you wish to control motor via H-Bridge Driver IC - L298N to Raspberry Pi
+
+

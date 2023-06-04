@@ -1,0 +1,26 @@
+
+
+menuconfig CUST_DRIVER_UTILS
+	bool "Cust Driver Utilities"
+	---help---
+	  Say Y here to get to see options for Utilities for Cust Device Drivers
+	  Utilities generally involve support for custom drivers
+	  e.g. BCM_I2C , BCM_GPIO 
+
+	  If you say N, all options in this submenu will be skipped and disabled.
+
+if CUST_DRIVER_UTILS
+
+config BCM_CUST_GPIO
+	bool "Custom GPIO Drivers for Cust Drivers"
+	---help---
+	Say Y here if you wish to enable Library Support for Custom GPIO drivers
+
+ 
+config BCM_CUST_I2C
+	bool "Custom I2C Drivers for Cust Drivers"
+	---help---
+	Say Y here if you wish to enable Library Support for Custom I2C drivers
+
+
+endif # CUST_DRIVER_UTILS

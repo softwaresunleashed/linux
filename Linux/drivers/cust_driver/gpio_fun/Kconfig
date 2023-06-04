@@ -1,0 +1,10 @@
+
+
+config GPIO_FUN_ENABLE
+	tristate "Support for GPIO functionality"
+	depends on BCM_CUST_GPIO
+	default n
+	---help---
+	Enable this option if you wish to Play around with GPIO pins
+
+

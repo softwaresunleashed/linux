@@ -1,0 +1,34 @@
+
+
+#include <linux/module.h>
+#include <linux/kernel.h>
+
+
+
+static int __init eview_webcam_init(void)
+{
+	printk(KERN_INFO "Sudhanshu : Module Enter");
+	return 0;
+}
+
+static void __exit eview_webcam_exit(void)
+{
+	printk(KERN_INFO "Sudhanshu : Module Exit");
+	return;
+}
+
+
+
+module_init(eview_webcam_init);
+module_exit(eview_webcam_exit);
+
+
+
+
+MODULE_AUTHOR("Sudhanshu Gupta");
+MODULE_DESCRIPTION("Driver for EView Webcam");
+MODULE_VERSION("0.1");
+MODULE_LICENSE("GPL");
+MODULE_FIRMWARE("");
+
+

@@ -1,0 +1,216 @@
+To make a directory / hierarchy of directories (when the hierarchy of directories are not present)
+    $ mkdir -p <path/to/hierarchy/of/directories/if/not/present/already>
+    e.g. $ mkdir /usr/src/linux/sudhanshu --> will create a hierarchy of directories till the end as mentioned in path, while creating those directories which are not already present.
+
+
+To remove only a package & not its dependencies (on a RPM based distro).
+    $ rpm -e --nodebs
+    
+To dump 'man' pages to text file. (where 'foo' is the command name)
+    $ man foo | col -b > foo_man.txt
+
+Downloading Video Streaming to local disk
+    $ yum install mplayer
+    $ mplayer -dumpstream <http://myvideo.com/video.avi>  -dumpfile <myVideo.avi>
+
+Finding open socket
+    $ lsof    --> lists all the sockets open in a system
+    $ watch lsof -i   --> din't do much here.
+    
+
+
+To create an 'empty' file on using unix shell
+    $ touch <name_of_file.ext>
+
+To permanently enter SuperUser Mode (during a terminal lifetime)
+    $ sudo -s           (password needs to be entered once)
+
+To Unzip a ".tar.bz" file (linux kernel)
+    $ bunzip2 ./<filename>.tar.bz   -->   <filename>.tar
+    $ tar -xvf ./<filename>.tar     -->   Directory <filename>
+
+
+To see the symbols exported by Kernel, see this file  ::
+  ==>  /proc/kallsyms
+
+To see the system calls associated with a user-space executable file (.out file) 
+  $ strace ./hello.out
+        or
+  $ strace <path to linux executable file>
+
+
+To build an external module
+	#  make −C /usr/src/linux−`uname −r` SUBDIRS=$PWD modules
+	#  make −C <PATH_TO_PREBUILT_LINUX_KERNEL> SUBDIRS=$PWD modules
+
+------ Following Command Worked for making successful Module under Ubuntu ------
+////////////////////////////////////////////////////////////////////////////////
+  #  make -C /usr/src/linux-headers-2.6.32-27-generic/ SUBDIRS=$PWD modules
+///////////////////////////////////////////////////////////////////////////////
+
+
+Allow loading of modules without version information 
+(ie. modprobe --force). Forced module loading sets the 'F' (forced) taint flag and is usually a really bad idea.
+
+To learn more on how to compile modules which are not part of the official kernel, see file -->  linux/Documentation/kbuild/modules.txt.
+
+To see what modules are already loaded into the kernel by running  (This info is fetched by reading /proc/modules)
+	# lsmod			
+
+Linux distros provide "modprobe", "insmod" and "depmod" as a package called modutils or mod−utils.
+
+
+/etc/modules (file)
+	--> this file contains list of kernel modules to be loaded at boot time.
+
+/lib/modules/<kernel-version-num>/modules.dep 
+	--> contains list of modules and their respective dependencies.
+
+/proc/kallsyms (file)
+  --> This file has a list of Kernel Symbols (exported / exposed by kernel) for the modules to use.
+
+/proc/devices (file)
+  --> Contains the mapping between "major number" and "device's file name".
+  --> Each entry in this file, corresponds to a registered Device Driver / Module with the kernel using the system call register_chrdev(major_number, name_of_device_file, file_operations_table).
+
+/proc/modules (file)
+  --> Keeps a track of how many processes are using the device file (3rd field).
+  --> If the value is NOT zero, the module shall NOT be unloaded by 'rmmod' command.
+
+/proc/meminfo (file)
+  --> Keeps a track of memory usage statistics.
+
+How is a MODULE loaded into KERNEL
+==================================
+* When kernel needs a feature that is not resident in the kernel , kernel module daemon (kmod) executes "modprobe" to load the module in.
+* "modprobe" is passed a string (name of the module to be loaded). 
+	either 
+		A _module_ name 
+			or 
+		A _Generic_ Identifier is passed.
+
+* If "modprobe" is handed a 'generic' identifier, modprobe searches for that Generic string (and its corresponding ALIAS) in /etc/modules.conf.
+* "modprobe" then searches the file /lib/modules/<kernel-version-num>/modules.dep to see if other modules must be loaded before the requested module may be loaded.
+	This file (modules.dep) is created by the command --> # depmod -a
+* Lastly, "modprobe" uses 'insmod' (insert module) to first load any pre-requisite modules into the kernel, and then the requested module.
+  "modprobe" directs insmod to /lib/modules/<kernel-version-number> (the standard directory for modules).
+* E.g. if we want to load 'msdos' module, we can either run 
+	# insmod /lib/modules/2.5.1/kernel/fs/fat/fat.o
+	# insmod /lib/modules/2.5.1/kernel/fs/msdos/msdos.o
+				OR
+	# modprobe -a msdos
+
+
+How to compile Kernel source code
+=================================
+1) Navigate to Linux source code parent directory.
+2) Execute the following command
+	# make xconfig 			(this requires QT3 pre-installed in the system)
+		OR
+	# make menuconfig
+3) Configure Kernel options (e.g. force module loading / un-loading).
+4) Save the config file.
+5) On the parent directory of linux source code, execute the following command.
+	# make 
+		OR
+	# make -d 		(debug mode, prints lots of debugging info...such as currently executing command)
+
+Tips :
+To see full list of section mismatch(es), build the kernel with :
+	# make CONFIG_DEBUG_SECTION_MISMATCH=y
+
+How To Compile Linux documentation (under /linux/Documentation) in fav format.
+=============================================================================
+1) First of all your enviroment should be installed with the following packages
+  $ sudo apt-get install xmlto
+          OR
+  $ sudo apt-get install docbook-utils
+2) Then go to the top level kernel source directory , and issue the following command
+  $ make pdfdocs
+3) For more options (on what Documentation formats - pdf, html are available), execute
+  $ make help 
+
+
+Tools you'll need to Build Kernel
+=================================
+[Ref: https://help.ubuntu.com/community/Kernel/Compile] 
+  $ sudo apt-get install fakeroot build-essential crash kexec-tools makedumpfile kernel-wedge
+  $ sudo apt-get build-dep linux
+  $ sudo apt-get install git-core libncurses5 libncurses5-dev libelf-dev asciidoc binutils-dev
+
+To Download Kernel Source Archive 
+=================================
+[Ref: https://help.ubuntu.com/community/Kernel/Compile]
+  $ sudo apt-get build-dep --no-install-recommends linux-image-$(uname -r)
+  $ apt-get source linux-image-$(uname -r)
+
+
+
+
+============ MODULE PROGRAMMING - TIPS & TRICKS ===========
+
+Due to some un-known reasons, on Ubunty only one of these "log-mesg levels" display mesgs to kernel log file "/var/log/messages"
+  - KERN_WARNING  <4>
+  - KERN_NOTICE   <5>
+  - KERN_INFO     <6>
+
+Classes of Modules in Linux :
+(1) Device Driver [Provide functionality for hardware like TV card or Serial Port]
+=================   
+* On UNIX each HW is represented by a file located in "/dev"
+* Device Driver(SW) provides a communication on behalf of User Program.
+* Devices are divided into two types -- 
+     (a) CHARACTER devices -- Have buffer for requests, so to choose best order in which to respond to requests. Can accept input and return output in blocks (where the block size depends on the device).
+     
+     (b) BLOCK devices -- Allowed to use as many or as few bytes as they like.
+
+* All the Device files(in the dir '/dev') were created when the system was installed (i.e. boot-up) using the command "mknod".
+e.g. to create a new device file 'coffee' with major/minor number 12 & 2 , execute the following command
+            $ mknod /dev/coffee c 12 2
+
+* When a device file is accessed, the kernel uses the major number of the file to determine which driver should be used to handle the access to device.                 
+
+
+===============================
+Ch.4. CHARACTER DEVICE DRIVERS
+===============================
+* struct 'file_operation'  <linux/fs.h>  -- holds pointers to functions defined (implemented) by device driver that perform various operations on the device.
+* Each Device is represented in the kernel by a 'file' structure <linux/fs.h>....this 'file' structure is a KERNEL level structure and is NOT the same as user-level 'FILE' structure.
+* Also, the name 'file' is misleading, as 'file' represents an abstract open file , NOT a file on a disk (a file on the disk is  represented by struct 'inode').
+* Registering A Device : 
+  -- Adding a driver to kernel means registering it with the kernel. This is equivalent to assigning 'driver' a major number during module's initialization.
+  -- int register_chrdev(unsigned int major, const char *name, struct file_operations *fops);
+ where      major -> is the major number we want to assign to our driver / module.
+            name -> is the name of the device as it will appear in file '/proc/devices'
+            fops -> is a pointer to file_operations table for our driver / module.
+  returns -1 means registeration failed.
+  
+
+Ch.5. 'proc' file system
+========================
+* The '/proc' file system is used by every bit of kernel , which has something interesting to report.
+* e.g. /proc/modules - keeps track of modules loaded in the kernel.
+        /proc/meminfo - keeps track of the memory usage statistics.
+
+Ch.9. Blocking Processes
+========================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

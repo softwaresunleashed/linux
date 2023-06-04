@@ -1,0 +1,205 @@
+SED -- Stream EDitor
+====================
+
+(1) Text Replacement 
+    $ echo This is a line of text. | sed 's/text/replaced text/'
+          s - stands for substitute.
+          / - is a delimiter.
+          
+(2) Sequence Command - Seq
+    $ seq 10 | sed '/[049]/d' 
+    $ seq 99 120 | sed '/[049]/d'
+          seq - command outputs a sequence of numbers, one to a line.
+          seq a b - prints a range of numbers between a & b.
+          d - specifies the action of deletion.
+    Hence, every matching line (containing any number from the set) is thus 
+          deleted - removed from the output.
+
+(3)
+
+
+
+Regular Expressions
+===================
+* Regular Expressions (regex) is a language used to represent patterns for 
+matching text. Regex are primary text-matching schema in all text-processing 
+tools, including Sed.
+
+Regex       Description
+^           Start-of-line marker
+            Ex. ^tux matches any line that starts with tux.
+
+$           The end-of-line marker
+            Ex. tux$ matches any line that ends with tux.
+            
+.           Matches any one character.
+            Ex. Hack. - matches Hack1, Hacki   but NOT Hack12, Hackil (only one additional character matches.
+            
+[]          Matches any one of the character set inside [].
+            Ex. coo[kl] matches cook or cool.
+
+[^]         Exclusion set  : the carat negates the set of characters in the square brackets.
+            Ex. 9[^01] matches 92, 93 but not 91 or 90.
+
+[-]         Matching any character within the range specified in []
+            Ex. [1-5] matches any digits from 1 to 5.
+
+?           The preceding item must match "ONE or ZERO" times. 
+            Ex. colou?r matches color or colour but NOT colouur
+
++           Preceding item must match "ONE or MORE"  times.
+            Ex. Rollno-9+ matches Rollno-99, Rollno-9 but not Rollno-
+
+*           Preceding item must match "ZERO or MORE" times.
+            Ex. co*l matches cl, col, cooool
+
+()          Creates a sub-string in the regex match.
+
+{n}         Preceding item must match _exactly_ 'n' times
+            Ex. [0-9]{3} matches any three-digit number...this can be expanded as [0-9][0-9][0-9]
+
+{n,}        Minimum number of times the preceding item should match.
+            Ex. [0-9]{2,} matches any number that is two digits or more in length.
+
+{n,m}       Minimum and Maximum number of times the preceding item should match. 
+            Ex. [0-9]{2,5} matches any number that is between two and five digits in length
+
+|           Alternation - one of the items on either side of  | should match.
+            Ex. Oct (1st | 2nd) matches "Oct 1st" or "Oct 2nd"                        
+
+\           Escape character for escaping any of the special characters (discussed above).
+            Ex. a\.b matches a.b , but not ajb                        
+                The 'dot' is not interpreted as the special 'match any one character'
+                
+
+POSIX Classes - [:name:]
+=============
+** POSIX classes can be used conveniently instead of spelling out the character set each time.                
+** In order to use POSIX Classes, you need to enclose the class itself in another pair of square brackets.
+
+  Ex. $ echo -e "max\nOR\nMatrix" | sed '/[:alpha:]/d'
+      $ echo -e "max\nOR\nMatrix" | sed '/[[:alpha:]]/d'
+      
+In the first case, the set is interpreted literally -- the words 'max' and 'matrix' are deleted because they contain alphabet 'a'.
+However, in second case, all the lines are deleted, because all of them contain atleast one alphabet.
+
+REGEX     --  Description                                   e.g.
+================================================================================
+[:alnum:] -- Alphanumeric characters                        e.g. [[:alnum:]]+
+[:alpha:] -- Alphabet character (lower & upper case).       e.g. [[:alpha:]]{4}
+[:blank:] -- Space & tab                                    e.g. [[:blank:]]*
+[:digit:] -- Digit                                          e.g. [[:digit:]]?
+[:lower:] -- Lower-case alphabet                            e.g. [[:lower:]]{5,}
+[:upper:] -- Lower-case alphabet                            e.g. ([[:upper:]]+)?
+[:punct:] -- Punctuation                                    e.g. [[:punct:]]
+[:space:] -- All white-space characters incl \n \r & so on e.g. [[:space:]]++
+
+
+Meta Characters
+===============
+Meta Chars are type of Perl-style regular expressions that are supported by subset of text-[rpcessing utilities.
+e.g. 
+\b  Word Boundary           >> \bcool\b matches only 'cool' and not 'coolant'
+\B  Non-Word Boundary       >> cool\B matches coolant but not cool.
+\d  Single Digit character  >> b\db matches b2b but not bcb.
+\D  Single non-digit        >> b\Db matches bcb but not b2b.
+\n  New Line                >> \n matches a new line
+\s  Single white-space      >> x\sx matches 'x x' but not 'xx'
+\S  Single non-space        >> x\Sx matches 'xkx' but not 'x x' 
+\r  Carriage Return         >> \r matches carriage return.
+
+Text Replacement --
+================
+To perform Stream editing on a file, specify the operation followed by filename.
+      $ sed 's/PATTERN/REPLACEMENT TEXT/' filename    
+
+We can pass contents of a file to Sed using standard input
+      $ cat filename | sed 's/pattern/replace_string'
+
+To Write the output of Sed command to a file
+      $ sed 's/MATCH/REPLACE/' filename > output.txt
+      
+To Save the changes in the input file itself
+      $ sed -i 's/MATCH/REPLACE/' filename
+      
+To replace multiple occurrences, append the 'g' (global replacement) switch 
+      $ sed 's/MATCH/REPLACE/g' filename
+      
+To replace all the occurrences, after 'N' occurrence.
+      $ echo this thisthisthis | sed 's/this/THIS/2g'
+            :: this THISTHISTHIS ::
+      $ echo this thisthisthis | sed 's/this/THIS/3g'
+            :: this thisTHISTHIS ::
+
+To Delete a line based on pattern : use the 'd' suffix
+      $ sed '/^$/d' filename          ; this removes all the blank lines present in the file.
+
+Printing only Pattern-matched lines...
+* To print only matched lines, use the -n (no output/silent) flag.
+* To print the lines that match, attach a 'p' suffix after the pattern.
+      $ sed -n '/[0-9]\+\./p' filename.txt      ; this prints lines starting with numbers from the file.
+
+Matched string reference in replacement text...
+Sometimes we need to replace matched text with some additional characters. We can reference the matched text using '&' notation in the replacement block.
+      $ sed this is a line of text | sed 's/./& /g'       ; this will add a space after all the characters (due to 'g')
+
+Sub-String Match
+----------------
+* If we can match each word as a sub-string, we can reference these sub-strings individually.
+* Sub-strings can be specified by using grouping operators - parentheses - like '\(SUBSTR\)'.
+* They are referenced by \N, where N is the Nth sub-string found.
+* The grouping operators '(' and ')' must be prefixed with the \ escape character.
+      $ echo Sudhanshu Gupta Mr | sed 's/\(\w\+\) (\w\+\) (\w\+\)/\3 \2 \1'
+          Output : Mr. Sudhanshu Gupta
+* \w is the regex used to match character.
+* \+ is to specify one or more characters.
+* Each of the words is grouped with \( & \)
+* \3 - third sub-string , \2 - second sub-string , \1 - first sub-string
+
+Quoting
+-------
+* In SED, when Single quotes are used(sed 'STATEMENTS' filename), it will NOT expand shell variables.
+* But with Double quotes, (sed "STATEMENTS" filename) , BASH shell will expand shell variables before passing the arguments to SED.
+      $ replace_txt="REPLACED"
+      $ match="MATCH"
+      $ echo This is a MATCH text | sed "s/$match/$replace_txt/"
+                OUTPUT : This is a REPLACED text
+
+Restrict range of affected lines (with patterns and line numbers)
+---------------------------------                
+      $ seq 30 | sed '10,20 s/[0-9]$//'         --> last digit of lines 10~20  are removed (replaced with empty string).
+      $ seq 30 | sed '10,$ s/[0-9]$//'          --> specifying ending line number to be last line in the file by using a $ character (10,$).
+      $ sed '/start/,/end/ s/.*/& modified/' eg.txt   --> To apply text operation to a range of text between 'start' and 'end' in file eg.txt
+
+* You can mix line numbers and text matches while specifying ranges; 
+    /START_PAT/,$ will operate on text between START_PAT and the end of file.
+
+Grouping Commands into subgroups
+--------------------------------
+* We can perform operations by matching some pattern of the input, then apply another text operation after the pattern is matched, after which we can again operate on a smaller subgroup and so on.
+      $ sed '3,8 {/single/,/double/ {s/.*/#/}}' filename.txt   --> grouping commands using {}
+
+* While grouping, we can also negate the match condition for a group by suffixing the text match condition with the ! operator
+      /TEXT/!{statements}
+
+Read & Write from files using SED
+---------------------------------
+The file list.txt is our input file. While reading from it, if a particular match occurs, and if we wish to read in the contents of another file to replace the matched pattern, we can issue the command...
+      $ cat list.txt | sed '/FILE1/ {r file1.txt 
+      d} 
+      /FILE2/ {r file2.txt 
+      d}'
+      where list.txt --> FILE1
+            file1.txt --> A line from file1      
+            file2.txt --> A line from file2
+
+      r filename : is the command used
+
+      
+
+                
+                
+                
+                
+                
+

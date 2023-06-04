@@ -1,0 +1,8 @@
+
+
+config WEBCAM_SUPPORT_ENABLE
+	tristate "Support for USB Webcams"
+	---help---
+	Enable this option if you wish to install drivers for USB Webcams
+
+

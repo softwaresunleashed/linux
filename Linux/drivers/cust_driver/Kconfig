@@ -1,0 +1,17 @@
+menu "Custom Drivers by Sudhanshu"
+
+source "drivers/cust_driver/_utils/Kconfig"
+
+source "drivers/cust_driver/webcam/Kconfig"
+
+source "drivers/cust_driver/gpio_fun/Kconfig"
+
+source "drivers/cust_driver/scull/Kconfig"
+
+source "drivers/cust_driver/keypad/Kconfig"
+
+source "drivers/cust_driver/rtc/Kconfig"
+
+source "drivers/cust_driver/motor_control/Kconfig"
+
+endmenu 

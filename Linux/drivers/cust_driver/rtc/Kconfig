@@ -1,0 +1,9 @@
+
+
+config RTC_DS1307_ENABLE
+	tristate "Support for External RTC (DS1307) Sub-System Interfacing"
+	depends on BCM_CUST_I2C
+	---help---
+	Enable this option if you wish to interface 4x3 External Keypad to Raspberry Pi
+
+

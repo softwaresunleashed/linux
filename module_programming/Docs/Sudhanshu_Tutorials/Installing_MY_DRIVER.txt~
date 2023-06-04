@@ -1,0 +1,52 @@
+
+This tutorial describes how-to add a custom device driver to your linux kernel, and to load it during boot up.
+
+1) Create a folder "my_driver" inside $(LINUX_KERN_SRC_ROOT)/driver.
+2) In the folder add the following three files...
+  a) my_driver.c --> the main file where the device-driver code resides 
+  b) Makefile --> which contains the object files details that needs to be linked to the kernel image
+  c) Kconfig --> to display a user-option in kernel config.[Optional] (using  $make xconfig)
+  
+3) Modify the contents of Makefile to look as follows : 
+    Makefile
+    --------
+    obj-m	+= my_driver.o
+ 
+ Note : To build the driver as a module (even if it is being built with kernel source tree) , keep it as "$obj-m"   
+ else if you keep it as "$obj-y", it is statically linked to kernel image (as in a system call implementation) and not as a module. 
+    
+    
+4) Modify the contents of Kconfig to look as follows : 
+    /drivers/Kconfig (add at the end of the file)
+    ----------------------------------------------
+    menu "Sudhanshu Device Drivers Menu"
+    source "drivers/my_driver/Kconfig"
+    endmenu
+
+    /drivers/my_driver/Kconfig
+    ---------------------------
+    config MY_DRIVER
+	    tristate "Sudhanshu Device driver"
+	    help
+	      Sudhanshu's test device driver.
+	      This driver is for testing purpose only.
+
+5) Now modify the /drivers/Makefile to invoke /drivers/my_driver/Makefile during build process
+    /drivers/Makefile
+    -----------------
+    obj-$(CONFIG_MY_DRIVER)	+= my_driver/ 
+  
+  where CONFIG_MY_DRIVER is set in Kconfig menu (during -->  $ make xconfig ).
+  If CONFIG_MY_DRIVER is set to 'y' only then the module is considered by the make build system for compilation.
+  The make build system looks for 'Makefile' in the folder 'my_driver/' , and once it finds it...it starts compiling the module / system call as described by the option 'obj-m/y'.
+
+
+6) Follow the kernel build process 
+   /linx_src # make -j30 && make -j30 modules && make -j30 modules_install & make -j30 install 
+  /boot # mkinitramfs -o initrd.2.6.38 2.6.38
+    
+    
+7) Boot into the new kernel after reboot, your module is loaded at bootup time.
+    
+    
+    

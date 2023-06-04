@@ -1,0 +1,8 @@
+
+
+config KEYPAD_ENABLE
+	tristate "Support for 4x3 External Keypad Interfacing"
+	---help---
+	Enable this option if you wish to interface 4x3 External Keypad to Raspberry Pi
+
+

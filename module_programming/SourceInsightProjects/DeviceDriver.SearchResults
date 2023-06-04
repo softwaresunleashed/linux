@@ -1,0 +1,1262 @@
+---- tty Matches (1583 in 192 files) ----
+Aaec2000.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\arm\mach-aaec2000\include\mach):#define AAEC_GPIO_INTTYPE1	__REG(AAEC_GPIO_PHYS + 0x4c)
+Aaec2000.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\arm\mach-aaec2000\include\mach):#define AAEC_GPIO_INTTYPE2	__REG(AAEC_GPIO_PHYS + 0x50)
+Acct.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):	__u16		ac_tty;			/* Control Terminal */
+Acct.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):	__u16		ac_tty;			/* Control Terminal */
+At91rm9200_mc.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\arm\mach-at91\include\mach):#define		AT91_MC_ABTTYP		(3 << 10)		/* Abort Type Status */
+At91rm9200_mc.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\arm\mach-at91\include\mach):#define			AT91_MC_ABTTYP_DATAREAD		(0 << 10)
+At91rm9200_mc.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\arm\mach-at91\include\mach):#define			AT91_MC_ABTTYP_DATAWRITE	(1 << 10)
+At91rm9200_mc.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\arm\mach-at91\include\mach):#define			AT91_MC_ABTTYP_FETCH		(2 << 10)
+At91_rstc.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\arm\mach-at91\include\mach):#define		AT91_RSTC_RSTTYP	(7 << 8)		/* Reset Type */
+At91_rstc.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\arm\mach-at91\include\mach):#define			AT91_RSTC_RSTTYP_GENERAL	(0 << 8)
+At91_rstc.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\arm\mach-at91\include\mach):#define			AT91_RSTC_RSTTYP_WAKEUP		(1 << 8)
+At91_rstc.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\arm\mach-at91\include\mach):#define			AT91_RSTC_RSTTYP_WATCHDOG	(2 << 8)
+At91_rstc.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\arm\mach-at91\include\mach):#define			AT91_RSTC_RSTTYP_SOFTWARE	(3 << 8)
+At91_rstc.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\arm\mach-at91\include\mach):#define			AT91_RSTC_RSTTYP_USER	(4 << 8)
+Atmdev.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define ATM_GETTYPE	_IOW('a',ATMIOC_ITF+4,struct atmif_sioc)
+Atmdev.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):/* for ATM_GETTYPE */
+Audio.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux\usb):	__u8  bFormatType;		/* FORMAT_TYPE_1 */
+Audio.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux\usb):	__u8  bFormatType;		/* FORMAT_TYPE_1 */
+Audio.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux\usb):	__u8  bFormatType;					\
+Audit.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define AUDIT_TTY_GET		1016	/* Get TTY auditing status */
+Audit.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define AUDIT_TTY_SET		1017	/* Set TTY auditing status */
+Audit.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define AUDIT_USER_TTY		1124	/* Non-ICANON TTY input meaning */
+Audit.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define AUDIT_TTY		1319	/* Input on an administrative TTY */
+Audit.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):struct audit_tty_status {
+Autoconf.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define CONFIG_NETFILTER_XT_MATCH_PKTTYPE_MODULE 1
+Autoconf.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define CONFIG_BT_RFCOMM_TTY 1
+Autoconf.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define CONFIG_AIC79XX_REG_PRETTY_PRINT 1
+Autoconf.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define CONFIG_BRIDGE_EBT_PKTTYPE_MODULE 1
+Autoconf.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define CONFIG_AIC7XXX_REG_PRETTY_PRINT 1
+Autoconf.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define CONFIG_ISDN_TTY_FAX 1
+Autoconf.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define CONFIG_IRTTY_SIR_MODULE 1
+Autoconf.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define CONFIG_PPP_SYNC_TTY_MODULE 1
+Blktrace_api.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):# define blk_trace_ioctl(bdev, cmd, arg)		(-ENOTTY)
+Blktrace_api.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):# define do_blk_trace_setup(q, name, dev, bdev, buts)	(-ENOTTY)
+Blktrace_api.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):# define blk_trace_setup(q, name, dev, bdev, arg)	(-ENOTTY)
+Blktrace_api.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):# define blk_trace_startstop(q, start)			(-ENOTTY)
+Blktrace_api.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):# define blk_trace_remove(q)				(-ENOTTY)
+Board.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\arm\mach-at91\include\mach):	unsigned short	console_tty;	/* tty number of serial console */
+Board.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\arm\mach-at91\include\mach):	unsigned short	nr_tty;		/* number of serial tty's */
+Board.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\arm\mach-at91\include\mach):	short		tty_map[];	/* map UART to tty number */
+Capability.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):/* Allow configuration of tty devices */
+Capability.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):/* Allow vhangup() of tty */
+Capability.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define CAP_SYS_TTY_CONFIG   26
+Cdc.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux\usb):	__u8	bmRequestType;
+Cfi.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux\mtd):	uint8_t  WordWriteTimeoutTyp;
+Cfi.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux\mtd):	uint8_t  BufWriteTimeoutTyp;
+Cfi.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux\mtd):	uint8_t  BlockEraseTimeoutTyp;
+Cfi.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux\mtd):	uint8_t  ChipEraseTimeoutTyp;
+Ch9.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux\usb): * It's also one of three fields in control requests bRequestType.
+Ch9.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux\usb): * USB types, the second of three bRequestType fields
+Ch9.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux\usb): * USB recipients, the third of three bRequestType fields
+Ch9.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux\usb): * These are qualified by the bRequestType field, so that for example
+Ch9.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux\usb): * @bRequestType: matches the USB bmRequestType field
+Ch9.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux\usb):	__u8 bRequestType;
+Chan_kern.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\um\include\shared):#include "linux/tty.h"
+Chan_kern.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\um\include\shared):			   struct tty_struct *tty, int irq);
+Chan_kern.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\um\include\shared):extern void chan_enable_winch(struct list_head *chans, struct tty_struct *tty);
+Chan_user.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\um\include\shared):	tty_ops, xterm_ops;
+Chan_user.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\um\include\shared):struct tty_struct;
+Chan_user.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\um\include\shared):extern void register_winch(int fd,  struct tty_struct *tty);
+Chan_user.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\um\include\shared):extern void register_winch_irq(int fd, int tty_fd, int pid,
+Chan_user.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\um\include\shared):			       struct tty_struct *tty, unsigned long stack);
+Chio.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):	int ce_fdsttype;    /* type/unit of element #2 */
+Chio.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):	int ce_sdsttype;    /* type/unit of element #3 */
+chipcHw_def.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\arm\mach-bcmring\include\mach\csp):	chipcHw_PIN_INPUTTYPE_CMOS = chipcHw_REG_INPUTTYPE_CMOS,
+chipcHw_def.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\arm\mach-bcmring\include\mach\csp):	chipcHw_PIN_INPUTTYPE_ST = chipcHw_REG_INPUTTYPE_ST
+chipcHw_def.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\arm\mach-bcmring\include\mach\csp):} chipcHw_PIN_INPUTTYPE_e;
+chipcHw_def.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\arm\mach-bcmring\include\mach\csp):static inline void chipcHw_setPinInputType(uint32_t pin,	/* Pin of type chipcHw_PIN_XXXXX */
+chipcHw_def.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\arm\mach-bcmring\include\mach\csp):					   chipcHw_PIN_INPUTTYPE_e inputType	/* Pin input type */
+chipcHw_inline.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\arm\mach-bcmring\include\mach\csp):static inline void chipcHw_setPinInputType(uint32_t pin,
+chipcHw_inline.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\arm\mach-bcmring\include\mach\csp):					   chipcHw_PIN_INPUTTYPE_e inputType)
+chipcHw_inline.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\arm\mach-bcmring\include\mach\csp):	*((uint32_t *) chipcHw_REG_INPUTTYPE(pin)) &=
+chipcHw_inline.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\arm\mach-bcmring\include\mach\csp):	    ~(chipcHw_REG_INPUTTYPE_MASK <<
+chipcHw_inline.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\arm\mach-bcmring\include\mach\csp):	      chipcHw_REG_INPUTTYPE_POSITION(pin));
+chipcHw_inline.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\arm\mach-bcmring\include\mach\csp):	*((uint32_t *) chipcHw_REG_INPUTTYPE(pin)) |=
+chipcHw_inline.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\arm\mach-bcmring\include\mach\csp):	    (uint32_t) inputType << chipcHw_REG_INPUTTYPE_POSITION(pin);
+chipcHw_reg.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\arm\mach-bcmring\include\mach\csp):#define chipcHw_REG_INPUTTYPE_CMOS                      0x00000000	/* Normal CMOS logic */
+chipcHw_reg.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\arm\mach-bcmring\include\mach\csp):#define chipcHw_REG_INPUTTYPE_ST                        0x00000001	/* High speed Schmitt Trigger */
+chipcHw_reg.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\arm\mach-bcmring\include\mach\csp):#define chipcHw_REG_INPUTTYPE_MASK                      0x00000001	/* Mask */
+chipcHw_reg.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\arm\mach-bcmring\include\mach\csp):#define chipcHw_REG_INPUTTYPE(pin)                      (((pin) > 42) ? (&pChipcHw->GpioInput_0_31 + (((pin) + 2) >> 5)) : (&pChipcHw->GpioInput_0_31 + ((pin) >> 5)))
+chipcHw_reg.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\arm\mach-bcmring\include\mach\csp):#define chipcHw_REG_INPUTTYPE_POSITION(pin)             (((pin) > 42) ? ((((pin) + 2) & 0x0000001F)) : (((pin) & 0x0000001F)))
+Clnt.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux\sunrpc):				cl_chatty   : 1;/* be verbose */
+Comstats.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):	unsigned long	ttystate;
+Conf.c (z:\usr\src\linux-headers-2.6.32-27-generic\scripts\kconfig):		valid_stdin = isatty(0) && isatty(1) && isatty(2);
+Console.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\alpha\include\asm):#define ENV_TTY_DEV		0x0F
+Console.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):struct tty_struct;
+Console.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):	struct tty_driver *(*device)(struct console *, int *);
+Console.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):extern struct tty_driver *console_device(int *);
+Console_struct.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):	struct tty_struct *vc_tty;		/* TTY we are attached to */
+Constants.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\net\sctp):extern const char *const sctp_evttype_tbl[];
+Core.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\xtensa\variants\dc232b\include\variant):#define XCHAL_INT0_TYPE 	XTHAL_INTTYPE_EXTERN_LEVEL
+Core.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\xtensa\variants\dc232b\include\variant):#define XCHAL_INT1_TYPE 	XTHAL_INTTYPE_EXTERN_LEVEL
+Core.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\xtensa\variants\dc232b\include\variant):#define XCHAL_INT2_TYPE 	XTHAL_INTTYPE_EXTERN_LEVEL
+Core.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\xtensa\variants\dc232b\include\variant):#define XCHAL_INT3_TYPE 	XTHAL_INTTYPE_EXTERN_LEVEL
+Core.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\xtensa\variants\dc232b\include\variant):#define XCHAL_INT4_TYPE 	XTHAL_INTTYPE_EXTERN_LEVEL
+Core.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\xtensa\variants\dc232b\include\variant):#define XCHAL_INT5_TYPE 	XTHAL_INTTYPE_EXTERN_LEVEL
+Core.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\xtensa\variants\dc232b\include\variant):#define XCHAL_INT6_TYPE 	XTHAL_INTTYPE_TIMER
+Core.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\xtensa\variants\dc232b\include\variant):#define XCHAL_INT7_TYPE 	XTHAL_INTTYPE_SOFTWARE
+Core.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\xtensa\variants\dc232b\include\variant):#define XCHAL_INT8_TYPE 	XTHAL_INTTYPE_EXTERN_LEVEL
+Core.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\xtensa\variants\dc232b\include\variant):#define XCHAL_INT9_TYPE 	XTHAL_INTTYPE_EXTERN_LEVEL
+Core.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\xtensa\variants\dc232b\include\variant):#define XCHAL_INT10_TYPE 	XTHAL_INTTYPE_TIMER
+Core.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\xtensa\variants\dc232b\include\variant):#define XCHAL_INT11_TYPE 	XTHAL_INTTYPE_SOFTWARE
+Core.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\xtensa\variants\dc232b\include\variant):#define XCHAL_INT12_TYPE 	XTHAL_INTTYPE_EXTERN_LEVEL
+Core.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\xtensa\variants\dc232b\include\variant):#define XCHAL_INT13_TYPE 	XTHAL_INTTYPE_TIMER
+Core.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\xtensa\variants\dc232b\include\variant):#define XCHAL_INT14_TYPE 	XTHAL_INTTYPE_NMI
+Core.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\xtensa\variants\dc232b\include\variant):#define XCHAL_INT15_TYPE 	XTHAL_INTTYPE_EXTERN_EDGE
+Core.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\xtensa\variants\dc232b\include\variant):#define XCHAL_INT16_TYPE 	XTHAL_INTTYPE_EXTERN_EDGE
+Core.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\xtensa\variants\dc232b\include\variant):#define XCHAL_INT17_TYPE 	XTHAL_INTTYPE_EXTERN_EDGE
+Core.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\xtensa\variants\dc232b\include\variant):#define XCHAL_INT18_TYPE 	XTHAL_INTTYPE_EXTERN_EDGE
+Core.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\xtensa\variants\dc232b\include\variant):#define XCHAL_INT19_TYPE 	XTHAL_INTTYPE_EXTERN_EDGE
+Core.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\xtensa\variants\dc232b\include\variant):#define XCHAL_INT20_TYPE 	XTHAL_INTTYPE_EXTERN_EDGE
+Core.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\xtensa\variants\dc232b\include\variant):#define XCHAL_INT21_TYPE 	XTHAL_INTTYPE_EXTERN_EDGE
+Core.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\xtensa\variants\dc232b\include\variant):#define XCHAL_INTTYPE_MASK_UNCONFIGURED	0xFFC00000
+Core.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\xtensa\variants\dc232b\include\variant):#define XCHAL_INTTYPE_MASK_SOFTWARE	0x00000880
+Core.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\xtensa\variants\dc232b\include\variant):#define XCHAL_INTTYPE_MASK_EXTERN_EDGE	0x003F8000
+Core.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\xtensa\variants\dc232b\include\variant):#define XCHAL_INTTYPE_MASK_EXTERN_LEVEL	0x0000133F
+Core.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\xtensa\variants\dc232b\include\variant):#define XCHAL_INTTYPE_MASK_TIMER	0x00002440
+Core.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\xtensa\variants\dc232b\include\variant):#define XCHAL_INTTYPE_MASK_NMI		0x00004000
+Core.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\xtensa\variants\dc232b\include\variant):#define XCHAL_INTTYPE_MASK_WRITE_ERROR	0x00000000
+Core.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\xtensa\variants\fsf\include\variant):#define XCHAL_INT0_TYPE 	XTHAL_INTTYPE_EXTERN_LEVEL
+Core.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\xtensa\variants\fsf\include\variant):#define XCHAL_INT1_TYPE 	XTHAL_INTTYPE_EXTERN_LEVEL
+Core.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\xtensa\variants\fsf\include\variant):#define XCHAL_INT2_TYPE 	XTHAL_INTTYPE_EXTERN_LEVEL
+Core.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\xtensa\variants\fsf\include\variant):#define XCHAL_INT3_TYPE 	XTHAL_INTTYPE_EXTERN_LEVEL
+Core.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\xtensa\variants\fsf\include\variant):#define XCHAL_INT4_TYPE 	XTHAL_INTTYPE_EXTERN_LEVEL
+Core.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\xtensa\variants\fsf\include\variant):#define XCHAL_INT5_TYPE 	XTHAL_INTTYPE_EXTERN_LEVEL
+Core.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\xtensa\variants\fsf\include\variant):#define XCHAL_INT6_TYPE 	XTHAL_INTTYPE_EXTERN_LEVEL
+Core.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\xtensa\variants\fsf\include\variant):#define XCHAL_INT7_TYPE 	XTHAL_INTTYPE_EXTERN_EDGE
+Core.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\xtensa\variants\fsf\include\variant):#define XCHAL_INT8_TYPE 	XTHAL_INTTYPE_EXTERN_EDGE
+Core.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\xtensa\variants\fsf\include\variant):#define XCHAL_INT9_TYPE 	XTHAL_INTTYPE_EXTERN_EDGE
+Core.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\xtensa\variants\fsf\include\variant):#define XCHAL_INT10_TYPE 	XTHAL_INTTYPE_TIMER
+Core.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\xtensa\variants\fsf\include\variant):#define XCHAL_INT11_TYPE 	XTHAL_INTTYPE_TIMER
+Core.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\xtensa\variants\fsf\include\variant):#define XCHAL_INT12_TYPE 	XTHAL_INTTYPE_TIMER
+Core.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\xtensa\variants\fsf\include\variant):#define XCHAL_INT13_TYPE 	XTHAL_INTTYPE_SOFTWARE
+Core.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\xtensa\variants\fsf\include\variant):#define XCHAL_INT14_TYPE 	XTHAL_INTTYPE_SOFTWARE
+Core.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\xtensa\variants\fsf\include\variant):#define XCHAL_INT15_TYPE 	XTHAL_INTTYPE_SOFTWARE
+Core.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\xtensa\variants\fsf\include\variant):#define XCHAL_INT16_TYPE 	XTHAL_INTTYPE_SOFTWARE
+Core.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\xtensa\variants\fsf\include\variant):#define XCHAL_INTTYPE_MASK_UNCONFIGURED	0xFFFE0000
+Core.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\xtensa\variants\fsf\include\variant):#define XCHAL_INTTYPE_MASK_SOFTWARE	0x0001E000
+Core.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\xtensa\variants\fsf\include\variant):#define XCHAL_INTTYPE_MASK_EXTERN_EDGE	0x00000380
+Core.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\xtensa\variants\fsf\include\variant):#define XCHAL_INTTYPE_MASK_EXTERN_LEVEL	0x0000007F
+Core.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\xtensa\variants\fsf\include\variant):#define XCHAL_INTTYPE_MASK_TIMER	0x00001C00
+Core.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\xtensa\variants\fsf\include\variant):#define XCHAL_INTTYPE_MASK_NMI		0x00000000
+Core.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\xtensa\variants\fsf\include\variant):#define XCHAL_INTTYPE_MASK_WRITE_ERROR	0x00000000
+Core.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\xtensa\variants\s6000\include\variant):#define XCHAL_INT0_TYPE 	XTHAL_INTTYPE_EXTERN_LEVEL
+Core.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\xtensa\variants\s6000\include\variant):#define XCHAL_INT1_TYPE 	XTHAL_INTTYPE_EXTERN_LEVEL
+Core.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\xtensa\variants\s6000\include\variant):#define XCHAL_INT2_TYPE 	XTHAL_INTTYPE_EXTERN_LEVEL
+Core.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\xtensa\variants\s6000\include\variant):#define XCHAL_INT3_TYPE 	XTHAL_INTTYPE_EXTERN_LEVEL
+Core.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\xtensa\variants\s6000\include\variant):#define XCHAL_INT4_TYPE 	XTHAL_INTTYPE_EXTERN_LEVEL
+Core.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\xtensa\variants\s6000\include\variant):#define XCHAL_INT5_TYPE 	XTHAL_INTTYPE_EXTERN_LEVEL
+Core.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\xtensa\variants\s6000\include\variant):#define XCHAL_INT6_TYPE 	XTHAL_INTTYPE_EXTERN_LEVEL
+Core.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\xtensa\variants\s6000\include\variant):#define XCHAL_INT7_TYPE 	XTHAL_INTTYPE_EXTERN_LEVEL
+Core.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\xtensa\variants\s6000\include\variant):#define XCHAL_INT8_TYPE 	XTHAL_INTTYPE_EXTERN_LEVEL
+Core.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\xtensa\variants\s6000\include\variant):#define XCHAL_INT9_TYPE 	XTHAL_INTTYPE_EXTERN_LEVEL
+Core.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\xtensa\variants\s6000\include\variant):#define XCHAL_INT10_TYPE 	XTHAL_INTTYPE_EXTERN_LEVEL
+Core.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\xtensa\variants\s6000\include\variant):#define XCHAL_INT11_TYPE 	XTHAL_INTTYPE_EXTERN_LEVEL
+Core.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\xtensa\variants\s6000\include\variant):#define XCHAL_INT12_TYPE 	XTHAL_INTTYPE_EXTERN_LEVEL
+Core.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\xtensa\variants\s6000\include\variant):#define XCHAL_INT13_TYPE 	XTHAL_INTTYPE_EXTERN_LEVEL
+Core.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\xtensa\variants\s6000\include\variant):#define XCHAL_INT14_TYPE 	XTHAL_INTTYPE_EXTERN_LEVEL
+Core.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\xtensa\variants\s6000\include\variant):#define XCHAL_INT15_TYPE 	XTHAL_INTTYPE_EXTERN_LEVEL
+Core.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\xtensa\variants\s6000\include\variant):#define XCHAL_INT16_TYPE 	XTHAL_INTTYPE_EXTERN_LEVEL
+Core.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\xtensa\variants\s6000\include\variant):#define XCHAL_INT17_TYPE 	XTHAL_INTTYPE_EXTERN_LEVEL
+Core.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\xtensa\variants\s6000\include\variant):#define XCHAL_INT18_TYPE 	XTHAL_INTTYPE_EXTERN_LEVEL
+Core.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\xtensa\variants\s6000\include\variant):#define XCHAL_INT19_TYPE 	XTHAL_INTTYPE_NMI
+Core.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\xtensa\variants\s6000\include\variant):#define XCHAL_INT20_TYPE 	XTHAL_INTTYPE_SOFTWARE
+Core.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\xtensa\variants\s6000\include\variant):#define XCHAL_INT21_TYPE 	XTHAL_INTTYPE_SOFTWARE
+Core.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\xtensa\variants\s6000\include\variant):#define XCHAL_INT22_TYPE 	XTHAL_INTTYPE_SOFTWARE
+Core.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\xtensa\variants\s6000\include\variant):#define XCHAL_INT23_TYPE 	XTHAL_INTTYPE_SOFTWARE
+Core.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\xtensa\variants\s6000\include\variant):#define XCHAL_INT24_TYPE 	XTHAL_INTTYPE_TIMER
+Core.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\xtensa\variants\s6000\include\variant):#define XCHAL_INT25_TYPE 	XTHAL_INTTYPE_TIMER
+Core.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\xtensa\variants\s6000\include\variant):#define XCHAL_INT26_TYPE 	XTHAL_INTTYPE_TIMER
+Core.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\xtensa\variants\s6000\include\variant):#define XCHAL_INTTYPE_MASK_UNCONFIGURED	0xF8000000
+Core.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\xtensa\variants\s6000\include\variant):#define XCHAL_INTTYPE_MASK_SOFTWARE	0x00F00000
+Core.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\xtensa\variants\s6000\include\variant):#define XCHAL_INTTYPE_MASK_EXTERN_EDGE	0x00000000
+Core.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\xtensa\variants\s6000\include\variant):#define XCHAL_INTTYPE_MASK_EXTERN_LEVEL	0x0007FFFF
+Core.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\xtensa\variants\s6000\include\variant):#define XCHAL_INTTYPE_MASK_TIMER	0x07000000
+Core.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\xtensa\variants\s6000\include\variant):#define XCHAL_INTTYPE_MASK_NMI		0x00080000
+Core.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\xtensa\variants\s6000\include\variant):#define XCHAL_INTTYPE_MASK_WRITE_ERROR	0x00000000
+Crime.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\mips\include\asm\ip32):#define CRIME_REV_PETTY			0x00
+Cs.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\pcmcia):    u_int	IntType;
+Cs.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\pcmcia):/* IntType field */
+Cyclades.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux): * For definitions of the flags field, see tty.h
+Cyclades.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):	struct tty_port		port;
+Cyclades.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):	int			flags; 		/* defined in tty.h */
+Devpts_fs.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):int devpts_pty_new(struct inode *ptmx_inode, struct tty_struct *tty);
+Devpts_fs.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):/* get tty structure */
+Devpts_fs.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):struct tty_struct *devpts_get_tty(struct inode *pts_inode, int number);
+Devpts_fs.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):void devpts_pty_kill(struct tty_struct *tty);
+Devpts_fs.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):				struct tty_struct *tty)
+Devpts_fs.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):static inline struct tty_struct *devpts_get_tty(struct inode *pts_inode,
+Devpts_fs.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):static inline void devpts_pty_kill(struct tty_struct *tty) { }
+Dm-ioctl.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):	 * return -ENOTTY) fill out this field, even if the
+Ds.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\pcmcia):	u_int			IntType;
+Ebt_pkttype.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux\netfilter_bridge):#ifndef __LINUX_BRIDGE_EBT_PKTTYPE_H
+Ebt_pkttype.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux\netfilter_bridge):#define __LINUX_BRIDGE_EBT_PKTTYPE_H
+Ebt_pkttype.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux\netfilter_bridge):struct ebt_pkttype_info
+Ebt_pkttype.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux\netfilter_bridge):#define EBT_PKTTYPE_MATCH "pkttype"
+Eisa.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):	char		      pretty_name[50];
+Elf.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\parisc\include\asm): * Fill in general registers in a core dump.  This saves pretty
+Errno-base.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\asm-generic):#define	ENOTTY		25	/* Not a typewriter */
+Excite.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\mips\include\asm\mach-excite):extern char modetty[];
+Fcntl.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\alpha\include\asm):#define O_NOCTTY	010000	/* not fcntl */
+Fcntl.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\mips\include\asm):#define O_NOCTTY	0x0800	/* not fcntl */
+Fcntl.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\parisc\include\asm):#define O_NOCTTY	000400000 /* not fcntl */
+Fcntl.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\sparc\include\asm):#define O_NOCTTY	0x8000	/* not fcntl */
+Fcntl.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\asm-generic):#ifndef O_NOCTTY
+Fcntl.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\asm-generic):#define O_NOCTTY	00000400	/* not fcntl */
+Fdt_ro.c (z:\usr\src\linux-headers-2.6.32-27-generic\scripts\dtc\libfdt):	/* FIXME: The algorithm here is pretty horrible: we scan each
+Fdt_ro.c (z:\usr\src\linux-headers-2.6.32-27-generic\scripts\dtc\libfdt):	/* FIXME: The algorithm here is pretty horrible: we scan each
+File2alias.c (z:\usr\src\linux-headers-2.6.32-27-generic\scripts\mod): * use either stdint.h or inttypes.h for the rest. */
+File2alias.c (z:\usr\src\linux-headers-2.6.32-27-generic\scripts\mod):#include <inttypes.h>
+Filter.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define SKF_AD_PKTTYPE 	4
+Fixdep.c (z:\usr\src\linux-headers-2.6.32-27-generic\scripts\basic): * Again, also this idea is pretty old and has been discussed on
+Fs.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):	/* needed for tty driver, and maybe others */
+Gadgetfs.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux\usb):		 *(setup.bmRequestType & USB_DIR_IN) flags direction
+Generic_serial.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#include <linux/tty.h>
+Generic_serial.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):  struct tty_port	  port;
+Generic_serial.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):int gs_put_char(struct tty_struct *tty, unsigned char ch);
+Generic_serial.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):int  gs_write(struct tty_struct *tty, 
+Generic_serial.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):int  gs_write_room(struct tty_struct *tty);
+Generic_serial.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):int  gs_chars_in_buffer(struct tty_struct *tty);
+Generic_serial.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):void gs_flush_buffer(struct tty_struct *tty);
+Generic_serial.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):void gs_flush_chars(struct tty_struct *tty);
+Generic_serial.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):void gs_stop(struct tty_struct *tty);
+Generic_serial.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):void gs_start(struct tty_struct *tty);
+Generic_serial.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):void gs_hangup(struct tty_struct *tty);
+Generic_serial.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):void gs_close(struct tty_struct *tty, struct file *filp);
+Generic_serial.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):void gs_set_termios (struct tty_struct * tty, 
+Gpio.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\m68k\include\asm):#define MCFGPIO_PORTTYPE		u8
+Gpio.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\m68k\include\asm):#define MCFGPIO_PORTTYPE		u16
+Gpio.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\m68k\include\asm):#define MCFGPIO_PORTTYPE		u32
+Gpio.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\m68k\include\asm):			MCFGPIO_PORTTYPE data;
+Hardware.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\arm\mach-ebsa110\include\mach): * f0000fe0 - f0000ffc	3f8 - 3ff  ttyS0
+Hardware.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\arm\mach-ebsa110\include\mach): * f0000be0 - f0000bfc	2f8 - 2ff  ttyS1
+Hayesesp.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):	struct tty_port		port;
+Hpsim.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\ia64\include\asm):struct tty_driver;
+Hpsim.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\ia64\include\asm):extern struct tty_driver *hp_simserial_driver;
+Hv_lp_event.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\powerpc\include\asm\iseries):extern int HvLpEvent_registerHandler(HvLpEvent_Type eventType,
+Hv_lp_event.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\powerpc\include\asm\iseries):extern int HvLpEvent_unregisterHandler(HvLpEvent_Type eventType);
+Hv_lp_event.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\powerpc\include\asm\iseries):extern int HvLpEvent_openPath(HvLpEvent_Type eventType, HvLpIndex lpIndex);
+Hv_lp_event.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\powerpc\include\asm\iseries):extern int HvLpEvent_closePath(HvLpEvent_Type eventType, HvLpIndex lpIndex);
+Hypercall.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\x86\include\asm\xen): * The result certainly isn't pretty, and it really shows up cpp's
+Ib_smi.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\rdma):	u8 vlcap_inittype;			/* 4 bits, 4 bits */
+Ib_smi.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\rdma):	u8 inittypereply_mtucap;		/* 4 bits, 4 bits */
+If_packet.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):	unsigned char	sll_pkttype;
+Interrupt.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux): * kernel code that has to do this nevertheless (pretty much
+Io.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\alpha\include\asm): * Mapping from port numbers to __iomem space is pretty easy.
+Io.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\mn10300\include\asm): * These are pretty trivial
+Io.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\s390\include\asm): * These are pretty trivial
+Io.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\um\include\asm): * These are pretty trivial
+Io.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\asm-generic): * These are pretty trivial
+Ioc3.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\mips\include\asm\sn):    ioc3_subdev_ttya,
+Ioc3.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\mips\include\asm\sn):    ioc3_subdev_ttyb,
+Ioc3.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\mips\include\asm\sn):#define IOC3_SDB_TTYA		(1<<ioc3_subdev_ttya)
+Ioc3.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\mips\include\asm\sn):#define IOC3_SDB_TTYB		(1<<ioc3_subdev_ttyb)
+Ioc3.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\mips\include\asm\sn):#define IOC3_SDB_SERIAL		(IOC3_SDB_TTYA|IOC3_SDB_TTYB)
+Ioctls.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\alpha\include\asm):#define TIOCGETP	_IOR('t', 8, struct sgttyb)
+Ioctls.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\alpha\include\asm):#define TIOCSETP	_IOW('t', 9, struct sgttyb)
+Ioctls.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\alpha\include\asm):#define TIOCSETN	_IOW('t', 10, struct sgttyb)	/* TIOCSETP wo flush */
+Ioctls.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\alpha\include\asm):#define TIOCSCTTY	0x540E
+Ioctls.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\alpha\include\asm):#define TIOCNOTTY	0x5422
+Ioctls.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\arm\include\asm):#define TIOCSCTTY	0x540E
+Ioctls.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\arm\include\asm):#define TIOCNOTTY	0x5422
+Ioctls.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\avr32\include\asm):#define TIOCSCTTY	0x540E
+Ioctls.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\avr32\include\asm):#define TIOCNOTTY	0x5422
+Ioctls.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\avr32\include\asm):/* #define TIOCTTYGSTRUCT 0x5426 - Former debugging-only ioctl */
+Ioctls.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\cris\include\asm):#define TIOCSCTTY	0x540E
+Ioctls.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\cris\include\asm):#define TIOCNOTTY	0x5422
+Ioctls.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\frv\include\asm):#define TIOCSCTTY	0x540E
+Ioctls.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\frv\include\asm):#define TIOCNOTTY	0x5422
+Ioctls.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\frv\include\asm):#define TIOCTTYGSTRUCT	0x5426  /* For debugging only */
+Ioctls.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\h8300\include\asm):#define TIOCSCTTY	0x540E
+Ioctls.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\h8300\include\asm):#define TIOCNOTTY	0x5422
+Ioctls.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\h8300\include\asm):#define TIOCTTYGSTRUCT	0x5426  /* For debugging only */
+Ioctls.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\ia64\include\asm):#define TIOCSCTTY	0x540E
+Ioctls.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\ia64\include\asm):#define TIOCNOTTY	0x5422
+Ioctls.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\m32r\include\asm):#define TIOCSCTTY	0x540E
+Ioctls.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\m32r\include\asm):#define TIOCNOTTY	0x5422
+Ioctls.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\m32r\include\asm):/* #define TIOCTTYGSTRUCT 0x5426 - Former debugging-only ioctl */
+Ioctls.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\m68k\include\asm):#define TIOCSCTTY	0x540E
+Ioctls.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\m68k\include\asm):#define TIOCNOTTY	0x5422
+Ioctls.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\mips\include\asm):#define TIOCEXCL	0x740d		/* set exclusive use of tty */
+Ioctls.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\mips\include\asm):#define TIOCNXCL	0x740e		/* reset exclusive use of tty */
+Ioctls.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\mips\include\asm):#define TIOCNOTTY	0x5471		/* void tty association */
+Ioctls.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\mips\include\asm):#define TIOCSPGRP	_IOW('t', 118, int)	/* set pgrp of tty */
+Ioctls.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\mips\include\asm):#define TIOCGPGRP	_IOR('t', 119, int)	/* get pgrp of tty */
+Ioctls.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\mips\include\asm):#define TIOCSCTTY	0x5480		/* become controlling tty */
+Ioctls.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\mn10300\include\asm):#define TIOCSCTTY	0x540E
+Ioctls.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\mn10300\include\asm):#define TIOCNOTTY	0x5422
+Ioctls.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\mn10300\include\asm):/* #define TIOCTTYGSTRUCT 0x5426 - Former debugging-only ioctl */
+Ioctls.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\parisc\include\asm):#define TIOCSCTTY	0x540E
+Ioctls.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\parisc\include\asm):#define TIOCNOTTY	0x5422
+Ioctls.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\powerpc\include\asm):#define TIOCGETP	_IOR('t', 8, struct sgttyb)
+Ioctls.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\powerpc\include\asm):#define TIOCSETP	_IOW('t', 9, struct sgttyb)
+Ioctls.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\powerpc\include\asm):#define TIOCSETN	_IOW('t', 10, struct sgttyb)	/* TIOCSETP wo flush */
+Ioctls.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\powerpc\include\asm):#define TIOCSCTTY	0x540E
+Ioctls.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\powerpc\include\asm):#define TIOCNOTTY	0x5422
+Ioctls.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\s390\include\asm):#define TIOCSCTTY	0x540E
+Ioctls.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\s390\include\asm):#define TIOCNOTTY	0x5422
+Ioctls.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\sh\include\asm):#define TIOCSCTTY	_IO('T', 14) /* 0x540E */
+Ioctls.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\sh\include\asm):#define TIOCNOTTY	_IO('T', 34) /* 0x5422 */
+Ioctls.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\sparc\include\asm):#define __TIOCGETP        _IOR('t', 8, struct sgttyb) /* SunOS Specific */
+Ioctls.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\sparc\include\asm):#define __TIOCSETP        _IOW('t', 9, struct sgttyb) /* SunOS Specific */
+Ioctls.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\sparc\include\asm):#define __TIOCSETN        _IOW('t', 10, struct sgttyb) /* SunOS Specific */
+Ioctls.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\sparc\include\asm):#define TIOCNOTTY	_IO('t', 113)
+Ioctls.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\sparc\include\asm):/* 118 is the non-posix setpgrp tty ioctl */
+Ioctls.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\sparc\include\asm):/* 119 is the non-posix getpgrp tty ioctl */
+Ioctls.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\sparc\include\asm):#define TIOCSCTTY	_IO('t', 132)
+Ioctls.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\xtensa\include\asm):#define TIOCSCTTY	_IO('T', 14)
+Ioctls.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\xtensa\include\asm):#define TIOCNOTTY	_IO('T', 34)
+Ioctls.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\xtensa\include\asm):#define TIOCTTYGSTRUCT	_IOR('T', 38, struct tty_struct) /* For debugging only*/
+Ioctls.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\asm-generic): * These are the most common definitions for tty ioctl numbers.
+Ioctls.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\asm-generic):#define TIOCSCTTY	0x540E
+Ioctls.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\asm-generic):#define TIOCNOTTY	0x5422
+Ircomm_core.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\net\irda):	int line;            /* Which TTY line we are using */
+Ircomm_param.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\net\irda):struct ircomm_tty_cb; /* Forward decl. */
+Ircomm_param.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\net\irda):int ircomm_param_request(struct ircomm_tty_cb *self, __u8 pi, int flush);
+Ircomm_tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\net\irda): * Filename:      ircomm_tty.h
+Ircomm_tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\net\irda):#ifndef IRCOMM_TTY_H
+Ircomm_tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\net\irda):#define IRCOMM_TTY_H
+Ircomm_tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\net\irda):#include <linux/tty.h>		/* struct tty_struct */
+Ircomm_tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\net\irda):#define IRCOMM_TTY_PORTS 32
+Ircomm_tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\net\irda):#define IRCOMM_TTY_MAGIC 0x3432
+Ircomm_tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\net\irda):#define IRCOMM_TTY_MAJOR 161
+Ircomm_tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\net\irda):#define IRCOMM_TTY_MINOR 0
+Ircomm_tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\net\irda):#define IRCOMM_TTY_HDR_UNINITIALISED	16
+Ircomm_tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\net\irda):#define IRCOMM_TTY_DATA_UNINITIALISED	(64 - IRCOMM_TTY_HDR_UNINITIALISED)
+Ircomm_tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\net\irda): * IrCOMM TTY driver state
+Ircomm_tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\net\irda):struct ircomm_tty_cb {
+Ircomm_tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\net\irda):	struct tty_struct *tty;
+Ircomm_tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\net\irda):void ircomm_tty_start(struct tty_struct *tty);
+Ircomm_tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\net\irda):void ircomm_tty_check_modem_status(struct ircomm_tty_cb *self);
+Ircomm_tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\net\irda):extern int ircomm_tty_tiocmget(struct tty_struct *tty, struct file *file);
+Ircomm_tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\net\irda):extern int ircomm_tty_tiocmset(struct tty_struct *tty, struct file *file,
+Ircomm_tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\net\irda):extern int ircomm_tty_ioctl(struct tty_struct *tty, struct file *file, 
+Ircomm_tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\net\irda):extern void ircomm_tty_set_termios(struct tty_struct *tty, 
+Ircomm_tty_attach.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\net\irda): * Filename:      ircomm_tty_attach.h
+Ircomm_tty_attach.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\net\irda):#ifndef IRCOMM_TTY_ATTACH_H
+Ircomm_tty_attach.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\net\irda):#define IRCOMM_TTY_ATTACH_H
+Ircomm_tty_attach.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\net\irda):#include <net/irda/ircomm_tty.h>
+Ircomm_tty_attach.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\net\irda):        IRCOMM_TTY_IDLE,
+Ircomm_tty_attach.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\net\irda):	IRCOMM_TTY_SEARCH,
+Ircomm_tty_attach.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\net\irda):        IRCOMM_TTY_QUERY_PARAMETERS,
+Ircomm_tty_attach.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\net\irda):	IRCOMM_TTY_QUERY_LSAP_SEL,
+Ircomm_tty_attach.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\net\irda):	IRCOMM_TTY_SETUP,
+Ircomm_tty_attach.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\net\irda):        IRCOMM_TTY_READY,
+Ircomm_tty_attach.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\net\irda):} IRCOMM_TTY_STATE;
+Ircomm_tty_attach.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\net\irda):/* IrCOMM TTY Events */
+Ircomm_tty_attach.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\net\irda):	IRCOMM_TTY_ATTACH_CABLE,
+Ircomm_tty_attach.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\net\irda):	IRCOMM_TTY_DETACH_CABLE,
+Ircomm_tty_attach.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\net\irda):	IRCOMM_TTY_DATA_REQUEST,
+Ircomm_tty_attach.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\net\irda):	IRCOMM_TTY_DATA_INDICATION,
+Ircomm_tty_attach.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\net\irda):	IRCOMM_TTY_DISCOVERY_REQUEST,
+Ircomm_tty_attach.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\net\irda):	IRCOMM_TTY_DISCOVERY_INDICATION,
+Ircomm_tty_attach.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\net\irda):	IRCOMM_TTY_CONNECT_CONFIRM,
+Ircomm_tty_attach.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\net\irda):	IRCOMM_TTY_CONNECT_INDICATION,
+Ircomm_tty_attach.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\net\irda):	IRCOMM_TTY_DISCONNECT_REQUEST,
+Ircomm_tty_attach.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\net\irda):	IRCOMM_TTY_DISCONNECT_INDICATION,
+Ircomm_tty_attach.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\net\irda):	IRCOMM_TTY_WD_TIMER_EXPIRED,
+Ircomm_tty_attach.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\net\irda):	IRCOMM_TTY_GOT_PARAMETERS,
+Ircomm_tty_attach.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\net\irda):	IRCOMM_TTY_GOT_LSAPSEL,
+Ircomm_tty_attach.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\net\irda):} IRCOMM_TTY_EVENT;
+Ircomm_tty_attach.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\net\irda):struct ircomm_tty_info {
+Ircomm_tty_attach.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\net\irda):extern const char *const ircomm_tty_state[];
+Ircomm_tty_attach.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\net\irda):int ircomm_tty_do_event(struct ircomm_tty_cb *self, IRCOMM_TTY_EVENT event,
+Ircomm_tty_attach.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\net\irda):			struct sk_buff *skb, struct ircomm_tty_info *info);
+Ircomm_tty_attach.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\net\irda):int  ircomm_tty_attach_cable(struct ircomm_tty_cb *self);
+Ircomm_tty_attach.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\net\irda):void ircomm_tty_detach_cable(struct ircomm_tty_cb *self);
+Ircomm_tty_attach.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\net\irda):void ircomm_tty_connect_confirm(void *instance, void *sap, 
+Ircomm_tty_attach.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\net\irda):void ircomm_tty_disconnect_indication(void *instance, void *sap, 
+Ircomm_tty_attach.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\net\irda):void ircomm_tty_connect_indication(void *instance, void *sap, 
+Ircomm_tty_attach.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\net\irda):int ircomm_tty_send_initial_parameters(struct ircomm_tty_cb *self);
+Ircomm_tty_attach.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\net\irda):void ircomm_tty_link_established(struct ircomm_tty_cb *self);
+Ircomm_tty_attach.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\net\irda):#endif /* IRCOMM_TTY_ATTACH_H */
+Irda.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\net\irda):#define IRTTY_MAGIC        0x2357
+Irda_device.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\net\irda):#include <linux/tty.h>
+Isdn.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define ISDN_LMSNLEN         255 /* Length of tty's Listen-MSN string */
+Isdn.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define TTY_DV 0x06  /* Data version for iprofd etc.          */
+Isdn.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#include <linux/tty.h>
+Isdn.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#include <linux/tty_flip.h>
+Isdn.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define ISDN_TTY_MAJOR    43
+Isdn.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define ISDN_TTYAUX_MAJOR 44
+Isdn.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define ISDN_TIMER_RINGING     5 /* tty RINGs = ISDN_TIMER_1SEC * this factor       */
+Isdn.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):/*======================= Start of ISDN-tty stuff ===========================*/
+Isdn.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define ISDN_ASYNC_HUP_NOTIFY         0x0001 /* Notify tty on hangups/closes */
+Isdn.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):  int			flags;		 /* defined in tty.h               */
+Isdn.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):  atomic_t              xmit_lock;       /* Semaphore for isdn_tty_write   */
+Isdn.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#ifdef CONFIG_ISDN_TTY_FAX
+Isdn.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):  struct tty_struct 	*tty;            /* Pointer to corresponding tty   */
+Isdn.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):/* Description of one ISDN-tty */
+Isdn.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):  struct tty_driver  *tty_modem;			/* tty-device             */
+Isdn.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):  struct tty_struct  *modem_table[ISDN_MAX_CHANNELS];	/* ?? copied from Orig    */
+Isdn.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):/*======================= End of ISDN-tty stuff ============================*/
+Isdn.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):	int               modempoll;		      /* Flag: tty-read active      */
+Isdn.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):	int               usage[ISDN_MAX_CHANNELS];   /* Used by tty/ip/voice       */
+Isdn.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):	isdn_modem_t      mdm;			      /* tty-driver-data            */
+Isdnif.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#ifdef CONFIG_ISDN_TTY_FAX
+Isdnif.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define ISDN_TTY_FAX_CONN_IN	0
+Isdnif.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define ISDN_TTY_FAX_CONN_OUT	1
+Isdnif.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define ISDN_TTY_FAX_FCON	0
+Isdnif.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define ISDN_TTY_FAX_DIS 	1
+Isdnif.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define ISDN_TTY_FAX_FTT 	2
+Isdnif.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define ISDN_TTY_FAX_MCF 	3
+Isdnif.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define ISDN_TTY_FAX_DCS 	4
+Isdnif.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define ISDN_TTY_FAX_TRAIN_OK	5
+Isdnif.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define ISDN_TTY_FAX_EOP 	6
+Isdnif.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define ISDN_TTY_FAX_EOM 	7
+Isdnif.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define ISDN_TTY_FAX_MPS 	8
+Isdnif.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define ISDN_TTY_FAX_DTC 	9
+Isdnif.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define ISDN_TTY_FAX_RID 	10
+Isdnif.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define ISDN_TTY_FAX_HNG 	11
+Isdnif.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define ISDN_TTY_FAX_DT  	12
+Isdnif.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define ISDN_TTY_FAX_FCON_I	13
+Isdnif.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define ISDN_TTY_FAX_DR  	14
+Isdnif.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define ISDN_TTY_FAX_ET  	15
+Isdnif.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define ISDN_TTY_FAX_CFR 	16
+Isdnif.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define ISDN_TTY_FAX_PTS 	17
+Isdnif.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define ISDN_TTY_FAX_SENT	18
+Isdnif.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#endif /* TTY_FAX */
+Isdnif.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#ifdef CONFIG_ISDN_TTY_FAX
+Isdnif.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):		T30_s	*fax;	/* Pointer to ttys fax struct		*/
+Istallion.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):	struct tty_port		port;
+Iw_handler.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\net): * Some of the choice I've made are pretty controversials. Defining an
+Iw_handler.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\net): * available. Hopefully, this will be pretty stable and no changes
+Kallsyms.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux): * Pretty-print a function pointer.  This function is deprecated.
+Kbd_kern.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#include <linux/tty.h>
+Kbd_kern.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):static inline void con_schedule_flip(struct tty_struct *t)
+Klconfig.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\mips\include\asm\sn):#define KLSTRUCT_HUB_TTY        23
+Klconfig.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\mips\include\asm\sn):#define KLSTRUCT_IOC3_TTY 	24
+Klconfig.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\mips\include\asm\sn):#define MAX_IOC3_TTY	2
+Klconfig.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\mips\include\asm\sn):	klconf_off_t	ioc3_tty_off ;
+Klconfig.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\mips\include\asm\sn):typedef struct klttydev_s {                          /* TTY device */
+Klconfig.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\mips\include\asm\sn):	klinfo_t 	ttydev_info ;
+Klconfig.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\mips\include\asm\sn):	struct terminal_data *ttydev_cfg ; /* driver fills up this */
+Klconfig.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\mips\include\asm\sn):} klttydev_t ;
+Klconfig.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\mips\include\asm\sn):	klttydev_t	kc_tty_dev ;
+Ktime.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux): * pretty okay-ish, given the circumstances. We do all this for
+Led.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\parisc\include\asm):#define DISPLAY_MODEL_LCD  0		/* KittyHawk LED or LCD */
+Lex.c (z:\usr\src\linux-headers-2.6.32-27-generic\scripts\genksyms):/* C99 systems have <inttypes.h>. Non-C99 systems may or may not. */
+Lex.c (z:\usr\src\linux-headers-2.6.32-27-generic\scripts\genksyms):#include <inttypes.h>
+Lex.c (z:\usr\src\linux-headers-2.6.32-27-generic\scripts\genksyms):extern int isatty (int );
+Lex.c (z:\usr\src\linux-headers-2.6.32-27-generic\scripts\genksyms):        b->yy_is_interactive = file ? (isatty( fileno(file) ) > 0) : 0;
+Lex.zconf.c (z:\usr\src\linux-headers-2.6.32-27-generic\scripts\kconfig):/* C99 systems have <inttypes.h>. Non-C99 systems may or may not. */
+Lex.zconf.c (z:\usr\src\linux-headers-2.6.32-27-generic\scripts\kconfig):#include <inttypes.h>
+Libsas.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\scsi):/* The phy pretty much is controlled by the LLDD.
+Line.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\um\include\shared):#include "linux/tty.h"
+Line.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\um\include\shared):	struct tty_struct *tty;
+Line.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\um\include\shared):extern void line_close(struct tty_struct *tty, struct file * filp);
+Line.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\um\include\shared):extern int line_open(struct line *lines, struct tty_struct *tty);
+Line.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\um\include\shared):extern int line_write(struct tty_struct *tty, const unsigned char *buf,
+Line.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\um\include\shared):extern int line_put_char(struct tty_struct *tty, unsigned char ch);
+Line.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\um\include\shared):extern void line_set_termios(struct tty_struct *tty, struct ktermios * old);
+Line.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\um\include\shared):extern int line_chars_in_buffer(struct tty_struct *tty);
+Line.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\um\include\shared):extern void line_flush_buffer(struct tty_struct *tty);
+Line.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\um\include\shared):extern void line_flush_chars(struct tty_struct *tty);
+Line.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\um\include\shared):extern int line_write_room(struct tty_struct *tty);
+Line.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\um\include\shared):extern int line_ioctl(struct tty_struct *tty, struct file * file,
+Line.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\um\include\shared):extern void line_throttle(struct tty_struct *tty);
+Line.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\um\include\shared):extern void line_unthrottle(struct tty_struct *tty);
+Line.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\um\include\shared):extern struct tty_driver *register_lines(struct line_driver *line_driver,
+Line.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\um\include\shared):					 const struct tty_operations *driver,
+Major.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define TTY_MAJOR		4
+Major.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define TTYAUX_MAJOR		5
+Major.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define IBM_TTY3270_MAJOR	227
+Mca_dma.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\x86\include\asm): *   should be pretty obvious on inspection.  Note that the user must divide
+Mconf.c (z:\usr\src\linux-headers-2.6.32-27-generic\scripts\kconfig):"In order for this to work, the \"stty size\" command must be able to\n"
+Nfs4.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):	NFS4ERR_UNKNOWN_LAYOUTTYPE = 10062,
+Nfsd.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux\nfsd):#define nfserr_unknown_layouttype	cpu_to_be32(NFS4ERR_UNKNOWN_LAYOUTTYPE)
+Nf_conntrack_pptp.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux\netfilter):	__be16	packetType;
+N_r3964.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):	struct tty_struct *tty;
+Openprom.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\m68k\include\asm):#define	PROMDEV_TTYA	1		/* in/out to ttya */
+Openprom.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\m68k\include\asm):#define	PROMDEV_TTYB	2		/* in/out to ttyb */
+Openprom.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\sparc\include\asm):#define	PROMDEV_TTYA	1		/* in/out to ttya */
+Openprom.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\sparc\include\asm):#define	PROMDEV_TTYB	2		/* in/out to ttyb */
+Oplib.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\m68k\include\asm):	PROMDEV_ITTYA,			/* input from ttya */
+Oplib.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\m68k\include\asm):	PROMDEV_ITTYB,			/* input from ttyb */
+Oplib.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\m68k\include\asm):	PROMDEV_OTTYA,			/* to ttya */
+Oplib.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\m68k\include\asm):	PROMDEV_OTTYB,			/* to ttyb */
+Os.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\um\include\shared):/* tty.c */
+Paravirt_types.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\x86\include\asm):#define ____PVOP_CALL(rettype, op, clbr, call_clbr, extra_clbr,		\
+Paravirt_types.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\x86\include\asm):		rettype __ret;						\
+Paravirt_types.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\x86\include\asm):		if (sizeof(rettype) > sizeof(unsigned long)) {		\
+Paravirt_types.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\x86\include\asm):			__ret = (rettype)((((u64)__edx) << 32) | __eax); \
+Paravirt_types.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\x86\include\asm):			__ret = (rettype)__eax;				\
+Paravirt_types.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\x86\include\asm):#define __PVOP_CALL(rettype, op, pre, post, ...)			\
+Paravirt_types.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\x86\include\asm):	____PVOP_CALL(rettype, op, CLBR_ANY, PVOP_CALL_CLOBBERS,	\
+Paravirt_types.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\x86\include\asm):#define __PVOP_CALLEESAVE(rettype, op, pre, post, ...)			\
+Paravirt_types.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\x86\include\asm):	____PVOP_CALL(rettype, op.func, CLBR_RET_REG,			\
+Paravirt_types.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\x86\include\asm):#define PVOP_CALL0(rettype, op)						\
+Paravirt_types.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\x86\include\asm):	__PVOP_CALL(rettype, op, "", "")
+Paravirt_types.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\x86\include\asm):#define PVOP_CALLEE0(rettype, op)					\
+Paravirt_types.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\x86\include\asm):	__PVOP_CALLEESAVE(rettype, op, "", "")
+Paravirt_types.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\x86\include\asm):#define PVOP_CALL1(rettype, op, arg1)					\
+Paravirt_types.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\x86\include\asm):	__PVOP_CALL(rettype, op, "", "", PVOP_CALL_ARG1(arg1))
+Paravirt_types.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\x86\include\asm):#define PVOP_CALLEE1(rettype, op, arg1)					\
+Paravirt_types.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\x86\include\asm):	__PVOP_CALLEESAVE(rettype, op, "", "", PVOP_CALL_ARG1(arg1))
+Paravirt_types.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\x86\include\asm):#define PVOP_CALL2(rettype, op, arg1, arg2)				\
+Paravirt_types.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\x86\include\asm):	__PVOP_CALL(rettype, op, "", "", PVOP_CALL_ARG1(arg1),		\
+Paravirt_types.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\x86\include\asm):#define PVOP_CALLEE2(rettype, op, arg1, arg2)				\
+Paravirt_types.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\x86\include\asm):	__PVOP_CALLEESAVE(rettype, op, "", "", PVOP_CALL_ARG1(arg1),	\
+Paravirt_types.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\x86\include\asm):#define PVOP_CALL3(rettype, op, arg1, arg2, arg3)			\
+Paravirt_types.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\x86\include\asm):	__PVOP_CALL(rettype, op, "", "", PVOP_CALL_ARG1(arg1),		\
+Paravirt_types.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\x86\include\asm):#define PVOP_CALL4(rettype, op, arg1, arg2, arg3, arg4)			\
+Paravirt_types.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\x86\include\asm):	__PVOP_CALL(rettype, op,					\
+Paravirt_types.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\x86\include\asm):#define PVOP_CALL4(rettype, op, arg1, arg2, arg3, arg4)			\
+Paravirt_types.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\x86\include\asm):	__PVOP_CALL(rettype, op, "", "",				\
+Pci.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\frv\include\asm): *	These are pretty much arbitary with the CoMEM implementation.
+Pfkeyv2.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):	__u16	sadb_sa_exttype;
+Pfkeyv2.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):	__u16	sadb_lifetime_exttype;
+Pfkeyv2.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):	__u16	sadb_address_exttype;
+Pfkeyv2.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):	__u16	sadb_key_exttype;
+Pfkeyv2.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):	__u16	sadb_ident_exttype;
+Pfkeyv2.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):	__u16	sadb_sens_exttype;
+Pfkeyv2.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):	__u16	sadb_prop_exttype;
+Pfkeyv2.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):	__u16	sadb_supported_exttype;
+Pfkeyv2.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):	__u16	sadb_spirange_exttype;
+Pfkeyv2.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):	__u16	sadb_x_kmprivate_exttype;
+Pfkeyv2.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):	__u16	sadb_x_sa2_exttype;
+Pfkeyv2.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):	__u16	sadb_x_policy_exttype;
+Pfkeyv2.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):	__u16	sadb_x_nat_t_type_exttype;
+Pfkeyv2.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):	__u16	sadb_x_nat_t_port_exttype;
+Pfkeyv2.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):	__u16	sadb_x_sec_exttype;
+Pfkeyv2.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):	__u16	sadb_x_kmaddress_exttype;
+Pfkeyv2.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define SADB_IDENTTYPE_RESERVED	0
+Pfkeyv2.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define SADB_IDENTTYPE_PREFIX	1
+Pfkeyv2.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define SADB_IDENTTYPE_FQDN	2
+Pfkeyv2.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define SADB_IDENTTYPE_USERFQDN	3
+Pfkeyv2.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define SADB_IDENTTYPE_MAX	3
+Pq.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux\raid):#include <inttypes.h>
+Processor.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\microblaze\include\asm):/* Grotty old names for some.  */
+Proc_fs.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux): * proc_tty.c
+Proc_fs.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):struct tty_driver;
+Proc_fs.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):extern void proc_tty_init(void);
+Proc_fs.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):extern void proc_tty_register_driver(struct tty_driver *driver);
+Proc_fs.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):extern void proc_tty_unregister_driver(struct tty_driver *driver);
+Proc_fs.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):struct tty_driver;
+Proc_fs.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):static inline void proc_tty_register_driver(struct tty_driver *driver) {};
+Proc_fs.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):static inline void proc_tty_unregister_driver(struct tty_driver *driver) {};
+Rcupdate.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux): * (pretty much all of them other than x86), and also prevents
+Registers.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\arm\mach-lh7a40x\include\mach):#define GPIO_INTTYPE1	__REG(GPIO_PHYS + 0x4c)	/* Interrupt Type 1 (Edge) */
+Registers.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\arm\mach-lh7a40x\include\mach):#define GPIO_INTTYPE2	__REG(GPIO_PHYS + 0x50)	/* Interrupt Type 2 */
+Registers.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\arm\mach-lh7a40x\include\mach):#define GPIO_INTTYPE1		__REG(GPIO_PHYS + 0x4c)	/* IRQ edge or lvl  */
+Registers.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\arm\mach-lh7a40x\include\mach):#define GPIO_INTTYPE2		__REG(GPIO_PHYS + 0x50)	/* IRQ activ hi/lo */
+Rfcomm.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\net\bluetooth):/* ---- RFCOMM TTY ---- */
+Rfcomm.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\net\bluetooth):#define RFCOMM_TTY_ATTACHED   3
+Rfcomm.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\net\bluetooth):#define RFCOMM_TTY_RELEASED   4
+Rfcomm.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\net\bluetooth):#ifdef CONFIG_BT_RFCOMM_TTY
+Rfcomm.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\net\bluetooth):int  rfcomm_init_ttys(void);
+Rfcomm.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\net\bluetooth):void rfcomm_cleanup_ttys(void);
+Rfcomm.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\net\bluetooth):static inline int rfcomm_init_ttys(void)
+Rfcomm.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\net\bluetooth):static inline void rfcomm_cleanup_ttys(void)
+Sb1250_dma.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\mips\include\asm\sibyte):#define S_DMA_ETHRX_PKTTYPE         55
+Sb1250_dma.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\mips\include\asm\sibyte):#define M_DMA_ETHRX_PKTTYPE         _SB_MAKEMASK(3, S_DMA_ETHRX_PKTTYPE)
+Sb1250_dma.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\mips\include\asm\sibyte):#define V_DMA_ETHRX_PKTTYPE(x)      _SB_MAKEVALUE(x, S_DMA_ETHRX_PKTTYPE)
+Sb1250_dma.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\mips\include\asm\sibyte):#define G_DMA_ETHRX_PKTTYPE(x)      _SB_GETVALUE(x, S_DMA_ETHRX_PKTTYPE, M_DMA_ETHRX_PKTTYPE)
+Sb1250_dma.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\mips\include\asm\sibyte):#define K_DMA_ETHRX_PKTTYPE_IPV4    0
+Sb1250_dma.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\mips\include\asm\sibyte):#define K_DMA_ETHRX_PKTTYPE_ARPV4   1
+Sb1250_dma.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\mips\include\asm\sibyte):#define K_DMA_ETHRX_PKTTYPE_802     2
+Sb1250_dma.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\mips\include\asm\sibyte):#define K_DMA_ETHRX_PKTTYPE_OTHER   3
+Sb1250_dma.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\mips\include\asm\sibyte):#define K_DMA_ETHRX_PKTTYPE_USER0   4
+Sb1250_dma.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\mips\include\asm\sibyte):#define K_DMA_ETHRX_PKTTYPE_USER1   5
+Sb1250_dma.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\mips\include\asm\sibyte):#define K_DMA_ETHRX_PKTTYPE_USER2   6
+Sb1250_dma.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\mips\include\asm\sibyte):#define K_DMA_ETHRX_PKTTYPE_USER3   7
+Sched.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):	struct pid *tty_old_pgrp;
+Sched.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):	struct tty_struct *tty; /* NULL if no tty */
+Sched.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):	unsigned audit_tty;
+Sched.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):	struct tty_audit_buf *tty_audit_buf;
+Sched.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):/* Protection of (de-)allocation: mm, files, fs, tty, keyrings, mems_allowed,
+Scsi_transport_fc.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\scsi):	FC_PORTTYPE_UNKNOWN,
+Scsi_transport_fc.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\scsi):	FC_PORTTYPE_OTHER,
+Scsi_transport_fc.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\scsi):	FC_PORTTYPE_NOTPRESENT,
+Scsi_transport_fc.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\scsi):	FC_PORTTYPE_NPORT,		/* Attached to FPort */
+Scsi_transport_fc.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\scsi):	FC_PORTTYPE_NLPORT,		/* (Public) Loop w/ FLPort */
+Scsi_transport_fc.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\scsi):	FC_PORTTYPE_LPORT,		/* (Private) Loop w/o FLPort */
+Scsi_transport_fc.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\scsi):	FC_PORTTYPE_PTP,		/* Point to Point w/ another NPort */
+Scsi_transport_fc.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\scsi):	FC_PORTTYPE_NPIV,		/* VPORT based on NPIV */
+Scsi_transport_fc.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\scsi):	enum fc_port_type vport_type;	/* only FC_PORTTYPE_NPIV allowed */
+Sctp.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\net\sctp):#include <linux/tty.h>
+Se401.h (z:\usr\src\linux-headers-2.6.32-27-generic\drivers\media\video):	info("[" __PRETTY_FUNCTION__ ":%d] " fmt, __LINE__ , ## args)
+Selection.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux): * Interface between console.c, tty_io.c, vt.c, vc_screen.c and selection.c
+Selection.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):struct tty_struct;
+Selection.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):struct tty_struct;
+Selection.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):extern int set_selection(const struct tiocl_selection __user *sel, struct tty_struct *tty);
+Selection.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):extern int paste_selection(struct tty_struct *tty);
+Selection.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):extern void mouse_report(struct tty_struct * tty, int butt, int mrx, int mry);
+Serial.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\alpha\include\asm):	{ 0, BASE_BAUD, 0x3F8, 4, STD_COM_FLAGS },	/* ttyS0 */	\
+Serial.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\alpha\include\asm):	{ 0, BASE_BAUD, 0x2F8, 3, STD_COM_FLAGS },	/* ttyS1 */	\
+Serial.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\alpha\include\asm):	{ 0, BASE_BAUD, 0x3E8, 4, STD_COM_FLAGS },	/* ttyS2 */	\
+Serial.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\alpha\include\asm):	{ 0, BASE_BAUD, 0x2E8, 3, STD_COM4_FLAGS },	/* ttyS3 */
+Serial.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\arm\mach-l7200\include\mach):	{ 0, BASE_BAUD, UART1_BASE, IRQ_UART_1, STD_COM_FLAGS },  /* ttyLU0 */ \
+Serial.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\arm\mach-l7200\include\mach):	{ 0, BASE_BAUD, UART2_BASE, IRQ_UART_2, STD_COM_FLAGS },  /* ttyLU1 */ \
+Serial.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\m68k\include\asm):	{ 0, BASE_BAUD, 0x3F8, 4, STD_COM_FLAGS },	/* ttyS0 */	\
+Serial.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\m68k\include\asm):	{ 0, BASE_BAUD, 0x2F8, 3, STD_COM_FLAGS },	/* ttyS1 */	\
+Serial.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\m68k\include\asm):	{ 0, BASE_BAUD, 0x3E8, 4, STD_COM_FLAGS },	/* ttyS2 */	\
+Serial.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\m68k\include\asm):	{ 0, BASE_BAUD, 0x2E8, 3, STD_COM4_FLAGS },	/* ttyS3 */
+Serial.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\mn10300\unit-asb2303\include\unit): * dispose of the /dev/ttyS0 and /dev/ttyS1 serial ports
+Serial.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\mn10300\unit-asb2303\include\unit):#ifndef CONFIG_GDBSTUB_ON_TTYSx
+Serial.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\mn10300\unit-asb2303\include\unit):#else /* CONFIG_GDBSTUB_ON_TTYSx */
+Serial.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\mn10300\unit-asb2303\include\unit):#if defined(CONFIG_GDBSTUB_ON_TTYS0)
+Serial.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\mn10300\unit-asb2303\include\unit):#elif defined(CONFIG_GDBSTUB_ON_TTYS1)
+Serial.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\mn10300\unit-asb2303\include\unit):#endif /* CONFIG_GDBSTUB_ON_TTYSx */
+Serial.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\mn10300\unit-asb2305\include\unit): * dispose of the /dev/ttyS0 serial port
+Serial.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\mn10300\unit-asb2305\include\unit):#ifndef CONFIG_GDBSTUB_ON_TTYSx
+Serial.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\mn10300\unit-asb2305\include\unit):#else /* CONFIG_GDBSTUB_ON_TTYSx */
+Serial.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\mn10300\unit-asb2305\include\unit):#if defined(CONFIG_GDBSTUB_ON_TTYS0)
+Serial.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\mn10300\unit-asb2305\include\unit):#elif defined(CONFIG_GDBSTUB_ON_TTYS1)
+Serial.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\mn10300\unit-asb2305\include\unit):#error The ASB2305 doesnt have a /dev/ttyS1
+Serial.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\mn10300\unit-asb2305\include\unit):#define TTYS0_TX	__SYSREG(SERIAL_PORT0_BASE_ADDRESS + UART_TX  * 4, u8)
+Serial.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\mn10300\unit-asb2305\include\unit):#define TTYS0_MCR	__SYSREG(SERIAL_PORT0_BASE_ADDRESS + UART_MCR * 4, u8)
+Serial.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\mn10300\unit-asb2305\include\unit):#define TTYS0_LSR	__SYSREG(SERIAL_PORT0_BASE_ADDRESS + UART_LSR * 4, u8)
+Serial.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\mn10300\unit-asb2305\include\unit):#define TTYS0_MSR	__SYSREG(SERIAL_PORT0_BASE_ADDRESS + UART_MSR * 4, u8)
+Serial.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\mn10300\unit-asb2305\include\unit):	while (!(TTYS0_LSR & UART_LSR_##STATE)) {}	\
+Serial.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\mn10300\unit-asb2305\include\unit):	while (!(TTYS0_MSR & UART_MSR_##LINE)) {}	\
+Serial.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\mn10300\unit-asb2305\include\unit):	TTYS0_MCR &= ~UART_MCR_##LINE;		\
+Serial.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\mn10300\unit-asb2305\include\unit):	TTYS0_MCR |= UART_MCR_##LINE;		\
+Serial.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\mn10300\unit-asb2305\include\unit):#define FLOWCTL_QUERY(LINE)	({ TTYS0_MSR & UART_MSR_##LINE; })
+Serial.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\mn10300\unit-asb2305\include\unit):			TTYS0_TX = 0x0d;
+Serial.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\mn10300\unit-asb2305\include\unit):		TTYS0_TX = ch;
+Serial.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\mn10300\unit-asb2305\include\unit):#endif /* CONFIG_GDBSTUB_ON_TTYSx */
+Serial.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\x86\include\asm):	{ 0, BASE_BAUD, 0x3F8, 4, STD_COM_FLAGS },	/* ttyS0 */	\
+Serial.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\x86\include\asm):	{ 0, BASE_BAUD, 0x2F8, 3, STD_COM_FLAGS },	/* ttyS1 */	\
+Serial.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\x86\include\asm):	{ 0, BASE_BAUD, 0x3E8, 4, STD_COM_FLAGS },	/* ttyS2 */	\
+Serial.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\x86\include\asm):	{ 0, BASE_BAUD, 0x2E8, 3, STD_COM4_FLAGS },	/* ttyS3 */
+Serial.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define ASYNCB_HUP_NOTIFY	 0 /* Notify getty on hangups and closes
+Serial.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux\usb):#define SERIAL_TTY_MAJOR	188	/* Nice legal number now */
+Serial.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux\usb):#define SERIAL_TTY_MINORS	254	/* loads of devices :) */
+Serial.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux\usb):#define SERIAL_TTY_NO_MINOR	255	/* No minor was assigned */
+Serial.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux\usb): * @port: pointer to the corresponding tty_port for this port.
+Serial.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux\usb): * @throttle_req: nonzero if the tty wants to throttle us
+Serial.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux\usb):	struct tty_port		port;
+Serial.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux\usb): * the corresponding tty port functions are called.  If they are not
+Serial.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux\usb):	/* Called by console and by the tty layer */
+Serial.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux\usb):	int  (*open)(struct tty_struct *tty, struct usb_serial_port *port);
+Serial.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux\usb):	int  (*write)(struct tty_struct *tty, struct usb_serial_port *port,
+Serial.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux\usb):	/* Called only by the tty layer */
+Serial.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux\usb):	int  (*write_room)(struct tty_struct *tty);
+Serial.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux\usb):	int  (*ioctl)(struct tty_struct *tty, struct file *file,
+Serial.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux\usb):	void (*set_termios)(struct tty_struct *tty,
+Serial.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux\usb):	void (*break_ctl)(struct tty_struct *tty, int break_state);
+Serial.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux\usb):	int  (*chars_in_buffer)(struct tty_struct *tty);
+Serial.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux\usb):	void (*throttle)(struct tty_struct *tty);
+Serial.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux\usb):	void (*unthrottle)(struct tty_struct *tty);
+Serial.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux\usb):	int  (*tiocmget)(struct tty_struct *tty, struct file *file);
+Serial.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux\usb):	int  (*tiocmset)(struct tty_struct *tty, struct file *file,
+Serial.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux\usb):	/* Called by the tty layer for port level work. There may or may not
+Serial.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux\usb):	   be an attached tty at this point */
+Serial.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux\usb):	void (*init_termios)(struct tty_struct *tty);
+Serial.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux\usb):extern int usb_serial_generic_open(struct tty_struct *tty,
+Serial.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux\usb):extern int usb_serial_generic_write(struct tty_struct *tty,
+Serial.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux\usb):extern int usb_serial_generic_write_room(struct tty_struct *tty);
+Serial.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux\usb):extern int usb_serial_generic_chars_in_buffer(struct tty_struct *tty);
+Serial.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux\usb):extern void usb_serial_generic_throttle(struct tty_struct *tty);
+Serial.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux\usb):extern void usb_serial_generic_unthrottle(struct tty_struct *tty);
+Serial.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux\usb):extern int usb_serial_handle_sysrq_char(struct tty_struct *tty,
+Serial.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux\usb):extern struct tty_driver *usb_serial_tty_driver;
+Serial167.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux): * For definitions of the flags field, see tty.h
+Serial167.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):	int			flags; 		/* defined in tty.h */
+Serial167.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):	struct tty_struct 	*tty;
+serialP.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux): * For definitions of the flags field, see tty.h
+serialP.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):	struct tty_struct 	*tty;
+Serial_core.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#include <linux/tty.h>
+Serial_core.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):	struct tty_port		port;
+Serial_core.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):struct tty_driver;
+Serial_core.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):	struct tty_driver	*tty_driver;
+Serial_core.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):struct tty_driver *uart_console_device(struct console *co, int *index);
+Serial_core.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):	struct tty_struct *tty = port->state->port.tty;
+Serial_core.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):	if(tty->stopped || tty->hw_stopped)
+Serial_core.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):			handle_sysrq(ch, port->state->port.tty);
+Serial_core.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):		do_SAK(state->port.tty);
+Serial_core.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):	struct tty_port *port = &state->port;
+Serial_core.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):		else if (port->tty)
+Serial_core.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):			tty_hangup(port->tty);
+Serial_core.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):	struct tty_port *port = &uport->state->port;
+Serial_core.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):	struct tty_struct *tty = port->tty;
+Serial_core.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):		if (tty->hw_stopped) {
+Serial_core.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):				tty->hw_stopped = 0;
+Serial_core.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):				tty->hw_stopped = 1;
+Serial_core.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#include <linux/tty_flip.h>
+Serial_core.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):	struct tty_struct *tty = port->state->port.tty;
+Serial_core.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):		tty_insert_flip_char(tty, ch, flag);
+Serial_core.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):		tty_insert_flip_char(tty, 0, TTY_OVERRUN);
+Setup.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\arm\include\asm): * in include/linux/tty.h
+Sgiarcs.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\mips\include\asm):#define PROM_ENOTTY                     0x13
+Signal.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\mips\include\asm):#define SIGTTIN		26	/* Background read from tty (POSIX).  */
+Signal.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\mips\include\asm):#define SIGTTOU		27	/* Background write to tty (POSIX).  */
+Simcall.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\xtensa\platforms\iss\include\platform):#define SYS_isatty	21	/* n/a - mount */
+Snapgear.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\sh\include\mach-common\mach): * D0         DCD on ttySC1          power
+Snapgear.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\sh\include\mach-common\mach): * D2         ttySC0 CTS (7100)      LAN
+Snapgear.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\sh\include\mach-common\mach): * D4         ttySC0 DCD (7100)      CONSOLE
+Snapgear.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\sh\include\mach-common\mach): * D7         -                      DTR on ttySC1
+Snapgear.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\sh\include\mach-common\mach): * D8         -                      ttySC0 RTS (7100)
+Snapgear.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\sh\include\mach-common\mach): * D9         -                      ttySC0 DTR (7100)
+Sock.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\net): * 	Inlined as it's very short and called for pretty much every
+Spec.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux\uwb):	u8 bEventType;			/* enum hwa_cet */
+Stallion.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):	struct tty_port		port;
+Sumversion.c (z:\usr\src\linux-headers-2.6.32-27-generic\scripts\mod):#include <inttypes.h>
+Swab.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\alpha\include\asm):	 * pretty hard to hide.  Just in case a future implementation
+Swab.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\parisc\include\asm):** Pretty cool algorithm: (* == zero'd bits)
+Sysrq.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):struct tty_struct;
+Sysrq.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):	void (*handler)(int, struct tty_struct *);
+Sysrq.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux): * ASCII code of the key, pointer to registers and kbd/tty structs (if they
+Sysrq.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):void handle_sysrq(int key, struct tty_struct *tty);
+Sysrq.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):void __handle_sysrq(int key, struct tty_struct *tty, int check_mask);
+Sysrq.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):static inline void handle_sysrq(int key, struct tty_struct *tty)
+System.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\mn10300\include\asm):#ifdef CONFIG_MN10300_TTYSM
+Tc_em_meta.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux\tc_ematch):	TCF_META_ID_PKTTYPE,
+Termios.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\alpha\include\asm):struct sgttyb {
+Termios.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\mips\include\asm):struct sgttyb {
+Termios.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\powerpc\include\asm):struct sgttyb {
+Termios.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\sparc\include\asm):struct sgttyb {
+Timeconst.pl (z:\usr\src\linux-headers-2.6.32-27-generic\kernel):# Pretty-print Perl values
+Topology.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\x86\include\asm): * architecture is flat, so it is a pretty simple function!
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#ifndef _LINUX_TTY_H
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define _LINUX_TTY_H
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux): * 'tty.h' defines some structures used by tty_io.c and some defines.
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#include <linux/tty_driver.h>
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#include <linux/tty_ldisc.h>
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define N_TTY		0
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):struct tty_buffer {
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):	struct tty_buffer *next;
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux): * We default to dicing tty buffer allocations to this many characters
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux): * tty_buffer itself but it must also be taken into account that the
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux): * the buffer is 256 byte aligned. See tty_buffer_find for the allocation
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define TTY_BUFFER_PAGE	(((PAGE_SIZE - sizeof(struct tty_buffer)) / 2) & ~0xFF)
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):struct tty_bufhead {
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):	struct tty_buffer *head;	/* Queue head */
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):	struct tty_buffer *tail;	/* Active buffer */
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):	struct tty_buffer *free;	/* Free queue head */
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define TTY_NORMAL	0
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define TTY_BREAK	1
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define TTY_FRAME	2
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define TTY_PARITY	3
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define TTY_OVERRUN	4
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define INTR_CHAR(tty) ((tty)->termios->c_cc[VINTR])
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define QUIT_CHAR(tty) ((tty)->termios->c_cc[VQUIT])
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define ERASE_CHAR(tty) ((tty)->termios->c_cc[VERASE])
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define KILL_CHAR(tty) ((tty)->termios->c_cc[VKILL])
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define EOF_CHAR(tty) ((tty)->termios->c_cc[VEOF])
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define TIME_CHAR(tty) ((tty)->termios->c_cc[VTIME])
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define MIN_CHAR(tty) ((tty)->termios->c_cc[VMIN])
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define SWTC_CHAR(tty) ((tty)->termios->c_cc[VSWTC])
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define START_CHAR(tty) ((tty)->termios->c_cc[VSTART])
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define STOP_CHAR(tty) ((tty)->termios->c_cc[VSTOP])
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define SUSP_CHAR(tty) ((tty)->termios->c_cc[VSUSP])
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define EOL_CHAR(tty) ((tty)->termios->c_cc[VEOL])
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define REPRINT_CHAR(tty) ((tty)->termios->c_cc[VREPRINT])
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define DISCARD_CHAR(tty) ((tty)->termios->c_cc[VDISCARD])
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define WERASE_CHAR(tty) ((tty)->termios->c_cc[VWERASE])
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define LNEXT_CHAR(tty)	((tty)->termios->c_cc[VLNEXT])
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define EOL2_CHAR(tty) ((tty)->termios->c_cc[VEOL2])
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define _I_FLAG(tty, f)	((tty)->termios->c_iflag & (f))
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define _O_FLAG(tty, f)	((tty)->termios->c_oflag & (f))
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define _C_FLAG(tty, f)	((tty)->termios->c_cflag & (f))
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define _L_FLAG(tty, f)	((tty)->termios->c_lflag & (f))
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define I_IGNBRK(tty)	_I_FLAG((tty), IGNBRK)
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define I_BRKINT(tty)	_I_FLAG((tty), BRKINT)
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define I_IGNPAR(tty)	_I_FLAG((tty), IGNPAR)
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define I_PARMRK(tty)	_I_FLAG((tty), PARMRK)
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define I_INPCK(tty)	_I_FLAG((tty), INPCK)
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define I_ISTRIP(tty)	_I_FLAG((tty), ISTRIP)
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define I_INLCR(tty)	_I_FLAG((tty), INLCR)
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define I_IGNCR(tty)	_I_FLAG((tty), IGNCR)
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define I_ICRNL(tty)	_I_FLAG((tty), ICRNL)
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define I_IUCLC(tty)	_I_FLAG((tty), IUCLC)
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define I_IXON(tty)	_I_FLAG((tty), IXON)
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define I_IXANY(tty)	_I_FLAG((tty), IXANY)
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define I_IXOFF(tty)	_I_FLAG((tty), IXOFF)
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define I_IMAXBEL(tty)	_I_FLAG((tty), IMAXBEL)
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define I_IUTF8(tty)	_I_FLAG((tty), IUTF8)
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define O_OPOST(tty)	_O_FLAG((tty), OPOST)
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define O_OLCUC(tty)	_O_FLAG((tty), OLCUC)
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define O_ONLCR(tty)	_O_FLAG((tty), ONLCR)
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define O_OCRNL(tty)	_O_FLAG((tty), OCRNL)
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define O_ONOCR(tty)	_O_FLAG((tty), ONOCR)
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define O_ONLRET(tty)	_O_FLAG((tty), ONLRET)
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define O_OFILL(tty)	_O_FLAG((tty), OFILL)
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define O_OFDEL(tty)	_O_FLAG((tty), OFDEL)
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define O_NLDLY(tty)	_O_FLAG((tty), NLDLY)
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define O_CRDLY(tty)	_O_FLAG((tty), CRDLY)
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define O_TABDLY(tty)	_O_FLAG((tty), TABDLY)
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define O_BSDLY(tty)	_O_FLAG((tty), BSDLY)
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define O_VTDLY(tty)	_O_FLAG((tty), VTDLY)
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define O_FFDLY(tty)	_O_FLAG((tty), FFDLY)
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define C_BAUD(tty)	_C_FLAG((tty), CBAUD)
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define C_CSIZE(tty)	_C_FLAG((tty), CSIZE)
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define C_CSTOPB(tty)	_C_FLAG((tty), CSTOPB)
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define C_CREAD(tty)	_C_FLAG((tty), CREAD)
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define C_PARENB(tty)	_C_FLAG((tty), PARENB)
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define C_PARODD(tty)	_C_FLAG((tty), PARODD)
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define C_HUPCL(tty)	_C_FLAG((tty), HUPCL)
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define C_CLOCAL(tty)	_C_FLAG((tty), CLOCAL)
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define C_CIBAUD(tty)	_C_FLAG((tty), CIBAUD)
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define C_CRTSCTS(tty)	_C_FLAG((tty), CRTSCTS)
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define L_ISIG(tty)	_L_FLAG((tty), ISIG)
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define L_ICANON(tty)	_L_FLAG((tty), ICANON)
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define L_XCASE(tty)	_L_FLAG((tty), XCASE)
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define L_ECHO(tty)	_L_FLAG((tty), ECHO)
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define L_ECHOE(tty)	_L_FLAG((tty), ECHOE)
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define L_ECHOK(tty)	_L_FLAG((tty), ECHOK)
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define L_ECHONL(tty)	_L_FLAG((tty), ECHONL)
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define L_NOFLSH(tty)	_L_FLAG((tty), NOFLSH)
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define L_TOSTOP(tty)	_L_FLAG((tty), TOSTOP)
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define L_ECHOCTL(tty)	_L_FLAG((tty), ECHOCTL)
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define L_ECHOPRT(tty)	_L_FLAG((tty), ECHOPRT)
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define L_ECHOKE(tty)	_L_FLAG((tty), ECHOKE)
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define L_FLUSHO(tty)	_L_FLAG((tty), FLUSHO)
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define L_PENDIN(tty)	_L_FLAG((tty), PENDIN)
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define L_IEXTEN(tty)	_L_FLAG((tty), IEXTEN)
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux): * The tty port has a different lifetime to the tty so must be kept apart.
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux): * In addition be careful as tty -> port mappings are valid for the life
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux): * of the tty object but in many cases port -> tty mappings are valid only
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):struct tty_port;
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):struct tty_port_operations {
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):	int (*carrier_raised)(struct tty_port *port);
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):	void (*dtr_rts)(struct tty_port *port, int raise);
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):	void (*shutdown)(struct tty_port *port);
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):	void (*drop)(struct tty_port *port);
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):struct tty_port {
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):	struct tty_struct	*tty;		/* Back pointer */
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):	const struct tty_port_operations *ops;	/* Port operations */
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):	spinlock_t		lock;		/* Lock protecting tty field */
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):	unsigned long		flags;		/* TTY flags ASY_*/
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux): * Where all of the state associated with a tty is kept while the tty
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux): * is open.  Since the termios state should be kept even if the tty
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):struct tty_operations;
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):struct tty_struct {
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):	struct tty_driver *driver;
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):	const struct tty_operations *ops;
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):	/* Protects ldisc changes: Lock tty not pty */
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):	struct tty_ldisc *ldisc;
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):	struct tty_struct *link;
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):	struct tty_bufhead buf;		/* Locked internally */
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):	struct list_head tty_files;
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define N_TTY_BUF_SIZE 4096
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):	 * The following is data for the N_TTY line discipline.  For
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):	 * historical reasons, this is included in the tty structure.
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):	unsigned long read_flags[N_TTY_BUF_SIZE/(8*sizeof(unsigned long))];
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):	/* If the tty has a pending do_SAK, queue it here - akpm */
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):	struct tty_port *port;
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):/* tty magic number */
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define TTY_MAGIC		0x5401
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux): * These bits are used in the flags field of the tty structure.
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux): * tty->write.  Thus, you must use the inline functions set_bit() and
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define TTY_THROTTLED 		0	/* Call unthrottle() at threshold min */
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define TTY_IO_ERROR 		1	/* Cause an I/O error (may be no ldisc too) */
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define TTY_OTHER_CLOSED 	2	/* Other side (if any) has closed */
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define TTY_EXCLUSIVE 		3	/* Exclusive open mode */
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define TTY_DEBUG 		4	/* Debugging */
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define TTY_DO_WRITE_WAKEUP 	5	/* Call write_wakeup after queuing new */
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define TTY_PUSH 		6	/* n_tty private */
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define TTY_CLOSING 		7	/* ->close() in progress */
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define TTY_LDISC 		9	/* Line discipline attached */
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define TTY_LDISC_CHANGING 	10	/* Line discipline changing */
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define TTY_LDISC_OPEN	 	11	/* Line discipline is open */
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define TTY_HW_COOK_OUT 	14	/* Hardware can do output cooking */
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define TTY_HW_COOK_IN 		15	/* Hardware can do input cooking */
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define TTY_PTY_LOCK 		16	/* pty private */
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define TTY_NO_WRITE_SPLIT 	17	/* Preserve write boundaries to driver */
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define TTY_HUPPED 		18	/* Post driver->hangup() */
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define TTY_FLUSHING		19	/* Flushing to ldisc in progress */
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define TTY_FLUSHPENDING	20	/* Queued buffer flush pending */
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define TTY_WRITE_FLUSH(tty) tty_write_flush((tty))
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):extern void tty_write_flush(struct tty_struct *);
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):extern struct ktermios tty_std_termios;
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):extern struct class *tty_class;
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux): *	tty_kref_get		-	get a tty reference
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux): *	@tty: tty device
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux): *	Return a new reference to a tty object. The caller must hold
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):static inline struct tty_struct *tty_kref_get(struct tty_struct *tty)
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):	if (tty)
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):		kref_get(&tty->kref);
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):	return tty;
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):extern void tty_kref_put(struct tty_struct *tty);
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):extern int tty_paranoia_check(struct tty_struct *tty, struct inode *inode,
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):extern char *tty_name(struct tty_struct *tty, char *buf);
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):extern void tty_wait_until_sent(struct tty_struct *tty, long timeout);
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):extern int tty_check_change(struct tty_struct *tty);
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):extern void stop_tty(struct tty_struct *tty);
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):extern void start_tty(struct tty_struct *tty);
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):extern int tty_register_driver(struct tty_driver *driver);
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):extern int tty_unregister_driver(struct tty_driver *driver);
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):extern struct device *tty_register_device(struct tty_driver *driver,
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):extern void tty_unregister_device(struct tty_driver *driver, unsigned index);
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):extern int tty_read_raw_data(struct tty_struct *tty, unsigned char *bufp,
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):extern void tty_write_message(struct tty_struct *tty, char *msg);
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):extern int tty_put_char(struct tty_struct *tty, unsigned char c);
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):extern int tty_chars_in_buffer(struct tty_struct *tty);
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):extern int tty_write_room(struct tty_struct *tty);
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):extern void tty_driver_flush_buffer(struct tty_struct *tty);
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):extern void tty_throttle(struct tty_struct *tty);
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):extern void tty_unthrottle(struct tty_struct *tty);
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):extern int tty_do_resize(struct tty_struct *tty, struct winsize *ws);
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):extern void tty_shutdown(struct tty_struct *tty);
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):extern void tty_free_termios(struct tty_struct *tty);
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):extern struct pid *tty_get_pgrp(struct tty_struct *tty);
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):extern int tty_signal(int sig, struct tty_struct *tty);
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):extern void tty_hangup(struct tty_struct *tty);
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):extern void tty_vhangup(struct tty_struct *tty);
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):extern void tty_vhangup_self(void);
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):extern void tty_unhangup(struct file *filp);
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):extern int tty_hung_up_p(struct file *filp);
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):extern void do_SAK(struct tty_struct *tty);
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):extern void __do_SAK(struct tty_struct *tty);
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):extern void disassociate_ctty(int priv);
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):extern void no_tty(void);
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):extern void tty_flip_buffer_push(struct tty_struct *tty);
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):extern void tty_flush_to_ldisc(struct tty_struct *tty);
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):extern void tty_buffer_free_all(struct tty_struct *tty);
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):extern void tty_buffer_flush(struct tty_struct *tty);
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):extern void tty_buffer_init(struct tty_struct *tty);
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):extern speed_t tty_get_baud_rate(struct tty_struct *tty);
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):extern speed_t tty_termios_baud_rate(struct ktermios *termios);
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):extern speed_t tty_termios_input_baud_rate(struct ktermios *termios);
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):extern void tty_termios_encode_baud_rate(struct ktermios *termios,
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):extern void tty_encode_baud_rate(struct tty_struct *tty,
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):extern void tty_termios_copy_hw(struct ktermios *new, struct ktermios *old);
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):extern int tty_termios_hw_change(struct ktermios *a, struct ktermios *b);
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):extern struct tty_ldisc *tty_ldisc_ref(struct tty_struct *);
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):extern void tty_ldisc_deref(struct tty_ldisc *);
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):extern struct tty_ldisc *tty_ldisc_ref_wait(struct tty_struct *);
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):extern void tty_ldisc_hangup(struct tty_struct *tty);
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):extern const struct file_operations tty_ldiscs_proc_fops;
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):extern void tty_wakeup(struct tty_struct *tty);
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):extern void tty_ldisc_flush(struct tty_struct *tty);
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):extern long tty_ioctl(struct file *file, unsigned int cmd, unsigned long arg);
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):extern int tty_mode_ioctl(struct tty_struct *tty, struct file *file,
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):extern int tty_perform_flush(struct tty_struct *tty, unsigned long arg);
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):extern dev_t tty_devnum(struct tty_struct *tty);
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):extern void proc_clear_tty(struct task_struct *p);
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):extern struct tty_struct *get_current_tty(void);
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):extern void tty_default_fops(struct file_operations *fops);
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):extern struct tty_struct *alloc_tty_struct(void);
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):extern void free_tty_struct(struct tty_struct *tty);
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):extern void initialize_tty_struct(struct tty_struct *tty,
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):		struct tty_driver *driver, int idx);
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):extern struct tty_struct *tty_init_dev(struct tty_driver *driver, int idx,
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):extern void tty_release_dev(struct file *filp);
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):extern int tty_init_termios(struct tty_struct *tty);
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):extern struct tty_struct *tty_pair_get_tty(struct tty_struct *tty);
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):extern struct tty_struct *tty_pair_get_pty(struct tty_struct *tty);
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):extern struct mutex tty_mutex;
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):extern void tty_write_unlock(struct tty_struct *tty);
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):extern int tty_write_lock(struct tty_struct *tty, int ndelay);
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define tty_is_writelocked(tty)  (mutex_is_locked(&tty->atomic_write_lock))
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):extern void tty_port_init(struct tty_port *port);
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):extern int tty_port_alloc_xmit_buf(struct tty_port *port);
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):extern void tty_port_free_xmit_buf(struct tty_port *port);
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):extern struct tty_struct *tty_port_tty_get(struct tty_port *port);
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):extern void tty_port_tty_set(struct tty_port *port, struct tty_struct *tty);
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):extern int tty_port_carrier_raised(struct tty_port *port);
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):extern void tty_port_raise_dtr_rts(struct tty_port *port);
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):extern void tty_port_lower_dtr_rts(struct tty_port *port);
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):extern void tty_port_hangup(struct tty_port *port);
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):extern int tty_port_block_til_ready(struct tty_port *port,
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):				struct tty_struct *tty, struct file *filp);
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):extern int tty_port_close_start(struct tty_port *port,
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):				struct tty_struct *tty, struct file *filp);
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):extern void tty_port_close_end(struct tty_port *port, struct tty_struct *tty);
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):extern void tty_port_close(struct tty_port *port,
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):				struct tty_struct *tty, struct file *filp);
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):extern inline int tty_port_users(struct tty_port *port)
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):extern int tty_register_ldisc(int disc, struct tty_ldisc_ops *new_ldisc);
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):extern int tty_unregister_ldisc(int disc);
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):extern int tty_set_ldisc(struct tty_struct *tty, int ldisc);
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):extern int tty_ldisc_setup(struct tty_struct *tty, struct tty_struct *o_tty);
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):extern void tty_ldisc_release(struct tty_struct *tty, struct tty_struct *o_tty);
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):extern void tty_ldisc_init(struct tty_struct *tty);
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):extern void tty_ldisc_begin(void);
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):/* This last one is just for the tty layer internals and shouldn't be used elsewhere */
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):extern void tty_ldisc_enable(struct tty_struct *tty);
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):/* n_tty.c */
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):extern struct tty_ldisc_ops tty_ldisc_N_TTY;
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):/* tty_audit.c */
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):extern void tty_audit_add_data(struct tty_struct *tty, unsigned char *data,
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):extern void tty_audit_exit(void);
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):extern void tty_audit_fork(struct signal_struct *sig);
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):extern void tty_audit_tiocsti(struct tty_struct *tty, char ch);
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):extern void tty_audit_push(struct tty_struct *tty);
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):extern void tty_audit_push_task(struct task_struct *tsk,
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):static inline void tty_audit_add_data(struct tty_struct *tty,
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):static inline void tty_audit_tiocsti(struct tty_struct *tty, char ch)
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):static inline void tty_audit_exit(void)
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):static inline void tty_audit_fork(struct signal_struct *sig)
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):static inline void tty_audit_push(struct tty_struct *tty)
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):static inline void tty_audit_push_task(struct task_struct *tsk,
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):/* tty_ioctl.c */
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):extern int n_tty_ioctl_helper(struct tty_struct *tty, struct file *file,
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):extern int pcxe_open(struct tty_struct *tty, struct file *filp);
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):extern int vt_ioctl(struct tty_struct *tty, struct file *file,
+Tty.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):extern long vt_compat_ioctl(struct tty_struct *tty, struct file * file,
+Tty_driver.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#ifndef _LINUX_TTY_DRIVER_H
+Tty_driver.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define _LINUX_TTY_DRIVER_H
+Tty_driver.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux): * This structure defines the interface between the low-level tty
+Tty_driver.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux): * driver and the tty routines.  The following routines can be
+Tty_driver.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux): * struct tty_struct * (*lookup)(struct tty_driver *self, int idx)
+Tty_driver.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux): *	Return the tty device corresponding to idx, NULL if there is not
+Tty_driver.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux): *	tty_mutex (for now!)
+Tty_driver.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux): *	Optional method. Default behaviour is to use the ttys array
+Tty_driver.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux): * int (*install)(struct tty_driver *self, struct tty_struct *tty)
+Tty_driver.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux): *	Install a new tty into the tty driver internal tables. Used in
+Tty_driver.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux): *	Optional method. Default behaviour is to use the ttys array
+Tty_driver.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux): * void (*remove)(struct tty_driver *self, struct tty_struct *tty)
+Tty_driver.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux): *	Remove a closed tty from the tty driver internal tables. Used in
+Tty_driver.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux): *	Optional method. Default behaviour is to use the ttys array
+Tty_driver.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux): * int  (*open)(struct tty_struct * tty, struct file * filp);
+Tty_driver.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux): * 	This routine is called when a particular tty device is opened.
+Tty_driver.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux): * void (*close)(struct tty_struct * tty, struct file * filp);
+Tty_driver.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux): * 	This routine is called when a particular tty device is closed.
+Tty_driver.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux): * void (*shutdown)(struct tty_struct * tty);
+Tty_driver.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux): * 	This routine is called synchronously when a particular tty device
+Tty_driver.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux): * void (*cleanup)(struct tty_struct * tty);
+Tty_driver.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux): *	This routine is called asynchronously when a particular tty device
+Tty_driver.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux): * int (*write)(struct tty_struct * tty,
+Tty_driver.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux): * 	characters to the tty device.  The characters may come from
+Tty_driver.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux): * int (*put_char)(struct tty_struct *tty, unsigned char ch);
+Tty_driver.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux): * 	character to the tty device.  If the kernel uses this routine,
+Tty_driver.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux): *	Note: Do not call this function directly, call tty_put_char
+Tty_driver.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux): * void (*flush_chars)(struct tty_struct *tty);
+Tty_driver.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux): * 	series of characters to the tty device using put_char().  
+Tty_driver.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux): *	Note: Do not call this function directly, call tty_driver_flush_chars
+Tty_driver.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux): * int  (*write_room)(struct tty_struct *tty);
+Tty_driver.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux): * 	This routine returns the numbers of characters the tty driver
+Tty_driver.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux): *	Note: Do not call this function directly, call tty_write_room
+Tty_driver.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux): * int  (*ioctl)(struct tty_struct *tty, struct file * file,
+Tty_driver.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux): * 	This routine allows the tty driver to implement
+Tty_driver.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux): * long (*compat_ioctl)(struct tty_struct *tty, struct file * file,
+Tty_driver.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux): * void (*set_termios)(struct tty_struct *tty, struct ktermios * old);
+Tty_driver.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux): * 	This routine allows the tty driver to be notified when
+Tty_driver.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux): * void (*set_ldisc)(struct tty_struct *tty);
+Tty_driver.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux): * 	This routine allows the tty driver to be notified when the
+Tty_driver.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux): * void (*throttle)(struct tty_struct * tty);
+Tty_driver.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux): * 	This routine notifies the tty driver that input buffers for
+Tty_driver.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux): * 	signal that no more characters should be sent to the tty.
+Tty_driver.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux): *	Optional: Always invoke via tty_throttle(), called under the
+Tty_driver.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux): * void (*unthrottle)(struct tty_struct * tty);
+Tty_driver.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux): * 	This routine notifies the tty drivers that it should signals
+Tty_driver.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux): * 	that characters can now be sent to the tty without fear of
+Tty_driver.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux): *	Optional: Always invoke via tty_unthrottle(), called under the
+Tty_driver.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux): * void (*stop)(struct tty_struct *tty);
+Tty_driver.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux): * 	This routine notifies the tty driver that it should stop
+Tty_driver.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux): * 	outputting characters to the tty device.  
+Tty_driver.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux): *	Note: Call stop_tty not this method.
+Tty_driver.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux): * void (*start)(struct tty_struct *tty);
+Tty_driver.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux): * 	This routine notifies the tty driver that it resume sending
+Tty_driver.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux): *	characters to the tty device.
+Tty_driver.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux): *	Note: Call start_tty not this method.
+Tty_driver.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux): * void (*hangup)(struct tty_struct *tty);
+Tty_driver.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux): * 	This routine notifies the tty driver that it should hangup the
+Tty_driver.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux): * 	tty device.
+Tty_driver.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux): * int (*break_ctl)(struct tty_stuct *tty, int state);
+Tty_driver.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux): * 	This optional routine requests the tty driver to turn on or
+Tty_driver.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux): * 	If this routine is implemented, the high-level tty driver will
+Tty_driver.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux): *	If the driver sets TTY_DRIVER_HARDWARE_BREAK then the interface
+Tty_driver.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux): * void (*wait_until_sent)(struct tty_struct *tty, int timeout);
+Tty_driver.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux): *	Note: Usually correct to call tty_wait_until_sent
+Tty_driver.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux): * void (*send_xchar)(struct tty_struct *tty, char ch);
+Tty_driver.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux): * int (*resize)(struct tty_struct *tty, struct winsize *ws)
+Tty_driver.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux): *	line). See tty_do_resize() if you need to wrap the standard method
+Tty_driver.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux): * void (*set_termiox)(struct tty_struct *tty, struct termiox *new);
+Tty_driver.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux): *	unless the tty also has a valid tty->termiox pointer.
+Tty_driver.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):struct tty_struct;
+Tty_driver.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):struct tty_driver;
+Tty_driver.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):struct tty_operations {
+Tty_driver.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):	struct tty_struct * (*lookup)(struct tty_driver *driver,
+Tty_driver.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):	int  (*install)(struct tty_driver *driver, struct tty_struct *tty);
+Tty_driver.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):	void (*remove)(struct tty_driver *driver, struct tty_struct *tty);
+Tty_driver.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):	int  (*open)(struct tty_struct * tty, struct file * filp);
+Tty_driver.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):	void (*close)(struct tty_struct * tty, struct file * filp);
+Tty_driver.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):	void (*shutdown)(struct tty_struct *tty);
+Tty_driver.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):	void (*cleanup)(struct tty_struct *tty);
+Tty_driver.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):	int  (*write)(struct tty_struct * tty,
+Tty_driver.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):	int  (*put_char)(struct tty_struct *tty, unsigned char ch);
+Tty_driver.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):	void (*flush_chars)(struct tty_struct *tty);
+Tty_driver.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):	int  (*write_room)(struct tty_struct *tty);
+Tty_driver.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):	int  (*chars_in_buffer)(struct tty_struct *tty);
+Tty_driver.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):	int  (*ioctl)(struct tty_struct *tty, struct file * file,
+Tty_driver.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):	long (*compat_ioctl)(struct tty_struct *tty, struct file * file,
+Tty_driver.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):	void (*set_termios)(struct tty_struct *tty, struct ktermios * old);
+Tty_driver.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):	void (*throttle)(struct tty_struct * tty);
+Tty_driver.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):	void (*unthrottle)(struct tty_struct * tty);
+Tty_driver.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):	void (*stop)(struct tty_struct *tty);
+Tty_driver.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):	void (*start)(struct tty_struct *tty);
+Tty_driver.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):	void (*hangup)(struct tty_struct *tty);
+Tty_driver.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):	int (*break_ctl)(struct tty_struct *tty, int state);
+Tty_driver.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):	void (*flush_buffer)(struct tty_struct *tty);
+Tty_driver.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):	void (*set_ldisc)(struct tty_struct *tty);
+Tty_driver.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):	void (*wait_until_sent)(struct tty_struct *tty, int timeout);
+Tty_driver.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):	void (*send_xchar)(struct tty_struct *tty, char ch);
+Tty_driver.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):	int (*tiocmget)(struct tty_struct *tty, struct file *file);
+Tty_driver.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):	int (*tiocmset)(struct tty_struct *tty, struct file *file,
+Tty_driver.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):	int (*resize)(struct tty_struct *tty, struct winsize *ws);
+Tty_driver.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):	int (*set_termiox)(struct tty_struct *tty, struct termiox *tnew);
+Tty_driver.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):	int (*poll_init)(struct tty_driver *driver, int line, char *options);
+Tty_driver.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):	int (*poll_get_char)(struct tty_driver *driver, int line);
+Tty_driver.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):	void (*poll_put_char)(struct tty_driver *driver, int line, char ch);
+Tty_driver.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):struct tty_driver {
+Tty_driver.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):	short	type;		/* type of tty driver */
+Tty_driver.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):	short	subtype;	/* subtype of tty driver */
+Tty_driver.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):	int	flags;		/* tty driver flags */
+Tty_driver.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):	struct tty_driver *other; /* only used for the PTY driver */
+Tty_driver.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):	 * Pointer to the tty data structures
+Tty_driver.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):	struct tty_struct **ttys;
+Tty_driver.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):	const struct tty_operations *ops;
+Tty_driver.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):	struct list_head tty_drivers;
+Tty_driver.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):extern struct list_head tty_drivers;
+Tty_driver.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):extern struct tty_driver *alloc_tty_driver(int lines);
+Tty_driver.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):extern void put_tty_driver(struct tty_driver *driver);
+Tty_driver.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):extern void tty_set_operations(struct tty_driver *driver,
+Tty_driver.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):			const struct tty_operations *op);
+Tty_driver.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):extern struct tty_driver *tty_find_polling_driver(char *name, int *line);
+Tty_driver.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):extern void tty_driver_kref_put(struct tty_driver *driver);
+Tty_driver.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):static inline struct tty_driver *tty_driver_kref_get(struct tty_driver *d)
+Tty_driver.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):/* tty driver magic number */
+Tty_driver.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define TTY_DRIVER_MAGIC		0x5402
+Tty_driver.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux): * tty driver flags
+Tty_driver.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux): * TTY_DRIVER_RESET_TERMIOS --- requests the tty layer to reset the
+Tty_driver.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux): * TTY_DRIVER_REAL_RAW --- if set, indicates that the driver will
+Tty_driver.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux): * TTY_DRIVER_DYNAMIC_DEV --- if set, the individual tty devices need
+Tty_driver.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux): *	to be registered with a call to tty_register_driver() when the
+Tty_driver.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux): *	tty_unregister_device() so the devices will be show up
+Tty_driver.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux): *	created by the tty core in sysfs when tty_register_driver() is
+Tty_driver.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux): *	called.  This is to be used by drivers that have tty devices
+Tty_driver.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux): *	that can appear and disappear while the main tty driver is
+Tty_driver.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux): *	registered with the tty core.
+Tty_driver.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux): * TTY_DRIVER_DEVPTS_MEM -- don't use the standard arrays, instead
+Tty_driver.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux): * TTY_DRIVER_HARDWARE_BREAK -- hardware handles break signals. Pass
+Tty_driver.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define TTY_DRIVER_INSTALLED		0x0001
+Tty_driver.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define TTY_DRIVER_RESET_TERMIOS	0x0002
+Tty_driver.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define TTY_DRIVER_REAL_RAW		0x0004
+Tty_driver.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define TTY_DRIVER_DYNAMIC_DEV		0x0008
+Tty_driver.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define TTY_DRIVER_DEVPTS_MEM		0x0010
+Tty_driver.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define TTY_DRIVER_HARDWARE_BREAK	0x0020
+Tty_driver.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):/* tty driver types */
+Tty_driver.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define TTY_DRIVER_TYPE_SYSTEM		0x0001
+Tty_driver.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define TTY_DRIVER_TYPE_CONSOLE		0x0002
+Tty_driver.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define TTY_DRIVER_TYPE_SERIAL		0x0003
+Tty_driver.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define TTY_DRIVER_TYPE_PTY		0x0004
+Tty_driver.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define TTY_DRIVER_TYPE_SCC		0x0005	/* scc driver */
+Tty_driver.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define TTY_DRIVER_TYPE_SYSCONS		0x0006
+Tty_driver.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):/* system subtypes (magic, used by tty_io.c) */
+Tty_driver.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define SYSTEM_TYPE_TTY			0x0001
+Tty_driver.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):/* pty subtypes (magic, used by tty_io.c) */
+Tty_driver.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#endif /* #ifdef _LINUX_TTY_DRIVER_H */
+Tty_flip.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#ifndef _LINUX_TTY_FLIP_H
+Tty_flip.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define _LINUX_TTY_FLIP_H
+Tty_flip.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):extern int tty_buffer_request_room(struct tty_struct *tty, size_t size);
+Tty_flip.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):extern int tty_insert_flip_string(struct tty_struct *tty, const unsigned char *chars, size_t size);
+Tty_flip.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):extern int tty_insert_flip_string_flags(struct tty_struct *tty, const unsigned char *chars, const char *flags, size_t size);
+Tty_flip.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):extern int tty_prepare_flip_string(struct tty_struct *tty, unsigned char **chars, size_t size);
+Tty_flip.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):extern int tty_prepare_flip_string_flags(struct tty_struct *tty, unsigned char **chars, char **flags, size_t size);
+Tty_flip.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):void tty_schedule_flip(struct tty_struct *tty);
+Tty_flip.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):static inline int tty_insert_flip_char(struct tty_struct *tty,
+Tty_flip.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):	struct tty_buffer *tb = tty->buf.tail;
+Tty_flip.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):	return tty_insert_flip_string_flags(tty, &ch, &flag, 1);
+Tty_flip.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#endif /* _LINUX_TTY_FLIP_H */
+Tty_ldisc.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#ifndef _LINUX_TTY_LDISC_H
+Tty_ldisc.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define _LINUX_TTY_LDISC_H
+Tty_ldisc.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux): * This structure defines the interface between the tty line discipline
+Tty_ldisc.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux): * implementation and the tty routines.  The following routines can be
+Tty_ldisc.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux): * int	(*open)(struct tty_struct *);
+Tty_ldisc.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux): * 	with the tty.  The line discipline can use this as an
+Tty_ldisc.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux): * void	(*close)(struct tty_struct *);
+Tty_ldisc.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux): * 	shutdown, either because the tty is being closed or because
+Tty_ldisc.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux): * 	the tty is being changed to use a new line discipline
+Tty_ldisc.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux): * void	(*flush_buffer)(struct tty_struct *tty);
+Tty_ldisc.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux): * ssize_t (*chars_in_buffer)(struct tty_struct *tty);
+Tty_ldisc.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux): * ssize_t (*read)(struct tty_struct * tty, struct file * file,
+Tty_ldisc.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux): * 	the tty.  The line discipline will return whatever characters
+Tty_ldisc.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux): * ssize_t (*write)(struct tty_struct * tty, struct file * file,
+Tty_ldisc.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux): * 	tty.  The line discipline will deliver the characters to the
+Tty_ldisc.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux): * 	low-level tty device for transmission, optionally performing
+Tty_ldisc.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux): * int	(*ioctl)(struct tty_struct * tty, struct file * file,
+Tty_ldisc.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux): * 	is not handled by the tty layer or the low-level tty driver.
+Tty_ldisc.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux): * 	operation.  Note that the search order for ioctls is (1) tty
+Tty_ldisc.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux): * 	layer, (2) tty low-level driver, (3) line discpline.  So a
+Tty_ldisc.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux): * long	(*compat_ioctl)(struct tty_struct * tty, struct file * file,
+Tty_ldisc.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux): * void	(*set_termios)(struct tty_struct *tty, struct ktermios * old);
+Tty_ldisc.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux): * int	(*poll)(struct tty_struct * tty, struct file * file,
+Tty_ldisc.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux): * 	tty device.  It is solely the responsibility of the line
+Tty_ldisc.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux): * void	(*receive_buf)(struct tty_struct *, const unsigned char *cp,
+Tty_ldisc.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux): * 	This function is called by the low-level tty driver to send
+Tty_ldisc.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux): * void	(*write_wakeup)(struct tty_struct *);
+Tty_ldisc.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux): * 	This function is called by the low-level tty driver to signal
+Tty_ldisc.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux): * int (*hangup)(struct tty_struct *)
+Tty_ldisc.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux): *	cease I/O to the tty driver. Can sleep. The driver should
+Tty_ldisc.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):struct tty_ldisc_ops {
+Tty_ldisc.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):	int	(*open)(struct tty_struct *);
+Tty_ldisc.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):	void	(*close)(struct tty_struct *);
+Tty_ldisc.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):	void	(*flush_buffer)(struct tty_struct *tty);
+Tty_ldisc.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):	ssize_t	(*chars_in_buffer)(struct tty_struct *tty);
+Tty_ldisc.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):	ssize_t	(*read)(struct tty_struct * tty, struct file * file,
+Tty_ldisc.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):	ssize_t	(*write)(struct tty_struct * tty, struct file * file,
+Tty_ldisc.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):	int	(*ioctl)(struct tty_struct * tty, struct file * file,
+Tty_ldisc.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):	long	(*compat_ioctl)(struct tty_struct * tty, struct file * file,
+Tty_ldisc.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):	void	(*set_termios)(struct tty_struct *tty, struct ktermios * old);
+Tty_ldisc.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):	unsigned int (*poll)(struct tty_struct *, struct file *,
+Tty_ldisc.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):	int	(*hangup)(struct tty_struct *tty);
+Tty_ldisc.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):	void	(*receive_buf)(struct tty_struct *, const unsigned char *cp,
+Tty_ldisc.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):	void	(*write_wakeup)(struct tty_struct *);
+Tty_ldisc.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):struct tty_ldisc {
+Tty_ldisc.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):	struct tty_ldisc_ops *ops;
+Tty_ldisc.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define TTY_LDISC_MAGIC	0x5403
+Tty_ldisc.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):	MODULE_ALIAS("tty-ldisc-" __stringify(ldisc))
+Tty_ldisc.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#endif /* _LINUX_TTY_LDISC_H */
+Uio_driver.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux): * @porttype:		type of port (see UIO_PORT_* below)
+Uio_driver.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):	int			porttype;
+Uio_driver.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):/* defines for uio_port->porttype */
+Unistd.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\arm\include\asm):					/* 31 was sys_stty */
+Unistd.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\arm\include\asm):					/* 32 was sys_gtty */
+Unistd.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\blackfin\include\asm):				/* 31 __NR_stty obsolete */
+Unistd.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\blackfin\include\asm):				/* 32 __NR_gtty obsolete */
+Unistd.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\cris\include\asm):#define __NR_stty		 31
+Unistd.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\cris\include\asm):#define __NR_gtty		 32
+Unistd.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\frv\include\asm):#define __NR_stty		 31
+Unistd.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\frv\include\asm):#define __NR_gtty		 32
+Unistd.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\h8300\include\asm):#define __NR_stty		 31
+Unistd.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\h8300\include\asm):#define __NR_gtty		 32
+Unistd.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\m32r\include\asm):#define __NR_cachectl		 32 /* old #define __NR_gtty		 32*/
+Unistd.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\m68k\include\asm):#define __NR_stty		 31
+Unistd.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\m68k\include\asm):#define __NR_gtty		 32
+Unistd.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\microblaze\include\asm):#define __NR_stty		31 /* remove */
+Unistd.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\microblaze\include\asm):#define __NR_gtty		32 /* remove */
+Unistd.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\mips\include\asm):#define __NR_stty			(__NR_Linux +  31)
+Unistd.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\mips\include\asm):#define __NR_gtty			(__NR_Linux +  32)
+Unistd.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\mn10300\include\asm):#define __NR_stty		 31
+Unistd.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\mn10300\include\asm):#define __NR_gtty		 32
+Unistd.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\parisc\include\asm):#define __NR_HPUX_stty                   31
+Unistd.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\parisc\include\asm):#define __NR_HPUX_gtty                   32
+Unistd.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\powerpc\include\asm):#define __NR_stty		 31
+Unistd.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\powerpc\include\asm):#define __NR_gtty		 32
+Unistd_32.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\sh\include\asm):#define __NR_stty		 31
+Unistd_32.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\sh\include\asm):#define __NR_gtty		 32
+Unistd_32.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\x86\include\asm):#define __NR_stty		 31
+Unistd_32.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\x86\include\asm):#define __NR_gtty		 32
+Unistd_64.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\sh\include\asm):#define __NR_stty		 31
+Unistd_64.h (z:\usr\src\linux-headers-2.6.32-27-generic\arch\sh\include\asm):#define __NR_gtty		 32
+Usb.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):	__u8 request, __u8 requesttype, __u16 value, __u16 index,
+Usbdevice_fs.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):	__u8 bRequestType;
+Usbnet.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux\usb): * network-specific subroutine library ... that happens to do pretty
+Uwb.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):/* Print in @buf a pretty repr of @addr */
+Uwb.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):/* Print in @buf a pretty repr of @addr */
+Vt_kern.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#include <linux/tty.h>
+Vt_kern.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):struct tty_struct;
+Vt_kern.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):int tioclinux(struct tty_struct *tty, unsigned long arg);
+Wanrouter.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):	char tty;		/* Create a fake tty device */
+Wanrouter.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):	unsigned tty_major;	/* Major number for wanpipe tty device */
+Wanrouter.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):	unsigned tty_minor; 	/* Minor number for wanpipe tty device */
+Wanrouter.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):	unsigned tty_mode;	/* TTY operation mode SYNC or ASYNC */
+Wanrouter.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define WANOPT_TTY_SYNC  0
+Wanrouter.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):#define WANOPT_TTY_ASYNC 1
+Wireless.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux): *	is already pretty exhaustive, and you should use that first.
+Wusb-wa.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux\usb):	u8 bRequestType;		/* 0x80 WA_REQUEST_TYPE_CTL */
+Wusb-wa.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux\usb):	u8 bRequestType;
+Xfrm.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux):	__u16			exttype;
+Xt_pkttype.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux\netfilter):#ifndef _XT_PKTTYPE_H
+Xt_pkttype.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux\netfilter):#define _XT_PKTTYPE_H
+Xt_pkttype.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux\netfilter):struct xt_pkttype_info {
+Xt_pkttype.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux\netfilter):	int	pkttype;
+Xt_pkttype.h (z:\usr\src\linux-headers-2.6.32-27-generic\include\linux\netfilter):#endif /*_XT_PKTTYPE_H*/
+---- tty Search Errors Encountered (1) ----
+The following 1 files could not be processed:
+Z:\usr\src\linux-headers-2.6.32-27-generic\include\config\w1\con : File could not be opened.

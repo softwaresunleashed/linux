@@ -1,0 +1,40 @@
+
+CC=gcc
+
+SOURCE_CODE_DIR = ../Source_Code
+BUILD_ARTIFACTS_DIR = ../Build_Artifacts
+
+KERNEL_DIR = /usr/src/linux-headers-2.6.32-24
+KERNEL_GENERIC_DIR = /usr/src/linux-headers-2.6.32-24-generic
+
+INCLUDE_FILES = \
+-I $(KERNEL_GENERIC_DIR) \
+-I $(KERNEL_GENERIC_DIR)/include/ \
+-I $(KERNEL_GENERIC_DIR)/include/linux \
+-I $(KERNEL_GENERIC_DIR)/arch/x86/include \
+-I $(KERNEL_GENERIC_DIR)/arch/x86/include/asm 
+#-I $(KERNEL_DIR) \
+#-I $(KERNEL_DIR)/include \
+#-I $(KERNEL_DIR)/include/linux  \
+#-I $(KERNEL_DIR)/arch/x86/include \/module_program
+#-I $(KERNEL_DIR)/arch/x86/include/asm \
+
+
+
+SYS_DEFINES = -D CONFIG_PAGE_OFFSETUL 
+
+# -O2 -- Optimize code to level 2
+# -g -- Debug code 
+# -Wall -- Show all warnings
+CC_FLAGS = -O2 -g -Wall 
+
+SOURCE_FILES = $(SOURCE_CODE_DIR)/hello_world_module.c
+
+OBJ_FILES = $(BUILD_ARTIFACTS_DIR)/hello_world_module.o
+
+MACHINE_ARCH = i686
+
+
+all:
+	$(CC) -march=$(MACHINE_ARCH)  -c $(SOURCE_FILES) -o $(OBJ_FILES) $(INCLUDE_FILES) $(SYS_DEFINES) $(CC_FLAGS) 
+
